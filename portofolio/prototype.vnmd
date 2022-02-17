@@ -1,0 +1,143 @@
+/ Ce fichier est un prototype pour le Visual Novel MarkDown
+/ Le but est de faire un présentation succinte de sa syntaxe, ainsi que de ses
+/ buts et des raisons de son implémentation.
+
+/ L'objectif du VNMD est de proposer un formatage de texte lisible, adapté aux
+/ auteurs et écrivains, principalement porté vers le Visual novel, et qui soit
+/ toutefois facilement analysé et exploité par un programme dédié (parser), dans
+/ le but de le tranformer facilement en VN (ou par exemple, en pièce de théatre).
+
+/ Pour faciliter le processus machine, le VNMD repose sur plusieurs principes :
+/ - Identificateurs en début de ligne pour analyser le moins possible
+/ - Régularité dans sa structure
+/ - Des indentificateurs facile à suivre pour la machine
+
+/ Pour faciliter la lisibilité humaine, le VNMD repose sur :
+/ - Les acquis du MarkDown : pas de symboles par défaut, et identification
+/   facile même sans traitement, la syntaxe ne vous bloque pas
+/ - Le principe de continuité : des attributs (comme le personnage, la scène
+/   suivante ...) ne sont spécifiés que lorsqu'ils changent. Par défaut, tout
+/   est continu (un personnage non spécifié est le même qu'avant)
+/ - La simplicité : un texte est simplement un texte
+/ - Extensibilité : des mots-clés peuvent être ajoutés dans les en-têtes, et les
+/   formateurs (souligné, italique, liens, etc.) sont interprétés par le moteur
+/   de jeu comme il le souhaite
+
+/ Une ligne de commentaire commence par un /. Il s'agit du seul type de
+/ commentaire possible, et ils ne sont pas lus par la machine ou le jeu.
+/ Ils peuvent être mis n'importe ou, mais doivent être sur leur propre ligne et
+/ le premier caractère est forcément ce /
+
+$1
+/ Le $ permet de marquer l'identificateur de la scène. Il peut être quelconque, voire
+/ ne pas être présent du tout, auquel cas il ne peut être accédé que par la
+/ scène d'avant. Cet identificateur peut être n'importe quoi, mais ne doit pas
+/ contenir de retour à la ligne ni d'espace.
+Switch on the power line
+/ Une ligne normale. Cette ligne est affichée, et enroulée si elle est trop
+/ longue par le moteur.
+Remember to put on protection
+/ Une autre ligne, elle sera affichée dans un autre paragraphe de la même
+/ fenêtre à cause du retour à la ligne
+
+/ Une ligne qui commence par un retour à la ligne : c'est le bout du bloc de
+/ texte.
+/ A la suite commence un nouveau bloc, affiché lorsqu'on change de texte.
+/ Le programme efface la boite de dialogue et affiche ce nouveau bloc à la
+/ place.
+/ Celui-ci n'est pas identifié, mais sera juste lu à la suite du dernier,
+/ puisque rien n'est spécifié.
+Ley down your pieces
+And let's begin object creation
+- Fill in my data
+/ Voici un choix ! Il commence par un -. Cliquer l'un d'eux permet d'accéder à
+/ l'identificateur spécifié en dessous.
+=1
+/ Ici, ce choix renvoie au premier bloc de texte
+- Parameters initialization
+Let's start our new wold
+/ Un choix peut faire plusieurs paragraphes.
+=
+/ Sans précision, on ira simplement au prochain bloc de texte
+-1 And let's begin the
+/ On peut attacher au tiret un nom, qui sera interprété par le moteur si on le
+/ souhaite.
+/ Pas besoin de dire où on va, si on enchaîne sur un autre choix ou qu'on finit
+/ le bloc de texte, la destination sera toujours le prochain bloc de texte.
+
+$drop music=drop bg=java char=Mili-1
+/ Après l'identificateur peuvent se trouvers des paramètres à interpréter, tel
+/ le personnage ou le fond.
+__SIMULATION__
+/ Le mot est en souligné pour la plupart des lectures, mais si on en veut plus
+/ dans notre jeu, il pourrait s'agit d'un mot cliquable secret.
+
+# Parlotte
+/ Le # designe une division du script, comme un chapitre, un acte, une étape ...
+/ Et est affiché au joueur
+
+$Mais_si_on_se_répète...
+## Le début n'est pas trop ennuyeux
+/ Plus il y a de #, plus il s'agit d'une petite subdivision
+/ On peut donner des identificateurs et des paramètres à une division
+
+$ char=parleur bg=plage_d'hiver
+/ On peut ne pas identifier un bloc et y attacher des paramètres.
+/ Si char n'avait pas changé, ce serait toujours Mili-1 qui parle.
+Did you ever hear the tragedy of Darth Plagueis The Wise?
+- I thought not.
+=Mais_si_on_se_répète...
+-2 It's not a story the Jedi would tell you.
+
+It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life…
+- Really ?
+=[thedarkside.vnmd]
+/ On peut mettre un lien vers un autre fichier de VNMD : cela permet de séparer
+/ encore plus différentes branches d'un récit ou d'organiser les étapes.
+/ Ce choix emmène donc à un autre fichier.
+- I love democracy !
+=[goodending.vnmd]
+- ...
+
+*powername= The force
+
+I sense fear in you, young Skywalker.
+Why don't you embrace the {powername} more ?
+/ Si vous le souhaitez, il est possible d'ajouter des alias
+/ Le mot entre accolades est une variable que vous pouvez définir comme dans la
+/ ligne avant ce paragraphe
+/ Ici, on obtient :
+Why don't you embrace The force more ?
+
+$ char=the_padawan
+Didn't you say it twice ?
+$ char=parleur
+Right, you don't see the raw text, hush now.
+So I was saying ... > I sense wrath in you.
+/ Bien que les éléments dans les lignes dépendent principalement des moteurs de
+/ jeu, il est conseillé d'utilisé le chevron pour qu'un texte n'apparaisse
+/ qu'après un clic.
+>It could grant you ... POWER OVERWHELMING !
+
+$ bg=classroom
+But before that, check your math.
+Is really 3>4 ?
+/ Ici, le chevron sera interprété. Néanmoins, il existe une solution pour tous
+/ les symboles décrits ici.
+$ char=the_padawan
+Why the pause ?
+$ char=parleur
+Right, Is really 3\>4 ?
+/ Le \ permet d'annuler un caractère spécial. Si vous voulez écrire un \, il
+/ faut donc écrire \\
+
+Fin de ce document
+- Hourra !
+=1
+- Ne faut-il pas rajouter des choses ?
+=Vers_des_améliorations_encore_inconnues_...
+
+
+/ Cette syntaxe est encore sujette à amélioration, changements et extension.
+/ Nous espérons avoir atteint nos buts avec cette spécification pour écrire
+/ simplement et implémenter avce la même simplicité des scripts.

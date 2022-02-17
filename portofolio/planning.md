@@ -10,6 +10,7 @@ diverses tâches.
 Personne | Type | Date | Temps | Contenu
 ---------|------|------|-------|--------
 François|Organisation|15/02|1h30|Ébauche d'organisation (fichiers et commentaires)
+François|Design|16/02|2h|Spécification du VN Markdown pour les scripts
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
