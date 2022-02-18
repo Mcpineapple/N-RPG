@@ -35,3 +35,39 @@ y est collé, et indique vers où ammène le choix. Par défaut (pas de nom), la
 destination est le prochain paragraphe. Il peut dans ce cas même être omis (un
 nouveau choix ou un double retour à la ligne finit le choix actuel, qui prend
 alors comme destination le prochain paragraphe).
+
+Indique un titre | O | #
+Ce symbole indique un titre ou une subdivision du texte. Il peut être montré par
+le moteur ou non. Il peut y avoir plusieurs # : plus ce nombre est grand, plus
+la subdivision est petite.
+
+Crée un alias | O | *
+Ce symbole indique que le mot situé après lui en paramètre correspondra
+lorsqu'il est remplacé (voir {}). Après l'espace se place le texte qui le
+remplacera, qui peut être placé sur toute la ligne.
+
+## Caractères à l'intérieur d'une ligne
+Ces caractères spéciaux sont des symboles placés à même le texte. Un grand
+nombre d'entre eux dépendent du moteur de jeu.
+
+Lien vers un autre fichier | X | []
+Ces symboles ne peuvent s'utiliser qu'à la suite d'une ligne avec =. Si vous
+souhaitez séparer votre script entre plusieurs fichiers, vous pouvez mettre
+dedans le nom d'un autre ficher, et le script continuera vers ce dernier.
+
+Remplace un alias par son contenu | X | {}
+Tout mot entre ces symboles sera interprété comme ce que le remplacement de
+l'alias.
+
+Marque une pause | X | >
+Bien que ce symbole dépende de l'implémentation, il est conseillé d'ajouter ce
+symbole à toutes les implémentations. Il permet de marquer une pause au milieu
+de la ligne, et d'écrir ce qu'il y a après seulement après un clic.
+
+D'autres symboles, issus du MarkDown classique, comprennent:
+_x_
+*x*
+__x__
+==x==
+Tous ces symboles peucent modifier l'interprétation ou le formatage du texte,
+mais dépendent de l'implémentation.
