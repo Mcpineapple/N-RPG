@@ -41,10 +41,15 @@ Ce symbole indique un titre ou une subdivision du texte. Il peut être montré p
 le moteur ou non. Il peut y avoir plusieurs # : plus ce nombre est grand, plus
 la subdivision est petite.
 
-Crée un alias | O | *
+Crée un alias | O | <
 Ce symbole indique que le mot situé après lui en paramètre correspondra
 lorsqu'il est remplacé (voir {}). Après l'espace se place le texte qui le
 remplacera, qui peut être placé sur toute la ligne.
+
+Étend la ligne précédente | X |   (espace)
+En début de ligne, ce symbole permet d'indiquer que cette ligne est une
+continuation de la précédente, permettant d'écrire proprement le script sans
+affceter le résultat.
 
 ## Caractères à l'intérieur d'une ligne
 Ces caractères spéciaux sont des symboles placés à même le texte. Un grand

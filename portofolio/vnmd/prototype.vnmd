@@ -99,7 +99,7 @@ It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and 
 =[goodending.vnmd]
 - ...
 
-*powername The force
+<powername The force
 
 I sense fear in you, young Skywalker.
 Why don't you embrace the {powername} more ?
@@ -130,6 +130,11 @@ $ char=parleur
 Right, Is really 3\>4 ?
 / Le \ permet d'annuler un caractère spécial. Si vous voulez écrire un \, il
 / faut donc écrire \\
+
+Je vais maintenant parler très longtemps; c'est à dire très longtemps, mais je
+ veux rester sur la même ligne tout de même en restant lisible.
+/ Une ligne qui commence par un espace est la continuation de la dernière ligne,
+/ comme s'il n'y avait pas eu de retour à la ligne.
 
 Fin de ce document
 - Hourra !
