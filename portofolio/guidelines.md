@@ -1,0 +1,41 @@
+# Conventions de développement
+Ce projet s'efforce de suivre des bonnes pratiques, que ce soit de
+programmation, d'écriture ou d'organisation. Quelques-unes d'entre elles sont
+consignées ici.
+
+## Conventions d'écriture
+Ce projet s'efforce de suivre les règles conventionelles en python de nom des
+variables et de formatage. Il décide néanmoins de suivre une programmation en
+français (noms de variables français, par exemple). Ainsi, les modifications
+suivies sont :
+- Toutes les docstrings sont précédées d'un u, permettant de préciser qu'elles
+  sont en unicode, évitant tout problème de représentation des caractères
+  spéciaux français.
+- Les méthodes correspondant à un attribut d'objet, "Getters" et "Setters", sont
+  nommées avec le préfixe "obtenir" et "changer" respectivement, bien que la
+  méthode préférée soit les décorateurs de fonctions.
+
+## Conventions de programmation
+Les intéractions avec les attributs d'un objet se font par des méthodes
+permettant son obtention et modification. Celles-ci sont définies de préférence
+à l'aide la fonction property, via des décorateurs de fonctions, les fonctions
+décorées portant le nom de l'attribut concerné.
+
+## Conventions de documentation
+Toute la documentation "externe" aux programmes se fait dans le dossier
+principal "portofolio", le plus souvent sous le format MarkDown, permettant une
+bonne lisibilité.
+La documentation interne au programme s'organise de la façon suivante :
+- Chaque classe ou fonction possède une documentation sous la forme de doctring.
+  Celle-ci s'organise de la façon suivante :
+  """
+  	{Description}
+	Préconditions :
+		{Préconditions}
+		Paramètres (éventuellement):
+			{Description des paramètres envoyés à la fonction}
+	Postconditions :
+		{Postconditions}
+		Sortie {éventuellement} :
+			{Description des objets renvoyés par la fonction}
+  """
