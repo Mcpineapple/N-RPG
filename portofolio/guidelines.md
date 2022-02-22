@@ -5,7 +5,8 @@ consignées ici.
 
 ## Conventions d'écriture
 Ce projet s'efforce de suivre les règles conventionelles en python de nom des
-variables et de formatage. Il décide néanmoins de suivre une programmation en
+variables et de formatage, formalisées par la PEP 8.
+Il décide néanmoins de suivre une programmation en
 français (noms de variables français, par exemple). Ainsi, les modifications
 suivies sont :
 - Toutes les docstrings sont précédées d'un u, permettant de préciser qu'elles
@@ -39,3 +40,5 @@ La documentation interne au programme s'organise de la façon suivante :
 		Sortie {éventuellement} :
 			{Description des objets renvoyés par la fonction}
   """
+  Elle suit autrement les conventions généralement admises en python,
+  formalisées par la PEP 256.
