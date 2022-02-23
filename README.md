@@ -1,5 +1,15 @@
 # N-RPG
 Ce README sera la page de garde du projet.
+
+## Installation
+Pour pouvoir utiliser le projet, il faut considérer le fichier comme un module.
+Pour cela, copiez le projet localement :
+`git clone https://github.com/Mcpineapple/N-RPG.git`
+Puis entrez dans le dossier et rendez modulaire le dossier :
+`pip install .`
+Après toute modification, pensez à mettre à jour le module en utilisant :
+`pip install -e .`
+
 ## Contenu
 Il contiendra la présentation et le sommaire, les noms, les rôles
 Il documentera aussi comment lancer le jeu, l'installer ainsi que quelques
