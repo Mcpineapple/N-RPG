@@ -12,6 +12,3 @@ que les fichiers) de test sont dans le dossier portofolio.
 On y retrouvera aussi une modélisation de l'arbre de l'histoire, sous les
 différentes formes informatiques obtenues par le parser et la classe arbre ainsi
 que sous forme graphique.
-
-> La documentation et cet extrait sont éventuellement à traduire en fonction de
-> la langue choisie.
