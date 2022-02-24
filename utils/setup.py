@@ -2,8 +2,8 @@
 
 from setuptools import setup
 
-setup(name='nrpg',
+setup(name='utils',
         version='0.42',
         description='Module nécessaire au fonctionnement du N-RPG',
-        packages=['utils', 'structures']
+        packages=['nrpg_moteur', 'nrpg_parser']
         )

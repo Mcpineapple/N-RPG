@@ -1,2 +1,1 @@
-# Doit être lancé avec python3 portant l'option -m
-from utils import MoteurCLI
+from nrpg_moteur import MoteurCLI
