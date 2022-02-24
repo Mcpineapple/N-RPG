@@ -7,8 +7,6 @@ Pour cela, copiez le projet localement :
 `git clone https://github.com/Mcpineapple/N-RPG.git`
 Puis entrez dans le dossier et rendez modulaire le dossier :
 `pip install .`
-Après toute modification, pensez à mettre à jour le module en utilisant :
-`pip install -e .`
 
 ## Contenu
 Il contiendra la présentation et le sommaire, les noms, les rôles
