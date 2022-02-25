@@ -14,3 +14,5 @@ moteur.afficher("L’ANNONCIER , un papier à la main, tapant fortement le sol a
 moteur.afficher("...")
 moteur.personnage = "L'annonciér"
 moteur.afficher("Fixons, je vous prie, mes frères, les yeux sur ce point de l’Océan Atlantique qui est à quelques degrés au-dessous de la Ligne à égale distance de l’Ancien et du Nouveau Continent.")
+moteur.afficher(" Ajout.", False)
+moteur.afficher("Fin")

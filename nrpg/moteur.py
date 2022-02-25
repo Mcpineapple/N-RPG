@@ -37,7 +37,7 @@ class MoteurCLI:
         # en haut de ligne : il peut être vide. Il s'agit d'une chaîne de
         # caractères
 
-    def afficher(self, texte: str, ajouter=False) -> None:
+    def afficher(self, texte: str, nouveau=True) -> None:
         u"""
         Affiche le texte envoyé, à la place du précédent ou en l'ajoutant
         au précédent.
@@ -50,9 +50,9 @@ class MoteurCLI:
         Postconditions :
             Affiche dans la sortie standard le texte tel que demandé.
         """
-        if ajouter:
-            print("\n\t")
-        print(texte, sep="")
+        if nouveau:
+            print(f"\n\t", end="")
+        print(f"{texte}", end="")
 
     @property
     def personnage(self) -> str:
@@ -86,7 +86,8 @@ class MoteurCLI:
             du personnage dans la sortie standard.
         """
         self._personnage = valeur
-        print(f"\n {self.personnage}")
+        print(f"\n") # Imprime une ligne vide de séparation
+        print(f"{self.personnage}", end="")
 
     def __del__(self) -> None:
         pass
