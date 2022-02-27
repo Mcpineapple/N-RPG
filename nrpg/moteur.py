@@ -91,3 +91,52 @@ class MoteurCLI:
 
     def __del__(self) -> None:
         pass
+
+class MoteurGUI:
+    """
+    Moteur de jeu graphique destiné à la représentation du jeu. Il possède des
+    fonctions étendues, nottament l'affichage graphique de fonds et de dessins,
+    le rendement de son, l'intéraction graphique avec le joueur par le biais de
+    boutons. Il ouvre une fenêtre graphique par le biais du module standard
+    python Tkinter.
+    D'autres fonctions futures à ajouter à ce moteur sont :
+        - La tenue d'un log de jeu
+        - La gestion des sauvegardes
+        - Adaptation selon la taille
+    """
+    def __init__(self, menu=None) -> None:
+        """
+        Crée un objet MoteurGUI, et initialise une interface utilisateur de
+        base, extensible et personnalisable. Un menu permettant d'autres actions
+        peut être passé.
+        Préconditions :
+            Le module standard python Tkinter doit être disponible
+            Une fenêtre graphique doit pouvoir s'afficher via Tkinter
+            Paramètres :
+                menu : fonction, par défaut None. Cette fonction doit pouvoir
+                    recevoir l'objet Tkinter, ce qui lui permet d'agir dessus.
+                    Cette fonction peut aussi renvoyer des informations à
+                    charger dans le parser (dans le cas par exemple de la
+                    sélection de sauvegarde).
+        Postconditions :
+            Création d'une fenêtre de jeu active, éventuellement en affichant un
+            menu de jeu. Cette fenêtre possède des options classiques
+            d'interface de jeu.
+            Sortie : Aucune.
+        """
+        from tkinter import Tk # Ne doit se faire que si le module n'est pas
+        # encore importé
+
+        self.canvas = Tk()
+        if menu:
+            menu_choix = menu(self.canvas)
+            if menu_choix:
+                pass # Gestion des informations renvoyées par le menu : API à
+                    # définir
+
+    def __del__(self) -> None:
+        """
+        Détruit un objet MoteurGUI en effectuant les maintenances nécessaires et
+        en nettoyant les fenêtres grahiques affichées à l'écran.
+        """
+        pass

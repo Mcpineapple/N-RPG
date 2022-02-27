@@ -14,6 +14,7 @@ François|Design|16/02|2h|Spécification du VN Markdown pour les scripts
 François|Codage (console)|23/02|2h|Premier prototype de moteur CLI
 François|Organisation|24/02|2h|Mise en place des modules
 François|Codage (console)|25/02|h30|Debugging du moteur CLI
+François|Code (graphique)|27/02|2h|Ébauche du moteur de jeu graphique
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
