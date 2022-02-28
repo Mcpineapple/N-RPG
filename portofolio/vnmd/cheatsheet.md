@@ -57,17 +57,17 @@ dedans le nom d'un autre ficher, et le script continuera vers ce dernier.
 
 Remplace un alias par son contenu | X | {}
 Tout mot entre ces symboles sera interprété comme ce que le remplacement de
-l'alias.
+l'alias précise.
 
 Marque une pause | X | >
 Bien que ce symbole dépende de l'implémentation, il est conseillé d'ajouter ce
 symbole à toutes les implémentations. Il permet de marquer une pause au milieu
-de la ligne, et d'écrir ce qu'il y a après seulement après un clic.
+de la ligne, et d'écrire ce qu'il y a après seulement après un clic.
 
 D'autres symboles, issus du MarkDown classique, comprennent:
 _x_
 *x*
 __x__
 ==x==
-Tous ces symboles peucent modifier l'interprétation ou le formatage du texte,
+Tous ces symboles peuvent modifier l'interprétation ou le formatage du texte,
 mais dépendent de l'implémentation.
