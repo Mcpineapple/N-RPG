@@ -42,3 +42,16 @@ La documentation interne au programme s'organise de la façon suivante :
   """
   Elle suit autrement les conventions généralement admises en python,
   formalisées par la PEP 256.
+
+## Conventions d'organisation
+La documentation, le script exécuté et les modules de fonctionnement sont
+séparés. Les modules se trouvent sous le dossier de module général "nrpg",
+contenant les différents dossiers et fichiers de même nom correspondant aux
+modules. Ceux-ci sont ainsi importables tous ensemble, ou module par module ou
+commande par commande. Sont ainsi séparés :
+- Le parser;
+- Le moteur de jeu;
+- L'arbre binaire nécessaire au fonctionnement du jeu
+La structure des modules suit une approche rapide de la documentation officielle
+python afin d'être utilisable facilement avec pip, sans néanmoins formaliser
+complètement une structure standard pour être exportée.

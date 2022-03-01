@@ -11,11 +11,16 @@ Personne | Type | Date | Temps | Contenu
 ---------|------|------|-------|--------
 François|Organisation|15/02|1h30|Ébauche d'organisation (fichiers et commentaires)
 François|Design|16/02|2h|Spécification du VN Markdown pour les scripts
+François|Codage (console)|23/02|2h|Premier prototype de moteur CLI
+François|Organisation|24/02|2h|Mise en place des modules
+François|Codage (console)|25/02|h30|Debugging du moteur CLI
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
 ----|----|----------|-------
 Organisation|14/02|Facile|Ouverture du dépôt GitHub
+Organisation|24/02|Facile, avec recherche|Organisation du module
+Codage (console)|25/02|Facile|Création d'un moteur primitif CLI et de l'API
 
 ## Récapitulatif du travail
 Type|Temps|Difficulté
