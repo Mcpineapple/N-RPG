@@ -42,6 +42,7 @@ class Parser:
             parser à exécuter des méthodes du moteur de jeu.
         """
         self.moteur = moteur # Enregistre la référence du moteur pour agir avec
+        self.script_nom = script # Enregistre le nom du script actuel
         self.script_actuel = open(script,r,0) # Une amélioration peut
         # éventuellement se faire sur le buffering des fichiers. Néanmoins, ce
         # changement n'est pas trivial, complexe et rarement très utile.
@@ -49,18 +50,18 @@ class Parser:
             """
             Ne se déclenche que si une position particulière est
             précisée : par défaut, la valeur étant None, rien ne se passe et
-            le pointeur sur le fichier reste bien à à, position par défaut.
+            le pointeur sur le fichier reste bien à la position par défaut.
             """
             self.script_actuel.seek(position) # Placement du pointeur
-        self.table = {script : {}}
+        self.table = {self.script_nom : {}}
         """
         Dictionnaire de dictionnaires : il contient les
         identificateurs retenus et leur position, rangés par fichier
         Le hachage automatique des dictionnaires en python permet une
-        meilleure performance de ce type de fonctions
+        meilleure performance de ce type de fonctions.
+        La position retenue est le premier caractère des paramètres de la ligne,
+        que le parser analysera alors et enverra alors.
         """
-        self.choix = [] # Liste changeable, contient la position des choix d'une
-        # action sur l'autre pour être lue
 
     def suivant(self) -> None:
         """
@@ -83,9 +84,62 @@ class Parser:
                 - L'arivée à une fin
             Et toutes les autres possibilités de contrôle précisées pour le
             VNMD.
+            Sortie : Aucune
         """
-        # caractère = self.script_actuel.read(1)
+        # caractere = self.script_actuel.read(1)
         pass
 
     def choix(self, choix: int = None) -> None:
+        pass
+
+    def sauvegarde(self) -> None:
+        # Appel sauvegarde : voir spécification
+        pass
+
+    # Fonctions servant au fonctionnement des appels principaux
+
+    def _recherche(self, identifiant: str) -> None:
+        """
+        Place le pointeur dans le fichier à la ligne correspondant à
+        l'identifiant, soit en le retrouvant dans la table, soit en lisant le
+        script, en indexant tous les autres identifiants trouvés sur le chemin.
+        Préconditions :
+            Existence d'un script dans lequel rechecher
+            Existence d'une table dans laquelle indexer les positions
+                d'identifiants
+            Paramètres :
+                identifiant : str, le nom de l'identifiant recherché
+        Postconditions :
+            Placement du pointeur sur le fichier à l'identifiant demandé
+            Indexage des identifiants rencontrés
+            Sortie : Aucune
+        """
+        position = self.table.get(identifiant) # None si la clé n'est pas
+        # présente
+        if position is not None:
+            self.script_actuel.seek(position)
+        else:
+            while True:
+                caractere = self.script_actuel.read(1)
+                if caractere == "": # Arrivée en fin de fichier : ne lit plus
+                    # aucun caractère
+                    self._fin()
+                elif caractere == "\n": # Si on revient à la ligne
+                    caractere = self.script_actuel.read(1)
+                    if caractere == "$": # Et que celle-ci commence par un $
+                        nom = "" # Création d'un nom pour cet identifiant
+                        caractere = self.script_actuel.read(1) # Vérifie le
+                        # caractère suivant
+                        while caractere != " ": # Cherche jusqu'à l'espace
+                            nom += caractere # Enregistre le nom
+                            caractere = self.script_actuel.read(1)
+                        if nom != "": # N'enregistre pas dans le cas d'une ligne
+                            # de paramètre anonyme
+                            self.table[nom : self.script_actuel.tell()]
+                        if nom == identifiant : # Si il s'agit de ce que l'on
+                            # cherchait
+                            break # Fin de la fonction
+
+    def _fin(self) -> None:
+        # Action lorsque la fin du fichier est trouvée
         pass
