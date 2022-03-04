@@ -18,30 +18,30 @@ fonctions.
 # dictionnaires dans le cas de plusieurs fichiers.
 
 # Ce parser doit s'en tenr au moins possible d'entrées de la part du moteur, et
-# d'actionner un nombre limité de méthodes du moteur (une spécification du
-# moteur polyvalente et réduite)
+# d'actionner un nombre limité d'appels au moteur (une spécification du moteur
+# polyvalente et réduite)
 
 class Parser:
-    def __init__(self, moteur, script: str, position: int = None) -> None:
+    def __init__(self, script: str, position: int = None) -> None:
         """
         Initialisation d'un parser à utiliser pour lire le script et le
         transformer en appels au moteur de jeu.
         Préconditions :
             Un moteur quelconque suivant la spécification (à trouver dans
-                portofolio/moteur).
+                portofolio/moteur), qui recevra l'information en appelant le
+                parser.
             Un script écrit en Visual Novel MarkDown (.vnmd), suivant la
                 spécification à trouver dans portofolio/vnmd.
             Paramètres :
-                moteur : [moteur], un moteur quelconque suivant la spécification
                 script : str, le chemin vers le fichier de script VNMD qui est lu
                 position : int, la position dans le fichier lu (par défaut, 0)
         Postconditions :
             Création d'un objet parser, auquel est envoyé la méthode suivant,
-            qui exécute la prochaine partie du script, ou bien la méthode choix
-            avec un paramètre dans le cas des choix. Cette commande entraîne le
-            parser à exécuter des méthodes du moteur de jeu.
+            qui exécute la prochaine partie du script, la méthode sauvegarde
+            ou bien la méthode choix avec un paramètre dans le cas des choix.
+            Ces commandes entraînent un renvoi, défini sleon la spécification,
+            reçu par le moteur.
         """
-        self.moteur = moteur # Enregistre la référence du moteur pour agir avec
         self.script_nom = script # Enregistre le nom du script actuel
         self.script_actuel = open(script,r,0) # Une amélioration peut
         # éventuellement se faire sur le buffering des fichiers. Néanmoins, ce
@@ -71,11 +71,10 @@ class Parser:
         Préconditions :
             Existence d'un scipt valide depuis lequel lire dans
                 self.script_actuel
-            Existence d'un moteur vers lequel faire les appels dans self.moteur
             Paramètres : Aucun
         Postconditions :
             Avancée du pointeur du fichier jusqu'à la prochaine ligne en
-            attente, et appels au moteur de jeu en fonction de ce qui a été lu.
+            attente, et renvois au moteur de jeu en fonction de ce qui a été lu.
             En fonction des lectures peuvent être faits :
                 - Des ajouts à la table
                 - Un envoi de choix
@@ -84,10 +83,44 @@ class Parser:
                 - L'arivée à une fin
             Et toutes les autres possibilités de contrôle précisées pour le
             VNMD.
-            Sortie : Aucune
+            Sortie :
+                _ : any, sortie standardisée pour le moteur de jeu
         """
-        # caractere = self.script_actuel.read(1)
-        pass
+        # Lecture du premier caractère de la ligne
+        caractere = self.script_actuel.read(1)
+        if caractere == "" : # Read renvoie "" s'il n'y a plus rien à lire
+            self._fin()
+
+        elif caractere == "$":
+            # Ajout de l'identifiant
+            # Ajout des paramètres
+            # Retour de l'appel
+            pass
+
+        elif caractere == "-":
+            caractere = self.script_actuel.read(1)
+            parametre = ""
+            while caractere != " ": # Paramètre
+                parametre += caractere
+                caractere = self.script_actuel.read(1)
+            contenu = ""
+            caractere = self.script_actuel.read(1)
+            while caractere != "\n":
+                contenu += caractere
+            pass # Retour de l'information
+
+        elif caractere == "#":
+            ordre = 0
+            while caractere == "#":
+                ordre += 1 # Description de l'ordre du titre
+                caractere = self.script_actuel.read(1)
+            if caractere == " ": # Passer le premier espace
+                caractere = self.script_actuel.read(1)
+            contenu = ""
+            while caractere != "\n":
+                contenu += caractere
+                caractere = self.script_actuel.read(1)
+            pass # Retour d'information
 
     def choix(self, choix: int = None) -> None:
         pass
