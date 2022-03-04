@@ -87,39 +87,45 @@ class Parser:
                 _ : any, sortie standardisée pour le moteur de jeu
         """
         # Lecture du premier caractère de la ligne
-        caractere = self.script_actuel.read(1)
-        if caractere == "" : # Read renvoie "" s'il n'y a plus rien à lire
-            self._fin()
-
-        elif caractere == "$":
+        caractere = self._lire()
+        if caractere == "$":
             # Ajout de l'identifiant
             # Ajout des paramètres
             # Retour de l'appel
             pass
 
         elif caractere == "-":
-            caractere = self.script_actuel.read(1)
+            caractere = self._lire()
             parametre = ""
             while caractere != " ": # Paramètre
                 parametre += caractere
-                caractere = self.script_actuel.read(1)
+                caractere = self._lire()
             contenu = ""
-            caractere = self.script_actuel.read(1)
-            while caractere != "\n":
+            caractere = self._lire()
+            while True:
+                if caractere == "\n":
+                    if self._lire() != " ": # Si ligne étendue
+                        self.script_actuel.seek(-1,1) # Retour en arrière
+                        # Pour laisser place à la prochaine lecture
+                        break
+                    else:
+                        caractere = self._lire()
                 contenu += caractere
+
+            # Doit gérer la séquence de choi complète !
             pass # Retour de l'information
 
         elif caractere == "#":
             ordre = 0
             while caractere == "#":
                 ordre += 1 # Description de l'ordre du titre
-                caractere = self.script_actuel.read(1)
+                caractere = self._lire()
             if caractere == " ": # Passer le premier espace
-                caractere = self.script_actuel.read(1)
+                caractere = self._lire()
             contenu = ""
             while caractere != "\n":
                 contenu += caractere
-                caractere = self.script_actuel.read(1)
+                caractere = self._lire()
             pass # Retour d'information
 
     def choix(self, choix: int = None) -> None:
@@ -130,6 +136,25 @@ class Parser:
         pass
 
     # Fonctions servant au fonctionnement des appels principaux
+
+    def _lire(self) -> str:
+        """
+        Lit le caractere suivant de self.script_actuel, et le renvoie. Fait le
+        nécessaire si le script atteint sa fin.
+        Préconditions:
+            Existence s'un script ouvert sous forme d'un objet file dans
+                self.script_actuel
+            Paramètres : Aucun
+        Postconditions:
+            Avancement d'une position du pointeur dans le fichier
+            Appel à _fin si la fin du fichier est atteinte.
+            Sortie :
+                _ : str, le caractere lu.
+        """
+        caractere = self.script_actuel.read(1)
+        if caractere == "":
+            self._fin()
+        return caractere
 
     def _recherche(self, identifiant: str) -> None:
         """
@@ -153,19 +178,19 @@ class Parser:
             self.script_actuel.seek(position)
         else:
             while True:
-                caractere = self.script_actuel.read(1)
+                caractere = self._lire()
                 if caractere == "": # Arrivée en fin de fichier : ne lit plus
                     # aucun caractère
                     self._fin()
                 elif caractere == "\n": # Si on revient à la ligne
-                    caractere = self.script_actuel.read(1)
+                    caractere = self._lire()
                     if caractere == "$": # Et que celle-ci commence par un $
                         nom = "" # Création d'un nom pour cet identifiant
-                        caractere = self.script_actuel.read(1) # Vérifie le
+                        caractere = self._lire() # Vérifie le
                         # caractère suivant
                         while caractere != " ": # Cherche jusqu'à l'espace
                             nom += caractere # Enregistre le nom
-                            caractere = self.script_actuel.read(1)
+                            caractere = self._lire()
                         if nom != "": # N'enregistre pas dans le cas d'une ligne
                             # de paramètre anonyme
                             self.table[nom : self.script_actuel.tell()]
