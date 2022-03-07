@@ -17,9 +17,11 @@ fonctions.
 # Un dictionnaire retiendra les points et leur position, un dictionnaire de
 # dictionnaires dans le cas de plusieurs fichiers.
 
-# Ce parser doit s'en tenr au moins possible d'entrées de la part du moteur, et
+# Ce parser doit s'en tenir au moins possible d'entrées de la part du moteur, et
 # d'actionner un nombre limité d'appels au moteur (une spécification du moteur
 # polyvalente et réduite)
+
+import json
 
 class Parser:
     def __init__(self, script: str, position: int = None) -> None:
@@ -84,7 +86,7 @@ class Parser:
             Et toutes les autres possibilités de contrôle précisées pour le
             VNMD.
             Sortie :
-                _ : any, sortie standardisée pour le moteur de jeu
+                sortie : json, sortie standardisée pour le moteur de jeu
         """
         # Lecture du premier caractère de la ligne
         caractere = self._lire()
@@ -93,6 +95,10 @@ class Parser:
             # Ajout des paramètres
             # Retour de l'appel
             pass
+
+        elif caractere == "/":
+            while self._lire() != "\n":
+                pass # Lit directement la nouvelle valeur jusqu'en fin de ligne
 
         elif caractere == "-":
             caractere = self._lire()
@@ -112,7 +118,7 @@ class Parser:
                         caractere = self._lire()
                 contenu += caractere
 
-            # Doit gérer la séquence de choi complète !
+            # Doit gérer la séquence de choix complète !
             pass # Retour de l'information
 
         elif caractere == "#":
@@ -128,12 +134,33 @@ class Parser:
                 caractere = self._lire()
             pass # Retour d'information
 
+        elif caractere == "*":
+            pass
+
+        else: # Dans le cas de texte normal
+            pass
+
     def choix(self, choix: int = None) -> None:
         pass
 
     def sauvegarde(self) -> None:
-        # Appel sauvegarde : voir spécification
-        pass
+        """
+        Donne la position actuelle du parser afin de pouvoir réutiliser cette
+        position. Le processus de sauvegarde et de gestion des autres
+        informations est laissée au moteur de jeu.
+        Préconditions :
+            Disponibilité d'un fichier ouvert dans self.script_actuel
+            Paramètres : Aucun
+        Postconditons :
+            Sortie :
+                _ : json, appel standardisé contenant le nom du fichier et la
+                position dans celui-ci.
+        """
+        sortie = {
+                "fichier" : self.script_nom,
+                "position" : self.script_actuel.tell()
+                }
+        return json.dumps(sortie)
 
     # Fonctions servant au fonctionnement des appels principaux
 
