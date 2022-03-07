@@ -106,18 +106,7 @@ class Parser:
             while caractere != " ": # Paramètre
                 parametre += caractere
                 caractere = self._lire()
-            contenu = ""
-            caractere = self._lire()
-            while True:
-                if caractere == "\n":
-                    if self._lire() != " ": # Si ligne étendue
-                        self.script_actuel.seek(-1,1) # Retour en arrière
-                        # Pour laisser place à la prochaine lecture
-                        break
-                    else:
-                        caractere = self._lire()
-                contenu += caractere
-
+            contenu = self._contenu()
             # Doit gérer la séquence de choix complète !
             pass # Retour de l'information
 
@@ -163,6 +152,41 @@ class Parser:
         return json.dumps(sortie)
 
     # Fonctions servant au fonctionnement des appels principaux
+
+    def _contenu(self, stop=False) -> str:
+        """
+        Lit le contenu jusqu'à la fin de la ligne, et le renvoie. Permet aussi
+        évetuellement de prendre en compte les pauses dans le texte. Prend en
+        compte les lignes étendues à l'aide de l'espace en début de ligne
+        suivante.
+        Préconditions :
+            Existence d'un script ouvert sous forme d'un objet file dans
+            self.script_actuel.
+            Le positionnement doit être sur une ligne de contenu, après que les
+            autres informations aient été lues.
+            Paramètres :
+                stop : bool, note s'il faut s'arêter en rencontrant un symbole
+                de pause. Par défaut, la valeur est "False".
+        Postconditions :
+            Positionnement du pointeur dans le fichier au début d'une nouvelle
+            ligne.
+            Sortie :
+                contenu : str, texte lu jusqu'à la fin de la ligne.
+        """
+        # Trouver un moyen de bien s'occuper de la fin du fichier !
+        contenu = ""
+        while True:
+            caractere = self._lire()
+            if caractere == "\n":
+                if self._lire() == " ":
+                    continue # Si la ligne est étendue
+                else :
+                    self.script_actuel.seek(-1,1) # Retour en arrière
+                    break
+            elif stop and caractere == ">":
+                break
+            contenu += caractere
+        return contenu
 
     def _lire(self) -> str:
         """
