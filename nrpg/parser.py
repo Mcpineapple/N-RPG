@@ -65,6 +65,7 @@ class Parser:
         que le parser analysera alors et enverra alors.
         """
         self._aliases = {} # Aliases à remplacer
+        self._choix = [] # Options entre lesquelles choisir
 
     def suivant(self) -> None:
         u"""
@@ -102,7 +103,7 @@ class Parser:
 
         elif caractere == "$":
             identifiant = self._identifiant()
-            contenu = {
+            sortie = {
                     "type": "parametres"
                     }
             if identifiant != "":
@@ -114,7 +115,7 @@ class Parser:
                     break
                 elif caractere == "=":
                     if parametre != "":
-                        contenu[self._remplacement(parametre)] \
+                        sortie[self._remplacement(parametre)] \
                                 = self._identifiant()
                         parametre = ""
                 else:
@@ -126,10 +127,24 @@ class Parser:
             self._contenu()
 
         elif caractere == "-":
-            parametre = self._identifiant()
-            contenu = self._contenu()
-            # Doit gérer la séquence de choix complète !
-            pass # Retour de l'information
+            sortie = {
+                    "type": "choix"
+                    }
+            compteur = 0
+            while True:
+                self._choix.append("")
+                sortie[compteur]={
+                        "parametres": self._identifiant(),
+                        "texte": self._contenu()
+                        }
+                caractere = self._lire()
+                if caractere == "=":
+                    self._choix[compteur] = self_identifiant()
+                    self._contenu() # Ignorer la fin de la ligne
+                elif caractere == "\n":
+                    break
+                compteur += 1
+            return json.dumps(sortie)
 
         elif caractere == "#":
             ordre = 0
@@ -166,7 +181,24 @@ class Parser:
             return json.dumps(sortie)
 
     def choix(self, choix: int = None) -> None:
-        pass
+        u"""
+        Permet de selectionner l'un des choix disponibles. Les identifiants vers
+        lequels les choix menent sont enregistres dans self._choix.
+        Préconditions :
+            Disponibilité d'un fichier ouvert dans self._script_actuel
+            Disponibilité des identifiants vers lesquels les choix menent dans
+                self._choix.
+            Paramètres :
+                choix : int, le numero du choix vers lequel est redirige le
+                    script
+        Postconditons :
+            Deplacement de la position dans le fichier vers le bon emplacement.
+            Reinitialisation de self._choix pour un prochain choix
+            Sortie : Aucune
+        """
+        destination = self._choix[choix]
+        if destination != "": # Par defaut, laisse au paragraphe suivant
+            self._recherche(destination)
 
     def sauvegarde(self) -> None:
         u"""
