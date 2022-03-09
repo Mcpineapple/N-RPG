@@ -14,6 +14,12 @@ François|Design|16/02|2h|Spécification du VN Markdown pour les scripts
 François|Codage (console)|23/02|2h|Premier prototype de moteur CLI
 François|Organisation|24/02|2h|Mise en place des modules
 François|Codage (console)|25/02|h30|Debugging du moteur CLI
+François|Organisation|28/02|1h|Spécification de l'API du parser
+Tristan|Codage (arbre)|03/03|1h|Création de l'arbre binaire
+François|Codage (parser)|1 au 7/03|6h|Codage du parser
+Tristan|Codage (arbre)|09/03|20min|Amélioration de l'arbre
+Tristan|Codage (interface)|09/03|1h|Base de l'interface tkinter
+
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
