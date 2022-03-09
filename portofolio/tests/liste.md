@@ -7,3 +7,4 @@ contenant les unités de test produits pour.
 Type|Effet|Test|Fichier de test|Raison et contenu|Résolution/Test proposé
 ----|-----|----|---------------|-----------------|-----------------------
 Vérification|Exemple|Affichage d'un court script en commandes sur le moteur CLI|clicalls.py|X|X
+Vérification|Exemple|Affichage des appels renvoyes par le parser avce le prototype|parsertest.py|X|X

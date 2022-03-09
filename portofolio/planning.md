@@ -16,6 +16,7 @@ François|Organisation|24/02|2h|Mise en place des modules
 François|Codage (console)|25/02|h30|Debugging du moteur CLI
 François|Organisation|28/02|1h|Spécification de l'API du parser
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
+François|Codage (parser)|9/03|1h|Fin du parser
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu

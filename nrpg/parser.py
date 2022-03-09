@@ -374,5 +374,5 @@ class Parser:
 
     def _fin(self) -> None:
         # Action lorsque la fin du fichier est trouvée
-        pass
+        return "fin"
 
