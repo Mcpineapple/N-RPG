@@ -1,3 +1,4 @@
+from tkinter import *
 u"""
 Ce fichier est le moteur de jeu.
 Son but est de recevoir :
@@ -93,7 +94,7 @@ class MoteurCLI:
         pass
 
 class MoteurGUI:
-    """
+    u"""
     Moteur de jeu graphique destiné à la représentation du jeu. Il possède des
     fonctions étendues, nottament l'affichage graphique de fonds et de dessins,
     le rendement de son, l'intéraction graphique avec le joueur par le biais de
@@ -105,7 +106,7 @@ class MoteurGUI:
         - Adaptation selon la taille
     """
     def __init__(self, menu=None) -> None:
-        """
+        u"""
         Crée un objet MoteurGUI, et initialise une interface utilisateur de
         base, extensible et personnalisable. Un menu permettant d'autres actions
         peut être passé.
@@ -127,16 +128,41 @@ class MoteurGUI:
         from tkinter import Tk # Ne doit se faire que si le module n'est pas
         # encore importé
 
-        self.canvas = Tk()
-        if menu:
-            menu_choix = menu(self.canvas)
-            if menu_choix:
-                pass # Gestion des informations renvoyées par le menu : API à
-                    # définir
+        self.fenetre = Tk()
+
+        self.canvas = Canvas(self.fenetre, bg='black')
+        self.canvas.grid(column=0, row = 0, columnspan = 11, rowspan=10)
+
+        self.bouton_gauche = Button(self.fenetre, text="1", command=self.fonc_bouton_gauche)
+        self.bouton_gauche.grid(row=11, column=0, columnspan=3, sticky='w')
+
+        self.bouton_droit = Button(self.fenetre, text = "2", command=self.fonc_bouton_droit)
+        self.bouton_droit.grid(row=11, column=8, columnspan=3, sticky='e')
+
+        self.commande_bouton_gauche = "delete"
+        self.commande_bouton_droit = ""
+
+        self.fenetre.mainloop()
+
+
+    def fonc_bouton_gauche(self):
+        u"""
+        Fonctions exécutées lorsque on appuie sur le bouton gauche.
+        """
+        if self.commande_bouton_gauche == "delete":
+            self.fenetre.destroy()
+
+    def fonc_bouton_droit(self):
+        u"""
+        Fonctions exécutées lorsque on appuie sur le bouton droit.
+        """
+        pass 
 
     def __del__(self) -> None:
-        """
+        u"""
         Détruit un objet MoteurGUI en effectuant les maintenances nécessaires et
         en nettoyant les fenêtres grahiques affichées à l'écran.
         """
         pass
+
+test = MoteurGUI()
