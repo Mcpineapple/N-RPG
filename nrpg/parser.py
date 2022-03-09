@@ -247,9 +247,6 @@ class Parser:
                 else :
                     self._script_actuel.seek(-1,1) # Retour en arrière
                     break
-            elif caractere == "{":
-                # Aliases
-                pass
             elif stop and caractere == ">":
                 break
             contenu += caractere
