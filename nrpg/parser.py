@@ -107,7 +107,10 @@ class Parser:
                     "type": "parametres"
                     }
             if identifiant != "":
-                self._table[identifiant] = self._script_actuel.tell()
+                self._table[self._script_nom][str(identifiant)] \
+                        = self._script_actuel.tell()
+                # Le type d'identifiant doit être forcé pour éviter
+                # l'auto-changement. Python stuff.
             caractere = self._lire()
             parametre = ""
             while True:
@@ -120,8 +123,8 @@ class Parser:
                         parametre = ""
                 else:
                     parametre += caractere
-                    caractere = self._lire()
-            return json.dumps(contenu)
+                caractere = self._lire()
+            return json.dumps(sortie)
 
         elif caractere == "/":
             self._contenu()
@@ -130,28 +133,29 @@ class Parser:
             sortie = {
                     "type": "choix"
                     }
-            compteur = 0
+            compteur = -1 # Pour partir de 0
             while True:
-                self._choix.append("")
-                sortie[compteur]={
-                        "parametres": self._identifiant(),
-                        "texte": self._contenu()
-                        }
-                caractere = self._lire()
-                if caractere == "=":
-                    self._choix[compteur] = self_identifiant()
+                if caractere == "-":
+                    compteur += 1
+                    self._choix.append("")
+                    sortie[compteur]={
+                            "parametres": self._identifiant(),
+                            "texte": self._contenu()
+                            }
+                elif caractere == "=":
+                    self._choix[compteur] = self._identifiant()
                     self._contenu() # Ignorer la fin de la ligne
                 elif caractere == "\n":
                     break
-                compteur += 1
+                else:
+                    self._contenu()
+                caractere = self._lire()
             return json.dumps(sortie)
 
         elif caractere == "#":
             ordre = 0
             while caractere == "#":
                 ordre += 1 # Description de l'ordre du titre
-                caractere = self._lire()
-            if caractere == " ": # Passer le premier espace
                 caractere = self._lire()
             contenu = self._contenu()
             sortie = {
@@ -171,11 +175,19 @@ class Parser:
             else:
                 self._contenu()
 
-        else: # Dans le cas de texte normal
-            contenu = self._contenu(True)
+        elif caractere == ">":
             sortie = {
                     "type": "texte",
-                    "replacer": 0,
+                    "remplacer": 0,
+                    "contenu": ""
+                    }
+            return json.dumps(sortie)
+
+        else: # Dans le cas de texte normal
+            contenu = caractere + self._contenu(True)
+            sortie = {
+                    "type": "texte",
+                    "remplacer": 0,
                     "contenu": contenu
                     }
             return json.dumps(sortie)
@@ -198,7 +210,7 @@ class Parser:
         """
         destination = self._choix[choix]
         if destination != "": # Par defaut, laisse au paragraphe suivant
-            self._recherche(destination)
+            self._rechercher(destination)
 
     def sauvegarde(self) -> None:
         u"""
@@ -240,7 +252,10 @@ class Parser:
         identifiant = ""
         caractere = self._lire()
         while True:
-            if caractere == " ":
+            if caractere == "\\": # Caractère d'échappement
+                caractere = self._script_actuel.read(1)
+                # Ne passe pas par les autres vérifications
+            elif caractere == " ":
                 break
             elif caractere == "\n":
                 self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
@@ -273,7 +288,10 @@ class Parser:
         contenu = ""
         while True:
             caractere = self._lire()
-            if caractere == "\n":
+            if caractere == "\\": # Caractère d'échappement
+                caractere = self._script_actuel.read(1)
+                # Ne passe pas par les autres vérifications
+            elif caractere == "\n":
                 if self._lire() == " ":
                     continue # Si la ligne est étendue
                 else :
@@ -302,17 +320,15 @@ class Parser:
         caractere = self._script_actuel.read(1)
         if caractere == "":
             self._fin()
-        elif caractere == "\\": # Caractère d'échappement
-            caractere = self._script_actuel.read(1)
         return caractere
 
-    def _recherche(self, identifiant: str) -> None:
+    def _rechercher(self, identifiant: str) -> None:
         u"""
         Place le pointeur dans le fichier à la ligne correspondant à
         l'identifiant, soit en le retrouvant dans la _table, soit en lisant le
         script, en indexant tous les autres identifiants trouvés sur le chemin.
         Préconditions :
-            Existence d'un script dans lequel rechecher
+            Existence d'un script dans lequel rechercher
             Existence d'une _table dans laquelle indexer les positions
                 d'identifiants
             Paramètres :
@@ -361,7 +377,7 @@ class Parser:
                 sortie.append("")
                 actuel += 1
             elif i == "}" and actuel != 0:
-                remplacement = self._table[sortie[actuel]]
+                remplacement = self._table.get(sortie[actuel])
                 if remplacement:
                     sortie[actuel-1] += remplacement
                 else:
@@ -370,9 +386,9 @@ class Parser:
                 sortie.pop()
             else:
                 sortie[actuel] += i
-        return sortie
+        return sortie[0]
 
     def _fin(self) -> None:
         # Action lorsque la fin du fichier est trouvée
-        return "fin"
+        exit(0)
 
