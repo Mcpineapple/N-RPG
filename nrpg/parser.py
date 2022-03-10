@@ -45,7 +45,7 @@ class Parser:
             reçu par le moteur.
         """
         self._script_nom = script # Enregistre le nom du script actuel
-        self._script_actuel = open(script,r,0) # Une amélioration peut
+        self._script_actuel = open(script,"r") # Une amélioration peut
         # éventuellement se faire sur le buffering des fichiers. Néanmoins, ce
         # changement n'est pas trivial, complexe et rarement très utile.
         if position :
@@ -243,7 +243,7 @@ class Parser:
             if caractere == " ":
                 break
             elif caractere == "\n":
-                self._script_actuel.seek(-1,1)
+                self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
                 break
             identifiant += caractere
             caractere = self._lire()
@@ -277,7 +277,7 @@ class Parser:
                 if self._lire() == " ":
                     continue # Si la ligne est étendue
                 else :
-                    self._script_actuel.seek(-1,1) # Retour en arrière
+                    self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
                     break
             elif stop and caractere == ">":
                 break
