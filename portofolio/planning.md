@@ -21,6 +21,7 @@ Tristan|Codage (arbre)|09/03|0h20|Amélioration de l'arbre
 Tristan|Codage (interface)|09/03|1h|Base de l'interface tkinter
 Tristan|Codage (interface)|12/03|0h40|Amélioration de l'interface graphique, passage de canvas à label
 Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interface graphique, ajout d'une méthode pour changer l'image afficher
+Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 
 
 ## Étapes de développement
