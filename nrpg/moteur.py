@@ -1,4 +1,3 @@
-from tkinter import *
 u"""
 Ce fichier est le moteur de jeu.
 Son but est de recevoir :
@@ -125,13 +124,18 @@ class MoteurGUI:
             d'interface de jeu.
             Sortie : Aucune.
         """
-        from tkinter import Tk # Ne doit se faire que si le module n'est pas
+        from tkinter import Tk, Button, Label # Ne doit se faire que si le module n'est pas
+        from PIL import ImageTk, Image
+        import pathlib
         # encore importé
 
         self.fenetre = Tk()
 
-        self.canvas = Canvas(self.fenetre, bg='black')
-        self.canvas.grid(column=0, row = 0, columnspan = 11, rowspan=10)
+        image_OG = Image.open(pathlib.Path("media/Sakurajima_Mai_Holding_The_HolyC_Programming_Language.jpg"))
+        image_OG_tk = ImageTk.PhotoImage(image_OG)
+
+        self.affichage = Label(self.fenetre, image=image_OG_tk)
+        self.affichage.grid(column=0, row = 0, columnspan = 11, rowspan=10)
 
         self.bouton_gauche = Button(self.fenetre, text="1", command=self.fonc_bouton_gauche)
         self.bouton_gauche.grid(row=11, column=0, columnspan=3, sticky='w')
@@ -140,7 +144,7 @@ class MoteurGUI:
         self.bouton_droit.grid(row=11, column=8, columnspan=3, sticky='e')
 
         self.commande_bouton_gauche = "delete"
-        self.commande_bouton_droit = ""
+        self.commande_bouton_droit = "start"
 
         self.fenetre.mainloop()
 
@@ -148,15 +152,28 @@ class MoteurGUI:
     def fonc_bouton_gauche(self):
         u"""
         Fonctions exécutées lorsque on appuie sur le bouton gauche.
+        Préconditions :
+            Aucune
+        Postconditions :
+            La commande associée au bouton gauche est executée.
         """
         if self.commande_bouton_gauche == "delete":
             self.fenetre.destroy()
+        elif self.commande_bouton_gauche == "previous":
+            pass
 
     def fonc_bouton_droit(self):
         u"""
         Fonctions exécutées lorsque on appuie sur le bouton droit.
-        """
-        pass 
+         Préconditions :
+            Aucune
+        Postconditions :
+            La commande associée au bouton gauche est executée.       """
+        if self.commande_bouton_droit ==  "start":
+            self.commande_bouton_gauche = "previous"
+            self.commande_bouton_droit = "next"
+        elif self.commande_bouton_droit == "next":
+            pass
 
     def __del__(self) -> None:
         u"""
@@ -165,4 +182,5 @@ class MoteurGUI:
         """
         pass
 
+#test
 test = MoteurGUI()
