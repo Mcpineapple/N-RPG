@@ -17,9 +17,9 @@ François|Codage (console)|25/02|h30|Debugging du moteur CLI
 François|Organisation|28/02|1h|Spécification de l'API du parser
 Tristan|Codage (arbre)|03/03|1h|Création de l'arbre binaire
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
-Tristan|Codage (arbre)|09/03|20min|Amélioration de l'arbre
+Tristan|Codage (arbre)|09/03|0h20|Amélioration de l'arbre
 Tristan|Codage (interface)|09/03|1h|Base de l'interface tkinter
-Tristan|Codage (interface)|12/03|40min|Amélioration de l'interface graphique, passage de canvas à label
+Tristan|Codage (interface)|12/03|0h40|Amélioration de l'interface graphique, passage de canvas à label
 
 
 ## Étapes de développement
