@@ -1,6 +1,7 @@
 # Ce fichier est destiné à l'implémentation (la plus simple et efficace) d'un
 # arbre binaire pour représenter l'histoire. La classe sera utilisée par le
 # parser de script pour y mettre l'histoire.
+
 class Arbre:
     u"""
     Arbre binaire simple permettant de contenir le script et ses embranchements.
@@ -12,7 +13,7 @@ class Arbre:
         u"""
         Constructeur de la classe Arbre.
         Préconditions :
-            Paramètres : 
+            Paramètres :
                 texte : str, correspond au script de la racine
         Postconditions :
             Création d'une classe Arbre qui contiendra le script utilisable par le Moteur.
@@ -72,7 +73,7 @@ class Arbre:
         assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
 
         self.fils_droit = Arbre(texte)
-    
+
     @property.setter
     def arete_droit(self, texte : str):
         u"""
@@ -85,26 +86,26 @@ class Arbre:
         """
 
         assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-        
+
         self.arete_droit = texte
 
 
     @property
     def fils_gauche(self):
         u"""
-        Renvoit le fils gauche.
+        Renvoie le fils gauche.
         Préconditions:
             Aucune
         Postconditions:
             self.fils_gauche : None ou un Arbre
         """
-        
+
         return self.fils_gauche
 
     @property
     def fils_droit(self):
         u"""
-        Renvoit le fils droit.
+        Renvoie le fils droit.
         Préconditions:
             Aucune
         Postconditions:
@@ -115,7 +116,7 @@ class Arbre:
     @property
     def arete_gauche(self):
         u"""
-        Renvoit le texte de l'arête gauche.
+        Renvoie le texte de l'arête gauche.
         Préconditions:
             Aucune
         Postconditions:
@@ -127,11 +128,11 @@ class Arbre:
     @property
     def arete_droit(self):
         u"""
-        Renvoit le texte de l'arête droite.
+        Renvoie le texte de l'arête droite.
         Préconditions:
             Aucune
         Postconditions:
-            self.arete_droit : str, texte de l'arête droit  
+            self.arete_droit : str, texte de l'arête droit
         """
 
         return self.arete_droit
