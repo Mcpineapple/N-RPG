@@ -19,6 +19,7 @@ Tristan|Codage (arbre)|03/03|1h|Création de l'arbre binaire
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
 Tristan|Codage (arbre)|09/03|20min|Amélioration de l'arbre
 Tristan|Codage (interface)|09/03|1h|Base de l'interface tkinter
+Tristan|Codage (interface)|12/03|40min|Amélioration de l'interface graphique, passage de canvas à label
 
 
 ## Étapes de développement
