@@ -1,3 +1,7 @@
+from time import sleep
+from tkinter import * 
+from PIL import Image, ImageTk
+import pathlib
 u"""
 Ce fichier est le moteur de jeu.
 Son but est de recevoir :
@@ -92,7 +96,7 @@ class MoteurCLI:
     def __del__(self) -> None:
         pass
 
-class MoteurGUI:
+class MoteurGUI(Frame):
     u"""
     Moteur de jeu graphique destiné à la représentation du jeu. Il possède des
     fonctions étendues, nottament l'affichage graphique de fonds et de dessins,
@@ -104,7 +108,7 @@ class MoteurGUI:
         - La gestion des sauvegardes
         - Adaptation selon la taille
     """
-    def __init__(self, menu=None) -> None:
+    def __init__(self, master=None, menu=None) -> None:
         u"""
         Crée un objet MoteurGUI, et initialise une interface utilisateur de
         base, extensible et personnalisable. Un menu permettant d'autres actions
@@ -124,29 +128,37 @@ class MoteurGUI:
             d'interface de jeu.
             Sortie : Aucune.
         """
-        from tkinter import Tk, Button, Label # Ne doit se faire que si le module n'est pas
-        from PIL import ImageTk, Image
-        import pathlib
-        # encore importé
 
-        self.fenetre = Tk()
+        Frame.__init__(self, master)
+        largeur,hauteur = 650, 650
+        master.minsize(width=largeur, height=hauteur)
+        master.maxsize(width=largeur, height=hauteur)
+        self.pack(side=BOTTOM)
 
-        image_OG = Image.open(pathlib.Path("media/Sakurajima_Mai_Holding_The_HolyC_Programming_Language.jpg"))
-        image_OG_tk = ImageTk.PhotoImage(image_OG)
+        image = Image.open("media/lagiacrus.jpg")
+        image = image.resize((600,600), Image.ANTIALIAS)
+        self.image = ImageTk.PhotoImage(image) 
 
-        self.affichage = Label(self.fenetre, image=image_OG_tk)
-        self.affichage.grid(column=0, row = 0, columnspan = 11, rowspan=10)
+        self.label = Label(image=self.image)
+        self.label.pack(side=TOP)
 
-        self.bouton_gauche = Button(self.fenetre, text="1", command=self.fonc_bouton_gauche)
-        self.bouton_gauche.grid(row=11, column=0, columnspan=3, sticky='w')
+        self.bouton_gauche = Button(self, text="1", command=self.fonc_bouton_gauche)
+        self.bouton_gauche.pack(side=LEFT)
 
-        self.bouton_droit = Button(self.fenetre, text = "2", command=self.fonc_bouton_droit)
-        self.bouton_droit.grid(row=11, column=8, columnspan=3, sticky='e')
+        self.bouton_droit = Button(self, text = "2", command=self.fonc_bouton_droit)
+        self.bouton_droit.pack(side=RIGHT)
 
         self.commande_bouton_gauche = "delete"
         self.commande_bouton_droit = "start"
 
-        self.fenetre.mainloop()
+
+    def changer_image(self, emplacement):
+        image = Image.open(emplacement)
+        image = image.resize((600,600), Image.ANTIALIAS)
+       
+        self.image2 = ImageTk.PhotoImage(image)
+        self.label.configure(image=self.image2)
+        self.label.image=self.image2
 
 
     def fonc_bouton_gauche(self):
@@ -157,8 +169,9 @@ class MoteurGUI:
         Postconditions :
             La commande associée au bouton gauche est executée.
         """
+        global root
         if self.commande_bouton_gauche == "delete":
-            self.fenetre.destroy()
+            root.destroy()
         elif self.commande_bouton_gauche == "previous":
             pass
 
@@ -182,5 +195,8 @@ class MoteurGUI:
         """
         pass
 
-#test
-test = MoteurGUI()
+
+root = Tk()
+test = MoteurGUI(master=root)
+test.changer_image("media/fin.png")
+test.mainloop()
