@@ -117,6 +117,7 @@ class MoteurGUI(Frame):
             Le module standard python Tkinter doit être disponible
             Une fenêtre graphique doit pouvoir s'afficher via Tkinter
             Paramètres :
+                master : recoit l'objet Tk() 
                 menu : fonction, par défaut None. Cette fonction doit pouvoir
                     recevoir l'objet Tkinter, ce qui lui permet d'agir dessus.
                     Cette fonction peut aussi renvoyer des informations à
@@ -136,11 +137,16 @@ class MoteurGUI(Frame):
         self.pack(side=BOTTOM)
 
         image = Image.open("media/lagiacrus.jpg")
-        image = image.resize((600,600), Image.ANTIALIAS)
+        image = image.resize((500,500), Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(image) 
 
         self.label = Label(image=self.image)
         self.label.pack(side=TOP)
+
+        self.texte_afficher = StringVar()
+        self.texte_afficher.set("Hello there.")
+        self.affichage_texte = Label(textvariable = self.texte_afficher, height=100)
+        self.affichage_texte.pack(side=BOTTOM)
 
         self.bouton_gauche = Button(self, text="1", command=self.fonc_bouton_gauche)
         self.bouton_gauche.pack(side=LEFT)
@@ -152,13 +158,27 @@ class MoteurGUI(Frame):
         self.commande_bouton_droit = "start"
 
 
-    def changer_image(self, emplacement):
+    def changer_image(self, emplacement : str) -> None:
+        u"""
+        Change l'image afficher.
+        Préconditions:
+            Paramètres:
+                emplacement : str, contient l'emplacement de l'image qu'on souhaite afficher
+        Postconditions:
+            L'image affichée est remplacée.
+        """
         image = Image.open(emplacement)
         image = image.resize((600,600), Image.ANTIALIAS)
        
         self.image2 = ImageTk.PhotoImage(image)
         self.label.configure(image=self.image2)
         self.label.image=self.image2
+
+    def changer_texte(self, text : str) -> None:
+        u"""
+        Change le texte afficher.
+        """
+        self.texte_afficher.set(text)
 
 
     def fonc_bouton_gauche(self):
@@ -198,5 +218,6 @@ class MoteurGUI(Frame):
 
 root = Tk()
 test = MoteurGUI(master=root)
-test.changer_image("media/fin.png")
+#test.changer_image("media/fin.png")
+test.changer_texte("Bonjour.")
 test.mainloop()
