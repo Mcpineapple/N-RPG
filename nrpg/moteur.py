@@ -96,7 +96,7 @@ class MoteurCLI:
     def __del__(self) -> None:
         pass
 
-class MoteurGUI(Frame):
+class MoteurGUI(Label):
     u"""
     Moteur de jeu graphique destiné à la représentation du jeu. Il possède des
     fonctions étendues, nottament l'affichage graphique de fonds et de dessins,
@@ -108,7 +108,7 @@ class MoteurGUI(Frame):
         - La gestion des sauvegardes
         - Adaptation selon la taille
     """
-    def __init__(self, master=None, menu=None) -> None:
+    def __init__(self, master) -> None:
         u"""
         Crée un objet MoteurGUI, et initialise une interface utilisateur de
         base, extensible et personnalisable. Un menu permettant d'autres actions
@@ -118,11 +118,6 @@ class MoteurGUI(Frame):
             Une fenêtre graphique doit pouvoir s'afficher via Tkinter
             Paramètres :
                 master : recoit l'objet Tk() 
-                menu : fonction, par défaut None. Cette fonction doit pouvoir
-                    recevoir l'objet Tkinter, ce qui lui permet d'agir dessus.
-                    Cette fonction peut aussi renvoyer des informations à
-                    charger dans le parser (dans le cas par exemple de la
-                    sélection de sauvegarde).
         Postconditions :
             Création d'une fenêtre de jeu active, éventuellement en affichant un
             menu de jeu. Cette fenêtre possède des options classiques
@@ -130,29 +125,38 @@ class MoteurGUI(Frame):
             Sortie : Aucune.
         """
 
-        Frame.__init__(self, master)
-        largeur,hauteur = 650, 650
+        Label.__init__(self, master)
+
+        largeur,hauteur = 800, 800 
         master.minsize(width=largeur, height=hauteur)
         master.maxsize(width=largeur, height=hauteur)
-        self.pack(side=BOTTOM)
+        master.title("N-RPG")
+
 
         image = Image.open("media/lagiacrus.jpg")
-        image = image.resize((500,500), Image.ANTIALIAS)
+        image = image.resize((800, 350), Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(image) 
 
-        self.label = Label(image=self.image)
-        self.label.pack(side=TOP)
+        self.config(image = self.image)
+
+        self.pack(side=TOP)
 
         self.texte_afficher = StringVar()
-        self.texte_afficher.set("Hello there.")
-        self.affichage_texte = Label(textvariable = self.texte_afficher, height=100)
-        self.affichage_texte.pack(side=BOTTOM)
+        self.texte_bouton_droit = StringVar()
+        self.texte_bouton_gauche = StringVar()
 
-        self.bouton_gauche = Button(self, text="1", command=self.fonc_bouton_gauche)
-        self.bouton_gauche.pack(side=LEFT)
+        self.texte_bouton_gauche.set("Quitter")
+        self.texte_bouton_droit.set("Commencer")
+        self.texte_afficher.set(u"Vous pensez que ce Lagiacrus est impressionant ?\n Attendez de voir le Deviljho.")
+ 
+        self.affichage_texte = Label(master, font=("Firacode",15), textvariable = self.texte_afficher, anchor=N, height=15)
+        self.affichage_texte.pack(side=TOP)
 
-        self.bouton_droit = Button(self, text = "2", command=self.fonc_bouton_droit)
-        self.bouton_droit.pack(side=RIGHT)
+        self.bouton_gauche = Button(master, bg="grey", textvariable = self.texte_bouton_gauche, command=self.fonc_bouton_gauche, width = 45)
+        self.bouton_gauche.pack(side=LEFT,expand=True)
+
+        self.bouton_droit = Button(master, bg="grey", textvariable = self.texte_bouton_droit, command=self.fonc_bouton_droit, width=45)
+        self.bouton_droit.pack(side=RIGHT,expand=True)
 
         self.commande_bouton_gauche = "delete"
         self.commande_bouton_droit = "start"
@@ -181,6 +185,19 @@ class MoteurGUI(Frame):
         self.texte_afficher.set(text)
 
 
+    def changer_texte_bouton_gauche(self, text : str) -> None:
+        u"""
+        Change le texte sur le bouton gauche.
+        """
+        self.texte_bouton_gauche.set(text)
+
+    def changer_texte_bouton_droit(self, text : str) -> None:
+        u"""
+        Change le texte sur le bouton droit.
+        """
+        self.texte_bouton_droit.set(text)
+
+
     def fonc_bouton_gauche(self):
         u"""
         Fonctions exécutées lorsque on appuie sur le bouton gauche.
@@ -205,6 +222,8 @@ class MoteurGUI(Frame):
         if self.commande_bouton_droit ==  "start":
             self.commande_bouton_gauche = "previous"
             self.commande_bouton_droit = "next"
+            self.changer_texte_bouton_gauche(u"Précédent.")
+            self.changer_texte_bouton_droit(u"Prochain.")
         elif self.commande_bouton_droit == "next":
             pass
 
@@ -218,6 +237,4 @@ class MoteurGUI(Frame):
 
 root = Tk()
 test = MoteurGUI(master=root)
-#test.changer_image("media/fin.png")
-test.changer_texte("Bonjour.")
 test.mainloop()
