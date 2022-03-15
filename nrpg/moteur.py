@@ -2,6 +2,10 @@ from time import sleep
 from tkinter import * 
 from PIL import Image, ImageTk
 import pathlib
+from playsound import playsound
+from pydub import AudioSegment
+from pydub.playback import play
+from pydub.playback import _play_with_simpleaudio
 u"""
 Ce fichier est le moteur de jeu.
 Son but est de recevoir :
@@ -32,7 +36,7 @@ class MoteurCLI:
         Préconditions :
             Avoir à disposition une sortie standard quelconque vers laquelle
             écrire.
-            Paramètres : Aucun
+            Paramètres :  Aucun
         Postconditions :
             Création d'un objet MoteurCLI qui pourra exécuter des actions par ses
             méthodes.
@@ -127,12 +131,16 @@ class MoteurGUI(Label):
 
         Label.__init__(self, master)
 
+        # Paramètres de la fenêtre master (root), l'objet Tk
         largeur,hauteur = 800, 800 
         master.minsize(width=largeur, height=hauteur)
         master.maxsize(width=largeur, height=hauteur)
         master.title("N-RPG")
 
+        # 
+        self.jouer_musique("media/sfx/Duckpoxode_Syrup.mp3")
 
+        # L'image originale est récupérée et traité puis afficher dans le label
         image = Image.open("media/lagiacrus.jpg")
         image = image.resize((800, 350), Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(image) 
@@ -141,10 +149,12 @@ class MoteurGUI(Label):
 
         self.pack(side=TOP)
 
+        # Créations d'objets Stringvar pour stocker le texte
         self.texte_afficher = StringVar()
         self.texte_bouton_droit = StringVar()
         self.texte_bouton_gauche = StringVar()
 
+        # Valeur initiales des StringVar
         self.texte_bouton_gauche.set("Quitter")
         self.texte_bouton_droit.set("Commencer")
         self.texte_afficher.set(u"Vous pensez que ce Lagiacrus est impressionant ?\n Attendez de voir le Deviljho.")
@@ -160,6 +170,32 @@ class MoteurGUI(Label):
 
         self.commande_bouton_gauche = "delete"
         self.commande_bouton_droit = "start"
+
+
+    def jouer_bruitage(self, emplacement : str) -> None:
+        u"""
+        Joue un bruitage.
+        Préconditions:
+            Paramètres:
+                emplacement : str, endroit ou se trouve le fichier du bruitage jouer
+        """
+        playsound(emplacement,block=False)
+
+    def jouer_musique(self, emplacement : str) -> None:
+        u"""
+        Joue une musique à partir d'un fichier.
+        Préconditions :
+            Paramètres :
+                emplacement : str, l'endroit ou se trouve le fichier (devrait commencer par 'media/'')
+        """
+        musique = AudioSegment.from_mp3(pathlib.Path(emplacement))
+        self.musique = _play_with_simpleaudio(musique)
+
+    def arreter_musique(self) -> None:
+        u"""
+        Arrête la musique.
+        """
+        self.musique.stop()
 
 
     def changer_image(self, emplacement : str) -> None:
@@ -196,8 +232,7 @@ class MoteurGUI(Label):
         Change le texte sur le bouton droit.
         """
         self.texte_bouton_droit.set(text)
-
-
+        
     def fonc_bouton_gauche(self):
         u"""
         Fonctions exécutées lorsque on appuie sur le bouton gauche.
@@ -207,6 +242,7 @@ class MoteurGUI(Label):
             La commande associée au bouton gauche est executée.
         """
         global root
+        self.jouer_bruitage("media/sfx/button-3.wav")
         if self.commande_bouton_gauche == "delete":
             root.destroy()
         elif self.commande_bouton_gauche == "previous":
@@ -219,6 +255,7 @@ class MoteurGUI(Label):
             Aucune
         Postconditions :
             La commande associée au bouton gauche est executée.       """
+        self.jouer_bruitage("media/sfx/button-3.wav")
         if self.commande_bouton_droit ==  "start":
             self.commande_bouton_gauche = "previous"
             self.commande_bouton_droit = "next"
