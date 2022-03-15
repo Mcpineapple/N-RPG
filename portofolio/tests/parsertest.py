@@ -17,7 +17,7 @@ parser = Parser(position_script)
 compteur = 0
 a = ""
 while a != "fin":
-    a = parser.suivant()
+    a = parser.continuer()
     if a is not None :
         print(a)
     # print(parser.sauvegarde())

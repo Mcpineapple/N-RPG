@@ -38,11 +38,12 @@ class Parser:
                 script : str, le chemin vers le fichier de script VNMD qui est lu
                 position : int, la position dans le fichier lu (par défaut, 0)
         Postconditions :
-            Création d'un objet parser, auquel est envoyé la méthode suivant,
+            Création d'un objet parser, auquel est envoyé la méthode continuer,
             qui exécute la prochaine partie du script, la méthode sauvegarde
             ou bien la méthode choix avec un paramètre dans le cas des choix.
             Ces commandes entraînent un renvoi, défini sleon la spécification,
             reçu par le moteur.
+            Sortie : Aucune
         """
         self._script_nom = script # Enregistre le nom du script actuel
         self._script_actuel = open(script,"r") # Une amélioration peut
@@ -67,7 +68,7 @@ class Parser:
         self._aliases = {} # Aliases à remplacer
         self._choix = [] # Options entre lesquelles choisir
 
-    def suivant(self) -> None:
+    def continuer(self) -> None:
         u"""
         Lit la ligne suivante et analyse le texte.
         Fonction principale du parser, elle est appelée par le moteur de jeu
