@@ -25,6 +25,7 @@ Tristan|Codage (interface)|12/03|0h40|Amélioration de l'interface graphique, pa
 Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interface graphique, ajout d'une méthode pour changer l'image afficher
 Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
+Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
