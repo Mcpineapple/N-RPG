@@ -137,11 +137,12 @@ class MoteurGUI(Label):
         master.maxsize(width=largeur, height=hauteur)
         master.title("N-RPG")
 
-        # 
+        # Musique du menu
         self.jouer_musique("media/sfx/Duckpoxode_Syrup.mp3")
 
+        # Image menu.
         # L'image originale est récupérée et traité puis afficher dans le label
-        image = Image.open("media/lagiacrus.jpg")
+        image = Image.open("media/images/lagiacrus.jpg")
         image = image.resize((800, 350), Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(image) 
 
@@ -179,7 +180,12 @@ class MoteurGUI(Label):
             Paramètres:
                 emplacement : str, endroit ou se trouve le fichier du bruitage jouer
         """
-        playsound(emplacement,block=False)
+        # Block = False empêche l'écran de geler 
+        #sinon le programme attend que la musique se termine pour continuer
+        try :
+            playsound(emplacement,block=False)
+        except:
+            print(f"Erreur lors du lancement du bruitage {emplacement}.")
 
     def jouer_musique(self, emplacement : str) -> None:
         u"""
@@ -187,15 +193,27 @@ class MoteurGUI(Label):
         Préconditions :
             Paramètres :
                 emplacement : str, l'endroit ou se trouve le fichier (devrait commencer par 'media/'')
+        Postconditions :
+            self.musique contient la musique qui joue.
         """
-        musique = AudioSegment.from_mp3(pathlib.Path(emplacement))
-        self.musique = _play_with_simpleaudio(musique)
+        try :
+            musique = AudioSegment.from_mp3(pathlib.Path(emplacement))
+            self.musique = _play_with_simpleaudio(musique)
+        except :
+            print(f"Erreur dans le lancement de la musique {emplacement}.")
 
     def arreter_musique(self) -> None:
         u"""
         Arrête la musique.
+        Préconditions :
+            Il faut que self.musique existe.
+        Postconditions :
+            La musique qui jouait dans l'objet self.musique s'arrête.
         """
-        self.musique.stop()
+        try :
+            self.musique.stop()
+        except:
+            print("Erreur lors de l'arret de la musique.")
 
 
     def changer_image(self, emplacement : str) -> None:
@@ -207,7 +225,11 @@ class MoteurGUI(Label):
         Postconditions:
             L'image affichée est remplacée.
         """
-        image = Image.open(emplacement)
+        try :
+            image = Image.open(emplacement)
+        except :
+            print("Erreur lors de l'ouverture de l'image {emplacement}.")
+
         image = image.resize((600,600), Image.ANTIALIAS)
        
         self.image2 = ImageTk.PhotoImage(image)
@@ -217,21 +239,48 @@ class MoteurGUI(Label):
     def changer_texte(self, text : str) -> None:
         u"""
         Change le texte afficher.
+        Préconditions :
+            Paramètres :
+                text : str, le texte qui sera afficher
+        Postcontions :
+            self.afficher texte recoit la valeur entrée.
+            La valeur entrée s'affiche sur le label au centre de l'écran.
         """
-        self.texte_afficher.set(text)
+        try :
+            self.texte_afficher.set(text)
+        except :
+            print("Erreur lors du changement du texte principal.")
 
 
     def changer_texte_bouton_gauche(self, text : str) -> None:
         u"""
         Change le texte sur le bouton gauche.
+        Préconditions :
+            Paramètres :
+                text : str, le texte qui sera afficher
+        Postcontions :
+            self.texte_bouton_gauche texte recoit la valeur entrée.
+            La valeur entrée s'affiche sur le bouton gauche.
         """
-        self.texte_bouton_gauche.set(text)
+        try :
+            self.texte_bouton_gauche.set(text)
+        except :
+            print("Erreur lors du changement de texte du bouton de gauche.")
 
     def changer_texte_bouton_droit(self, text : str) -> None:
         u"""
-        Change le texte sur le bouton droit.
-        """
-        self.texte_bouton_droit.set(text)
+        Change le texte sur le bouton gauche.
+        Préconditions :
+            Paramètres :
+                text : str, le texte qui sera afficher
+        Postcontions :
+            self.texte_bouton_droit texte recoit la valeur entrée.
+            La valeur entrée s'affiche sur le bouton droit.
+        """       
+        try :
+            self.texte_bouton_droit.set(text)
+        except:
+            print("Erreur lors du changement du texte du bouton de droite.")
         
     def fonc_bouton_gauche(self):
         u"""
