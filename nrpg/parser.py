@@ -40,7 +40,7 @@ class Parser:
         Postconditions :
             Création d'un objet parser, auquel est envoyé la méthode continuer,
             qui exécute la prochaine partie du script, la méthode sauvegarde
-            ou bien la méthode choix avec un paramètre dans le cas des choix.
+            ou bien la méthode choisir avec un paramètre dans le cas des choix.
             Ces commandes entraînent un renvoi, défini sleon la spécification,
             reçu par le moteur.
             Sortie : Aucune
@@ -193,7 +193,7 @@ class Parser:
                     }
             return json.dumps(sortie)
 
-    def choix(self, choix: int = None) -> None:
+    def choisir(self, choix: int = None) -> None:
         u"""
         Permet de selectionner l'un des choix disponibles. Les identifiants vers
         lequels les choix menent sont enregistres dans self._choix.
