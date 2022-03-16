@@ -21,7 +21,7 @@ fonctions.
 # d'actionner un nombre limité d'appels au moteur (une spécification du moteur
 # polyvalente et réduite)
 
-import json
+import json, sys
 
 class Parser:
     def __init__(self, script: str, position: int = None) -> None:
@@ -88,7 +88,7 @@ class Parser:
             Et toutes les autres possibilités de contrôle précisées pour le
             VNMD.
             Sortie :
-                sortie : json, sortie standardisée pour le moteur de jeu
+                json.dumps(sortie): json, sortie standardisée pour le moteur de jeu
         """
         # Lecture du premier caractère de la ligne
         caractere = self._lire()
@@ -157,9 +157,11 @@ class Parser:
             while caractere == "#":
                 ordre += 1 # Description de l'ordre du titre
                 caractere = self._lire()
+            parametres = self._identifiant()
             contenu = self._contenu()
             sortie = {
                     "type": "titre",
+                    "parametres": parametres,
                     "ordre": ordre,
                     "contenu": contenu
                     }
@@ -180,6 +182,16 @@ class Parser:
                     "type": "texte",
                     "remplacer": 0,
                     "contenu": ""
+                    }
+            return json.dumps(sortie)
+
+        elif caractere == "|":
+            parametres = self._identifiant()
+            contenu = self._contenu()
+            sortie = {
+                    "type": "fin",
+                    "parametres": parametres,
+                    "texte": contenu
                     }
             return json.dumps(sortie)
 
@@ -390,4 +402,8 @@ class Parser:
 
     def _fin(self) -> None:
         # Action lorsque la fin du fichier est trouvée
-        exit(0)
+        sys.exit(json.dumps({
+            "type": "fin",
+            "parametres": "",
+            "texte": ""
+            }))
