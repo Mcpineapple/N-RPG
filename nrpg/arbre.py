@@ -209,10 +209,13 @@ class Arbre:
         print(self.texte)
         while True:
             if self.fils_droit is not None:
+                print() # Retour à la ligne pour la lisibilité
                 print(f"({self.arete_gauche})")
                 self.fils_gauche.afficher(route + "0")
+                print() # Retour à la ligne pour la lisibilité
                 print(f"({self.arete_droit})")
                 self.fils_droit.afficher(route + "1")
+                print() # Retour à la ligne pour la lisibilité
                 break
             elif self.fils_gauche is not None:
                 print(self.fils_gauche)
