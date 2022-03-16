@@ -167,8 +167,8 @@ class Arbre:
         while (contenu := json.loads(information))["type"] != "choix" :
             if information :
                 arbre.texte = information
-                arbre.fils_droit = ""
-                arbre = arbre.fils_droit
+                arbre.fils_gauche = ""
+                arbre = arbre.fils_gauche
             else : # À la fin du fichier
                 exit(0)
             information = parser.continuer()
@@ -184,3 +184,31 @@ class Arbre:
                 position["position"], 0)
         arbre.fils_droit.construire(position["fichier"], \
                 position["position"], 1)
+
+    def afficher(self, route: str = "") -> None:
+        """
+        Méthode d'impression, imprime l'arbre par parcours en profondeur infixe
+        afin de pouvoir le visualiser, avec des marques. Le résultat peut être
+        assez grand, veuillez le visualiser à l'aide de "more" ou "less" dans
+        un shell.
+        Préconditions :
+            L'arbre est rempli convenablement et contient des informations
+            Paramètres : Aucun
+        Postconditions :
+            Impression vers la sortie standard de l'arbre, de façon
+            visualisable. Il s'agit néanmoins probablement d'une mauvaise idée
+            sur un très grand arbre.
+            Sortie : Aucune
+        """
+        print(f"-- {route} --")
+        print(self.texte())
+        while not(self.fils_droit):
+            if self.fils_gauche:
+                print(self.fils_gauche)
+                self = self.fils_gauche # Changement de racine
+            else : # Fin de l'arbre
+                break
+        print(f"({self.arete_gauche})")
+        self.fils_gauche.afficher(route + "0")
+        print(f"({self.arete_droit})")
+        self.fils_droit.afficher(route + "1")
