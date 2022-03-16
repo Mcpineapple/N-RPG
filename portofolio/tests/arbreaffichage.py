@@ -24,4 +24,14 @@ arbre.afficher()
 
 """
 Ce test a permis de régler les bugs suivants :
+    - Mauvaise importation de json dans l'arbre
+    - Mauvaise importation du parser
+    - Mauvais placement des @property
+    - Mauvaise annonce de retour
+    - Mauvaise synatxe des @objet.setter
+    - Erreur d'assertion : les arbres ne pouvaient pas être Null
+    - Mauvais gestion de la fin du script
+    - Mauvais nom donné aux variables
+    - Fautes d'orthographe python
+    - Mauvaise gestion du déroulement de l'affichage
 """

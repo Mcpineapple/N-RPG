@@ -2,8 +2,8 @@
 # arbre binaire pour représenter l'histoire. La classe sera utilisée par le
 # parser de script pour y mettre l'histoire.
 
-from parser import Parser
-from json
+from nrpg.parser import Parser
+import json
 
 class Arbre:
     u"""
@@ -26,73 +26,14 @@ class Arbre:
 
         self.texte = texte
 
-        self.fils_gauche = None
-        self.fils_droit = None
+        self._fils_gauche = None
+        self._fils_droit = None
 
-        self.arete_gauche = u""
-        self.arete_droit = u""
-
-    @property.setter
-    def fils_gauche(self, texte : str) -> None:
-        u"""
-        Permet de creer un fils gauche au Noeud.
-        Préconditions:
-            Paramètres:
-                texte: str, correspond au script du noeud créé
-        Postconditions:
-            Creer un fils gauche, un arbre.
-        """
-
-        assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-
-        self.fils_gauche = Arbre(texte)
-
-    @property.setter
-    def arete_gauche(self, texte : str) -> None:
-        u"""
-        Change le texte de l'arête gauche.
-        Préconditions:
-            Paramètres:
-                texte : str, sera le texte de l'arête
-        Postconditions:
-            Le texte de l'arête gauche devient le texte entré.
-        """
-        assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-        self.arete_gauche = texte
-
-    @property.setter
-    def fils_droit(self, texte : str) -> None :
-        u"""
-        Permet de creer un fils droit au Noeud.
-        Préconditions:
-            Paramètres:
-                texte : str, correspond au script du noeud créé
-        Postconditions:
-            Creer un fils droit, un arbre.
-            Sortie : Aucune
-        """
-        assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-        self.fils_droit = Arbre(texte)
-
-    @property.setter
-    def arete_droit(self, texte : str) -> None :
-        u"""
-        Change le texte de l'arête droite.
-        Préconditions :
-            Paramètres :
-                texte : str, sera le texte de l'arête
-        Postconditions :
-            Le texte de l'arête droite devient le texte entré.
-            Sortie : Aucune
-        """
-
-        assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-
-        self.arete_droit = texte
-
+        self._arete_gauche = u""
+        self._arete_droit = u""
 
     @property
-    def fils_gauche(self) -> Arbre :
+    def fils_gauche(self) -> None :
         u"""
         Renvoie le fils gauche.
         Préconditions :
@@ -101,10 +42,10 @@ class Arbre:
             Sortie :
                 self.fils_gauche : None ou un Arbre
         """
-        return self.fils_gauche
+        return self._fils_gauche
 
     @property
-    def fils_droit(self) -> Arbre :
+    def fils_droit(self) -> None :
         u"""
         Renvoie le fils droit.
         Préconditions :
@@ -113,7 +54,7 @@ class Arbre:
             Sortie :
                 self.fils_droit : None ou un Arbre
         """
-        return self.fils_droit
+        return self._fils_droit
 
     @property
     def arete_gauche(self) -> str :
@@ -125,7 +66,7 @@ class Arbre:
             Sortie :
                 self.arete_gauche : str, texte de l'arête gauche
         """
-        return self.arete_gauche
+        return self._arete_gauche
 
     @property
     def arete_droit(self) -> str :
@@ -137,8 +78,72 @@ class Arbre:
             Sortie :
                 self.arete_droit : str, texte de l'arête droit
         """
-        return self.arete_droit
-    
+        return self._arete_droit
+
+    @fils_gauche.setter
+    def fils_gauche(self, texte : str) -> None:
+        u"""
+        Permet de creer un fils gauche au Noeud.
+        Préconditions:
+            Paramètres:
+                texte: str, correspond au script du noeud créé
+        Postconditions:
+            Creer un fils gauche, un arbre.
+        """
+
+        if texte is not None:
+            assert isinstance(texte, str), u"L'arbre doit \
+                contenir une chaîne de caractères ou être vide."
+
+            self._fils_gauche = Arbre(texte)
+
+    @arete_gauche.setter
+    def arete_gauche(self, texte : str) -> None:
+        u"""
+        Change le texte de l'arête gauche.
+        Préconditions:
+            Paramètres:
+                texte : str, sera le texte de l'arête
+        Postconditions:
+            Le texte de l'arête gauche devient le texte entré.
+        """
+        assert isinstance(texte, str), u"L'arête doit \
+            contenir une chaîne de caractères."
+        self._arete_gauche = texte
+
+    @fils_droit.setter
+    def fils_droit(self, texte : str) -> None :
+        u"""
+        Permet de creer un fils droit au Noeud.
+        Préconditions:
+            Paramètres:
+                texte : str, correspond au script du noeud créé
+        Postconditions:
+            Creer un fils droit, un arbre.
+            Sortie : Aucune
+        """
+        if texte is not None:
+            assert isinstance(texte, str), u"L'arbre doit \
+                contenir une chaîne de caractères ou être vide."
+            self._fils_droit = Arbre(texte)
+
+    @arete_droit.setter
+    def arete_droit(self, texte : str) -> None :
+        u"""
+        Change le texte de l'arête droite.
+        Préconditions :
+            Paramètres :
+                texte : str, sera le texte de l'arête
+        Postconditions :
+            Le texte de l'arête droite devient le texte entré.
+            Sortie : Aucune
+        """
+
+        assert isinstance(texte, str), u"L'arête doit \
+            contenir une chaîne de caractères"
+
+        self._arete_droit = texte
+
     def construire(self, script: str, position: int = None, choix : int = None) -> None:
         u"""
         Construit l'arbre pour accueillir le contenu complet d'un script. Agit
@@ -165,12 +170,12 @@ class Arbre:
             parser.choisir(choix)
         information = parser.continuer()
         while (contenu := json.loads(information))["type"] != "choix" :
-            if information :
-                arbre.texte = information
+            arbre.texte = information
+            if contenu["type"] == "fin": 
+                exit(0)
+            elif information :
                 arbre.fils_gauche = ""
                 arbre = arbre.fils_gauche
-            else : # À la fin du fichier
-                exit(0)
             information = parser.continuer()
         # À l'arivée d'un choix
         arbre.arete_gauche = contenu["0"] 
@@ -201,14 +206,16 @@ class Arbre:
             Sortie : Aucune
         """
         print(f"-- {route} --")
-        print(self.texte())
-        while not(self.fils_droit):
-            if self.fils_gauche:
+        print(self.texte)
+        while True:
+            if self.fils_droit is not None:
+                print(f"({self.arete_gauche})")
+                self.fils_gauche.afficher(route + "0")
+                print(f"({self.arete_droit})")
+                self.fils_droit.afficher(route + "1")
+                break
+            elif self.fils_gauche is not None:
                 print(self.fils_gauche)
                 self = self.fils_gauche # Changement de racine
             else : # Fin de l'arbre
                 break
-        print(f"({self.arete_gauche})")
-        self.fils_gauche.afficher(route + "0")
-        print(f"({self.arete_droit})")
-        self.fils_droit.afficher(route + "1")
