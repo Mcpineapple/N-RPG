@@ -26,6 +26,8 @@ Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interfac
 Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
+Tristan|Documentation et tests (interface et son)|16/03|0h45|Documenations/tests ajoutés dans la branche Son puis merge de Son dans GUI
+
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
