@@ -39,7 +39,7 @@ class Parser:
                 position : int, la position dans le fichier lu (par défaut, 0)
         Postconditions :
             Création d'un objet parser, auquel est envoyé la méthode continuer,
-            qui exécute la prochaine partie du script, la méthode sauvegarde
+            qui exécute la prochaine partie du script, la méthode sauvegarder
             ou bien la méthode choisir avec un paramètre dans le cas des choix.
             Ces commandes entraînent un renvoi, défini sleon la spécification,
             reçu par le moteur.
@@ -213,7 +213,7 @@ class Parser:
         if destination != "": # Par defaut, laisse au paragraphe suivant
             self._rechercher(destination)
 
-    def sauvegarde(self) -> None:
+    def sauvegarder(self) -> None:
         u"""
         Donne la position actuelle du parser afin de pouvoir réutiliser cette
         position. Le processus de sauvegarde et de gestion des autres

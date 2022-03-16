@@ -2,6 +2,9 @@
 # arbre binaire pour représenter l'histoire. La classe sera utilisée par le
 # parser de script pour y mettre l'histoire.
 
+from parser import Parser
+from json
+
 class Arbre:
     u"""
     Arbre binaire simple permettant de contenir le script et ses embranchements.
@@ -9,7 +12,7 @@ class Arbre:
     Les arêtes de l'arbre contiennent du texte qui décriront les embranchements.
     """
 
-    def __init__(self, texte : str):
+    def __init__(self, texte : str) -> None :
         u"""
         Constructeur de la classe Arbre.
         Préconditions :
@@ -45,7 +48,7 @@ class Arbre:
         self.fils_gauche = Arbre(texte)
 
     @property.setter
-    def arete_gauche(self, texte : str):
+    def arete_gauche(self, texte : str) -> None:
         u"""
         Change le texte de l'arête gauche.
         Préconditions:
@@ -54,35 +57,33 @@ class Arbre:
         Postconditions:
             Le texte de l'arête gauche devient le texte entré.
         """
-
         assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-
         self.arete_gauche = texte
 
     @property.setter
-    def fils_droit(self, texte : str):
+    def fils_droit(self, texte : str) -> None :
         u"""
         Permet de creer un fils droit au Noeud.
         Préconditions:
             Paramètres:
-                texte: str, correspond au script du noeud créé
+                texte : str, correspond au script du noeud créé
         Postconditions:
             Creer un fils droit, un arbre.
+            Sortie : Aucune
         """
-
         assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
-
         self.fils_droit = Arbre(texte)
 
     @property.setter
-    def arete_droit(self, texte : str):
+    def arete_droit(self, texte : str) -> None :
         u"""
         Change le texte de l'arête droite.
-        Préconditions:
-            Paramètres:
+        Préconditions :
+            Paramètres :
                 texte : str, sera le texte de l'arête
-        Postconditions:
+        Postconditions :
             Le texte de l'arête droite devient le texte entré.
+            Sortie : Aucune
         """
 
         assert isinstance(texte, str), u"L'arbre doit contenir des chaînes de caractères."
@@ -91,48 +92,95 @@ class Arbre:
 
 
     @property
-    def fils_gauche(self):
+    def fils_gauche(self) -> Arbre :
         u"""
         Renvoie le fils gauche.
-        Préconditions:
-            Aucune
-        Postconditions:
-            self.fils_gauche : None ou un Arbre
+        Préconditions :
+            Paramètres : Aucun
+        Postconditions :
+            Sortie :
+                self.fils_gauche : None ou un Arbre
         """
-
         return self.fils_gauche
 
     @property
-    def fils_droit(self):
+    def fils_droit(self) -> Arbre :
         u"""
         Renvoie le fils droit.
-        Préconditions:
-            Aucune
-        Postconditions:
-            self.fils_droit : None ou un Arbre
+        Préconditions :
+            Paramètres : Aucun
+        Postconditions :
+            Sortie :
+                self.fils_droit : None ou un Arbre
         """
         return self.fils_droit
 
     @property
-    def arete_gauche(self):
+    def arete_gauche(self) -> str :
         u"""
         Renvoie le texte de l'arête gauche.
-        Préconditions:
-            Aucune
-        Postconditions:
-            self.arete_gauche : str, texte de l'arête gauche
+        Préconditions :
+            Paramètres : Aucun
+        Postconditions :
+            Sortie :
+                self.arete_gauche : str, texte de l'arête gauche
         """
-
         return self.arete_gauche
 
     @property
-    def arete_droit(self):
+    def arete_droit(self) -> str :
         u"""
         Renvoie le texte de l'arête droite.
-        Préconditions:
-            Aucune
-        Postconditions:
-            self.arete_droit : str, texte de l'arête droit
+        Préconditions :
+            Paramètres : Aucun
+        Postconditions :
+            Sortie :
+                self.arete_droit : str, texte de l'arête droit
         """
-
         return self.arete_droit
+    
+    def construire(self, script: str, position: int = None, choix : int = None) -> None:
+        u"""
+        Construit l'arbre pour accueillir le contenu complet d'un script. Agit
+        de façon récursive pour construire l'arbre à travers les différentes
+        possibilités de l'histoire.
+        Préconditions :
+            Un parser de Visual Novel MarkDown, qui lira l'information depuis le
+                script précisé
+            Un script écrit en VNMD à préciser dans cette fonction
+            Paramètres :
+                script : str, le chemin vers un script en VNMD
+                position : int, endroit du cript auquel la lecture du parser
+                    doit commencer
+        Postconditions :
+            Peuplement de la structure de l'arbre sur lequel est appelée cette
+            méthode avec l'ensemble des contenus et des choix du scipt entré.
+            L'arbre est alors prêt à être montré pour représenter l'ensemble de
+            l'histoire, les choix et les différentes routes.
+            Sortie : Aucune
+        """
+        parser = Parser(script, position)
+        arbre = self # Suivi de la racine de cet arbre
+        if choix :
+            parser.choisir(choix)
+        information = parser.continuer()
+        while (contenu := json.loads(information))["type"] != "choix" :
+            if information :
+                arbre.texte = information
+                arbre.fils_droit = ""
+                arbre = arbre.fils_droit
+            else : # À la fin du fichier
+                exit(0)
+            information = parser.continuer()
+        # À l'arivée d'un choix
+        arbre.arete_gauche = contenu["0"] 
+        arbre.arete_droit = contenu["1"] 
+        # Garde l'endroit de la bifurcation
+        position = json.loads(self.sauvegarde())
+        arbre.fils_gauche = ""
+        arbre.fls_droit = ""
+        # Récursion
+        arbre.fils_gauche.construire(position["fichier"], \
+                position["position"], 0)
+        arbre.fils_droit.construire(position["fichier"], \
+                position["position"], 1)
