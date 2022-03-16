@@ -40,6 +40,8 @@ Indique un titre | O | #
 Ce symbole indique un titre ou une subdivision du texte. Il peut être montré par
 le moteur ou non. Il peut y avoir plusieurs # : plus ce nombre est grand, plus
 la subdivision est petite.
+Un paramètre peut lui être attaché, et le texte après le premier paramètre
+correspond au contenu du titre.
 
 Crée un alias | O | <
 Ce symbole indique que le mot situé après lui en paramètre correspondra
@@ -55,6 +57,12 @@ et de ses collègues.
 En début de ligne, ce symbole permet d'indiquer que cette ligne est une
 continuation de la précédente, permettant d'écrire proprement le script sans
 affecter le résultat.
+
+Spécifie une fin de l'histoire | O | | (barre verticale)
+En début de ligne, ce symbole précise que le script doit s'arrêter ici, et que
+le programme retournera ensuite au menu principal (ou autre comportement).
+Un paramètre peut lui être attaché, et le reste de la ligne (après le premier
+espace) sera traité comme le texte de la fin et sera affiché.
 
 ## Caractères à l'intérieur d'une ligne
 Ces caractères spéciaux sont des symboles placés à même le texte. Un grand
