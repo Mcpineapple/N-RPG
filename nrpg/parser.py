@@ -21,7 +21,7 @@ fonctions.
 # d'actionner un nombre limité d'appels au moteur (une spécification du moteur
 # polyvalente et réduite)
 
-import json
+import json, sys
 
 class Parser:
     def __init__(self, script: str, position: int = None) -> None:
@@ -402,4 +402,8 @@ class Parser:
 
     def _fin(self) -> None:
         # Action lorsque la fin du fichier est trouvée
-        exit(0)
+        sys.exit(json.dumps({
+            "type": "fin",
+            "parametres": "",
+            "texte": ""
+            }))
