@@ -83,7 +83,7 @@ $lab2logs
 - Celle de gauche
 =couloirréacteur1logs
 - Celle de droite
-=derniercouloirgauche1
+=derniercouloirdroit
 
 <couloirréacteur1 Devant vous s'étend un couloir avec une porte à la fin
 
@@ -120,7 +120,7 @@ En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond,
 
 |-"Freefall" Freefall
 
-<couloirréacteur2 Vous arrivez dans un couloir sombre avec une porte au bout
+<couloirréacteur2 Vous arrivez dans un couloir sombre avec une porte au bout.
 
 $couloirréacteur2 bg=couloirporte music=suspense
 {couloirréacteur2}
@@ -148,38 +148,107 @@ $caserne1logs
 - Continuer
 =caserne2
 
-<corps vous examinez le corps du militaire, il serre un paquet dans ses bras
+<corps vous examinez le corps du militaire, il serre un paquet dans ses bras.
 
 $corps
 {corps}
 
--prendre le paquet
+- prendre le paquet
 =explosifs
 
--ne pas continuer
+- ne pas continuer
 =caserne2
 
 $corpslogs
 {corps}
 
--prendre le paquet
+- prendre le paquet
 =explosifslogs
 
--ne pas continuer
+- ne pas continuer
 =caserne2
 
-<explosifs vous récupérez le paquet, il contient des explosifs, vous apercevez un insigne étrange sur l'uniforme du militaire
+<explosifs vous récupérez le paquet, il contient des explosifs, vous apercevez un insigne étrange sur l'uniforme du militaire.
 
 $explosifs
 {explosifs}
 
--examiner l'insigne
+- examiner l'insigne
 =insigne
 
 $explosifslogs
 {explosifs}
 
--examiner l'insigne
+- examiner l'insigne
 =insignelogs
 
+<insigne vous examinez l'insigne du militaire, il ne vous dit absolument rien.
+
 $insigne bg=insigne
+{insigne}
+
+- continuer
+=caserne2exp
+
+$insignelogs bg=insigne
+{insigne}
+
+- continuer
+=caserne2logs
+
+<caserne2 La clé du mystère n'est pas ici, il faut continuer
+
+$caserne2 bg=caserne
+{caserne2}
+
+- prendre la porte droit devant
+=derniercouloirgauche
+
+$caserne2exp bg=caserne
+{caserne2}
+
+- prendre la porte droit devant
+=derniercouloirgaucheexp
+
+$caserne2logs bg=caserne
+{caserne2}
+
+- prendre la porte droit devant
+=derniercouloirgauchelogs
+
+$derniercouloirdroit bg=couloirtournantgauche
+Vous arrivez dans un couloir avec un tournant à gauche au bout.
+
+- prendre le tournant
+=sas
+
+<derniercouloirgauche Vous arrivez dans un couloir avec un tournant à droite au bout.
+
+$derniercouloirgauche bg=couloirtournantdroit
+{derniercouloirgauche}
+
+-prendre le tournant
+=sas
+
+$derniercouloirgaucheexp bg=couloirtournantdroit
+{derniercouloirgauche}
+
+-prendre le tournant
+=sasexp
+
+$derniercouloirgauchelogs bg=couloirtournantdroit
+{derniercouloirgauche}
+
+-prendre le tournant
+=saslogs
+
+<sas Vous arrivez devant une grande porte en acier entrouverte avec un bouton à gauche.
+
+$sas bg=sas
+{sas}
+
+-appuyer sur le bouton
+=ouverture
+
+-se faufiler
+=cellule

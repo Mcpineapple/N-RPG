@@ -21,12 +21,13 @@ Tristan|Codage (arbre)|03/03|1h|Création de l'arbre binaire
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
 Tristan|Codage (arbre)|09/03|0h20|Amélioration de l'arbre
 Tristan|Codage (interface)|09/03|1h|Base de l'interface tkinter
+Pierre|écriture|11/03|1h|écriture du synopsis de l'histoire
 Tristan|Codage (interface)|12/03|0h40|Amélioration de l'interface graphique, passage de canvas à label
 Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interface graphique, ajout d'une méthode pour changer l'image afficher
 Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
-
+Pierre|écriture|17/03|3h|écriture du script 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
 ----|----|----------|-------
