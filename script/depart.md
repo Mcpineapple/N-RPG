@@ -9,6 +9,7 @@ Vous avez compris ce que j'ai dit au téléphone?
 - Euh,Non...
 =
 
+<<<<<<< HEAD
 Eh bien, vous voyez comment les disparitions étaient agencées sur la carte ?
 Avouez que c'était un peu étrange non? Eh bien ca formait un cercle, et le
  centre du cercle>, c'est ici!
@@ -22,6 +23,7 @@ Je pense que la clé du mystère est là-dessous.
 
 - Et c'est moi qui vais devoir m'y coller?
 =descente
+<<<<<<< HEAD
 - Ah?
 =
 
