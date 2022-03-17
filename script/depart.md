@@ -8,6 +8,7 @@ Ah vous voilà patron! Vous avez compris ce que j'ai dit au téléphone?
 -Euh,Non...
 =
 
+$
 Eh bien, vous voyez comment les disparitions étaient agencées sur la carte?
 Avouez que c'était un peu étrange non? Eh bien ca formait un cercle, et le 
 centre du cercle, c'est ici!
@@ -23,12 +24,15 @@ Je pense que la clé du mystère est là-dessous.
 =descente
 -Ah?
 =
+
+$
 Du coup vous voulez bien descendre?
 -Euh, D'accord...
 =descente
 -Ah oui mais non!
 =
 
+$
 Bah si, c'est vous le shériff, et moi je dois rester en contact avec le central
 Allez boss...
 
