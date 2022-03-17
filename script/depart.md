@@ -47,7 +47,6 @@ Je vais essayer de rester en contact avec vous mais on doit pas capter grand
 
 $1 char= music= bg=entrée
 Vous descendez lentement l'échelle et allumez votre lampe torche.
-Vous arrivez face à une porte en acier.
 
 $2 char=talkie
 All... Vo... ...nt...ndez..
@@ -63,6 +62,7 @@ le contact est coupé.
 - Pousser la porte
 =
 
+$
 Vous arrivez dans un couloir en acier.
 Où continuer ?
 - À droite
@@ -70,8 +70,9 @@ Où continuer ?
 - À gauche
 =[gauche.md]
 
-$couard
+$couard bg=black
 Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent
  pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait
  pendant des années.
+
 | Fin honteuse : Couard

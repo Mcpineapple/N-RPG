@@ -113,10 +113,11 @@ $réacteurlogs bg=réacteur music=birds
 - Continuer
 =couloirréacteur2logs
 
-$Freefall
+$Freefall bg=puits
 En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond,
  vous glissez sur la mousse environnant le puits.
-Vous mourrez après la meilleure expérience de chute libre de votre vie (et la plus courte).
+ Vous mourrez après la meilleure expérience de chute libre de votre vie (et la plus courte).
+
 |-"Freefall" Freefall
 
 <couloirréacteur2 Vous arrivez dans un couloir sombre avec une porte au bout
@@ -147,4 +148,38 @@ $caserne1logs
 - Continuer
 =caserne2
 
-/ corps=
+<corps vous examinez le corps du militaire, il serre un paquet dans ses bras
+
+$corps
+{corps}
+
+-prendre le paquet
+=explosifs
+
+-ne pas continuer
+=caserne2
+
+$corpslogs
+{corps}
+
+-prendre le paquet
+=explosifslogs
+
+-ne pas continuer
+=caserne2
+
+<explosifs vous récupérez le paquet, il contient des explosifs, vous apercevez un insigne étrange sur l'uniforme du militaire
+
+$explosifs
+{explosifs}
+
+-examiner l'insigne
+=insigne
+
+$explosifslogs
+{explosifs}
+
+-examiner l'insigne
+=insignelogs
+
+$insigne bg=insigne
