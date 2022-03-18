@@ -96,8 +96,10 @@ It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and 
 / encore plus différentes branches d'un récit ou d'organiser les étapes.
 / Ce choix emmène donc à un autre fichier.
 - I love democracy !
-=[goodending.vnmd]
+=[goodending.vnmd]lafin
 - ...
+/ On peut aussi préciser après les crochets l'identifiant vers lequel le script
+/ se redirige
 
 <powername The force
 
