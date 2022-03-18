@@ -340,6 +340,16 @@ class Parser:
             Indexage des identifiants rencontrés
             Sortie : Aucune
         """
+        # Passe sur l'identifiant pour y trouver un lien
+        if identifiant[0] = '[':
+            compteur = 1
+            lien = ""
+            while (lettre := identifiant[compteur]) != ']': # Passage dans les
+                                                            # crochets
+                lien += lettre
+                compteur += 1
+            self._passage_fichier(lien)
+            identifiant = identifiant[compteur+1:] # Recoupage de l'identifiant
         position = self._table.get(identifiant) # None si la clé n'est pas
         # présente
         if position is not None:
@@ -360,6 +370,21 @@ class Parser:
                 elif caractere == "": # Arrivée en fin de fichier : ne lit plus
                     # aucun caractère
                     self._fin()
+
+    def _passage_fichier(self, fichier: str) -> None:
+        u"""
+        Change le fichier dans lequel travaille actuellement le parser.
+        Préconditions :
+            Paramètres :
+                fichier : str, le nom du fichier vers lequel on passe
+        Postconditions:
+            Changement du fichier dans lequel le parser est placé et de son nom
+            Sortie : Aucune
+        """
+        self._script_nom = fichier # Enregistre le nom du script actuel
+        self._script_actuel.close()
+        self._script_actuel = open(fichier,"r")
+        self._table[fichier] = {}
 
     def _remplacement(self,contenu: str) -> str:
         u"""
@@ -392,4 +417,5 @@ class Parser:
 
     def _fin(self) -> None:
         # Action lorsque la fin du fichier est trouvée
+        self._script_actuel.close()
         exit(0)
