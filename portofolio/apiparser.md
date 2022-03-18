@@ -57,6 +57,7 @@ Les identifiants qui peuvent être envoyés au moteur sont :
 - choix
 - parametres
 - titre
+- fin
 
 L'identifiant texte permet d'envoyer un texte qui doit être affiché : il peut
 recevoir un argument supplémentaire, permettant d'ajouter le texte au texte déjà
@@ -68,9 +69,11 @@ L'identifiant parametres est l'un des plus importants pour tous les aspects
 avancés d'un moteur de jeu : il permet d'envoyer les paramètres après un "$",
 que ce soit pour des éléments graphiques, de personnages, etc... Ceux-ci seront
 interprétés par le client.
-L'identifiant titre enfin, correspond aux tires à afficher spécialement à
+L'identifiant titre correspond aux tires à afficher spécialement à
 l'écran. Ceux-ci se comportant assez différemment des textes et des paramètres,
 ils sont envoyés séparéments.
+L'identifiant fin, dernièrement, permet de caractériser l'une des fins du
+programme et doit amener à un arrêt.
 
 ## Recommendations pour le nom des paramètres
 
@@ -101,4 +104,5 @@ Nom de l'identifiant | Contenu | Effets
 texte | texte et "ajoute" | Permet d'afficher du texte, en nettoyant la zone de texte ou non
 choix | liste des choix et leurs paramètres | Permet d'afficher différents choix
 parametres | liste de parametres | Envoie diverses informations, nottament média ou personnages
-titre | texte et taille du titre | Permet d'afficher un titre
+titre | paramètre, texte et taille du titre | Permet d'afficher un titre
+fin | paramètre et texte | Affiche une fin
