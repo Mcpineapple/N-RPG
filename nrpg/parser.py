@@ -294,6 +294,7 @@ class Parser:
                 # Ne passe pas par les autres vérifications
             elif caractere == "\n":
                 if self._lire() == " ":
+                    contenu += caratere # Laisse un espace
                     continue # Si la ligne est étendue
                 else :
                     self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
