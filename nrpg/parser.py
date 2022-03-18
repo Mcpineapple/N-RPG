@@ -294,7 +294,7 @@ class Parser:
                 # Ne passe pas par les autres vérifications
             elif caractere == "\n":
                 if self._lire() == " ":
-                    contenu += caratere # Laisse un espace
+                    contenu += " " # Laisse un espace
                     continue # Si la ligne est étendue
                 else :
                     self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
@@ -341,7 +341,7 @@ class Parser:
             Sortie : Aucune
         """
         # Passe sur l'identifiant pour y trouver un lien
-        if identifiant[0] = '[':
+        if identifiant[0] == '[':
             compteur = 1
             lien = ""
             while (lettre := identifiant[compteur]) != ']': # Passage dans les
@@ -357,19 +357,18 @@ class Parser:
         else:
             while True:
                 caractere = self._lire()
-                if caractere == "\n": # Si on revient à la ligne
+                while caractere != "\n": # Recherche d'une fin de ligne
                     caractere = self._lire()
-                    if caractere == "$": # Et que celle-ci commence par un $
-                        nom = self._identifiant()
-                        if nom != "": # N'enregistre pas dans le cas d'une ligne
-                            # de paramètre anonyme
-                            self._table[nom : self._script_actuel.tell()]
-                        if nom == identifiant : # Si il s'agit de ce que l'on
-                            # cherchait
-                            break # Fin de la fonction
-                elif caractere == "": # Arrivée en fin de fichier : ne lit plus
-                    # aucun caractère
-                    self._fin()
+                while caractere == "\n": # En cas de plusieurs retours à la ligne
+                    caractere = self._lire()
+                if caractere == "$": # Et que celle-ci commence par un $
+                    nom = self._identifiant()
+                    if nom != "": # N'enregistre pas dans le cas d'une ligne
+                        # de paramètre anonyme
+                        self._table[nom] = self._script_actuel.tell()
+                    if nom == identifiant : # Si il s'agit de ce que l'on
+                        # cherchait
+                        break # Fin de la fonction
 
     def _passage_fichier(self, fichier: str) -> None:
         u"""

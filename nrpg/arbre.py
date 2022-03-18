@@ -144,18 +144,20 @@ class Arbre:
 
         self._arete_droit = texte
 
-    def construire(self, script: str, position: int = None, choix : int = None) -> None:
+    def construire(self, parser: Parser = None, script: str = None, \
+            position: int = None) -> None:
         u"""
         Construit l'arbre pour accueillir le contenu complet d'un script. Agit
         de façon récursive pour construire l'arbre à travers les différentes
-        possibilités de l'histoire.
+        possibilités de l'histoire. Il doit être appelé avec None comme premier
+        paramètre dans la plupart des cas.
         Préconditions :
             Un parser de Visual Novel MarkDown, qui lira l'information depuis le
                 script précisé
             Un script écrit en VNMD à préciser dans cette fonction
             Paramètres :
                 script : str, le chemin vers un script en VNMD
-                position : int, endroit du cript auquel la lecture du parser
+                position : int, endroit du script auquel la lecture du parser
                     doit commencer
         Postconditions :
             Peuplement de la structure de l'arbre sur lequel est appelée cette
@@ -164,34 +166,40 @@ class Arbre:
             l'histoire, les choix et les différentes routes.
             Sortie : Aucune
         """
-        parser = Parser(script, position)
+        print("Nouveau")
+        if parser is None : # Création de parser au début
+            parser = Parser(script, position)
         arbre = self # Suivi de la racine de cet arbre
-        if choix :
-            parser.choisir(choix)
         information = parser.continuer()
-        while (contenu := json.loads(information))["type"] != "choix" :
-            arbre.texte = information
-            if contenu["type"] == "fin": 
-                exit(0)
-            elif information :
+        while (information is None) or (((contenu := json.loads(information)) \
+                ["type"] != "choix") and (contenu["type"] != "fin")) :
+            if information :
+                print(information)
+                arbre.texte = information
                 arbre.fils_gauche = ""
                 arbre = arbre.fils_gauche
             information = parser.continuer()
-        # À l'arivée d'un choix
-        arbre.arete_gauche = contenu["0"] 
-        arbre.arete_droit = contenu["1"] 
-        # Garde l'endroit de la bifurcation
-        position = json.loads(self.sauvegarde())
-        arbre.fils_gauche = ""
-        arbre.fls_droit = ""
-        # Récursion
-        arbre.fils_gauche.construire(position["fichier"], \
-                position["position"], 0)
-        arbre.fils_droit.construire(position["fichier"], \
-                position["position"], 1)
+        print(contenu)
+        if contenu["type"] != "fin":
+            # À l'arivée d'un choix
+            arbre.arete_gauche = contenu["0"]["texte"]
+            # Garde l'endroit de la bifurcation
+            position = json.loads(parser.sauvegarder())
+            arbre.fils_gauche = ""
+            # Récursion
+            parser.choisir(0)
+            arbre.fils_gauche.construire(parser)
+            if contenu.get("1") :
+                print("Choix")
+                parser = Parser(position["fichier"], position["position"])
+                arbre.arete_droit = contenu["1"]["texte"]
+                arbre.fls_droit = ""
+                parser.choisir(1)
+                arbre.fils_droit.construire(parser)
+        print(contenu)
 
     def afficher(self, route: str = "") -> None:
-        """
+        u"""
         Méthode d'impression, imprime l'arbre par parcours en profondeur infixe
         afin de pouvoir le visualiser, avec des marques. Le résultat peut être
         assez grand, veuillez le visualiser à l'aide de "more" ou "less" dans
@@ -201,8 +209,8 @@ class Arbre:
             Paramètres : Aucun
         Postconditions :
             Impression vers la sortie standard de l'arbre, de façon
-            visualisable. Il s'agit néanmoins probablement d'une mauvaise idée
-            sur un très grand arbre.
+             visualisable. Il s'agit néanmoins probablement d'une mauvaise idée
+             sur un très grand arbre.
             Sortie : Aucune
         """
         print(f"-- {route} --")
