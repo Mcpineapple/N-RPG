@@ -40,11 +40,29 @@ Indique un titre | O | #
 Ce symbole indique un titre ou une subdivision du texte. Il peut être montré par
 le moteur ou non. Il peut y avoir plusieurs # : plus ce nombre est grand, plus
 la subdivision est petite.
+Un paramètre peut lui être attaché, et le texte après le premier paramètre
+correspond au contenu du titre.
 
-Crée un alias | O | *
+Crée un alias | O | <
 Ce symbole indique que le mot situé après lui en paramètre correspondra
 lorsqu'il est remplacé (voir {}). Après l'espace se place le texte qui le
 remplacera, qui peut être placé sur toute la ligne.
+
+Ouvre un commentaire | X | /
+Ce symbole perme, en début de lige, d'ouvrir une ligne de commentaires : toute
+la ligne sera ignorée par le jeu, et ne sert qu'à l'utilisation de l'écrivain
+et de ses collègues.
+
+Étend la ligne précédente | X |   (espace)
+En début de ligne, ce symbole permet d'indiquer que cette ligne est une
+continuation de la précédente, permettant d'écrire proprement le script sans
+affecter le résultat.
+
+Spécifie une fin de l'histoire | O | | (barre verticale)
+En début de ligne, ce symbole précise que le script doit s'arrêter ici, et que
+le programme retournera ensuite au menu principal (ou autre comportement).
+Un paramètre peut lui être attaché, et le reste de la ligne (après le premier
+espace) sera traité comme le texte de la fin et sera affiché.
 
 ## Caractères à l'intérieur d'une ligne
 Ces caractères spéciaux sont des symboles placés à même le texte. Un grand
@@ -57,17 +75,17 @@ dedans le nom d'un autre ficher, et le script continuera vers ce dernier.
 
 Remplace un alias par son contenu | X | {}
 Tout mot entre ces symboles sera interprété comme ce que le remplacement de
-l'alias.
+l'alias précise.
 
 Marque une pause | X | >
 Bien que ce symbole dépende de l'implémentation, il est conseillé d'ajouter ce
 symbole à toutes les implémentations. Il permet de marquer une pause au milieu
-de la ligne, et d'écrir ce qu'il y a après seulement après un clic.
+de la ligne, et d'écrire ce qu'il y a après seulement après un clic.
 
 D'autres symboles, issus du MarkDown classique, comprennent:
 _x_
 *x*
 __x__
 ==x==
-Tous ces symboles peucent modifier l'interprétation ou le formatage du texte,
+Tous ces symboles peuvent modifier l'interprétation ou le formatage du texte,
 mais dépendent de l'implémentation.

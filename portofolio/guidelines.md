@@ -29,7 +29,7 @@ bonne lisibilité.
 La documentation interne au programme s'organise de la façon suivante :
 - Chaque classe ou fonction possède une documentation sous la forme de doctring.
   Celle-ci s'organise de la façon suivante :
-  """
+  u"""
   	{Description}
 	Préconditions :
 		{Préconditions}
