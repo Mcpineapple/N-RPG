@@ -14,6 +14,7 @@ François|Design|16/02|2h|Spécification du VN Markdown pour les scripts
 François|Codage (console)|23/02|2h|Premier prototype de moteur CLI
 François|Organisation|24/02|2h|Mise en place des modules
 François|Codage (console)|25/02|h30|Debugging du moteur CLI
+François|Code (graphique)|27/02|2h|Ébauche du moteur de jeu graphique
 François|Organisation|28/02|1h|Spécification de l'API du parser
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
 François|Codage (parser)|9/03|1h|Fin du parser
@@ -28,6 +29,7 @@ Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
 Tristan|Documentation et tests (interface et son)|16/03|0h45|Documenations/tests ajoutés dans la branche Son puis merge de Son dans GUI
 François|Design|16/03|0h30|Ajout d'un appel "fin" pour la fin d'un script, et d'une représentation en VNMD
+
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
