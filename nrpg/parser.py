@@ -177,6 +177,7 @@ class Parser:
                             "parametres": self._identifiant(),
                             "texte": self._contenu()
                             }
+                    print(sortie)
                 elif caractere == "=":
                     self._choix[compteur] = self._identifiant()
                     self._contenu() # Ignorer la fin de la ligne
@@ -255,9 +256,11 @@ class Parser:
             Reinitialisation de self._choix pour un prochain choix
             Sortie : Aucune
         """
+        print(self._choix)
         destination = self._choix[choix]
         if destination != "": # Par defaut, laisse au paragraphe suivant
             self._rechercher(destination)
+        self._choix = []
 
     @_fin
     def sauvegarder(self) -> None:

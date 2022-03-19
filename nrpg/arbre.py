@@ -174,29 +174,29 @@ class Arbre:
         while (information is None) or (((contenu := json.loads(information)) \
                 ["type"] != "choix") and (contenu["type"] != "fin")) :
             if information :
-                print(information)
                 arbre.texte = information
                 arbre.fils_gauche = ""
                 arbre = arbre.fils_gauche
+            position = parser.sauvegarder()
             information = parser.continuer()
-        print(contenu)
         if contenu["type"] != "fin":
+            bifurcation = json.loads(position)
             # À l'arivée d'un choix
             arbre.arete_gauche = contenu["0"]["texte"]
             # Garde l'endroit de la bifurcation
-            position = json.loads(parser.sauvegarder())
             arbre.fils_gauche = ""
             # Récursion
             parser.choisir(0)
             arbre.fils_gauche.construire(parser)
             if contenu.get("1") :
                 print("Choix")
-                parser = Parser(position["fichier"], position["position"])
+                print(contenu)
+                parser = Parser(bifurcation["fichier"], bifurcation["position"])
                 arbre.arete_droit = contenu["1"]["texte"]
                 arbre.fls_droit = ""
                 parser.choisir(1)
                 arbre.fils_droit.construire(parser)
-        print(contenu)
+        print("Sortie")
 
     def afficher(self, route: str = "") -> None:
         u"""
