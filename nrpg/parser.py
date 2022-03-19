@@ -21,7 +21,7 @@ fonctions.
 # d'actionner un nombre limité d'appels au moteur (une spécification du moteur
 # polyvalente et réduite)
 
-import json, sys
+import json, sys, os.path
 
 # Erreur en fin de fichier
 class FinError(Exception):
@@ -91,12 +91,15 @@ class Parser:
         def inner(self):
             try :
                 sortie = func(self)
-            except(FinError): 
+            except(FinError):
                 sortie = json.dumps({
                 'type': 'fin',
                 'parametres': '',
                 'texte': ''
                 })
+            except (Exception) as e:
+                # Dans le cas d'une autre erreur, la laisse passer normalement
+                raise
             finally:
                 return sortie
         return inner
@@ -177,7 +180,6 @@ class Parser:
                             "parametres": self._identifiant(),
                             "texte": self._contenu()
                             }
-                    print(sortie)
                 elif caractere == "=":
                     self._choix[compteur] = self._identifiant()
                     self._contenu() # Ignorer la fin de la ligne
@@ -256,7 +258,6 @@ class Parser:
             Reinitialisation de self._choix pour un prochain choix
             Sortie : Aucune
         """
-        print(self._choix)
         destination = self._choix[choix]
         if destination != "": # Par defaut, laisse au paragraphe suivant
             self._rechercher(destination)
@@ -400,25 +401,27 @@ class Parser:
                 compteur += 1
             self._passage_fichier(lien)
             identifiant = identifiant[compteur+1:] # Recoupage de l'identifiant
-        position = self._table.get(identifiant) # None si la clé n'est pas
-        # présente
-        if position is not None:
-            self._script_actuel.seek(position)
-        else:
-            while True:
-                caractere = self._lire()
-                while caractere != "\n": # Recherche d'une fin de ligne
+        if identifiant != "": # Dans le cas où on change de fichier sans aller
+            # vers un nouvel identifiant, mais juste le début du fichier
+            position = self._table.get(identifiant) # None si la clé n'est pas
+            # présente
+            if position is not None:
+                self._script_actuel.seek(position)
+            else:
+                while True:
                     caractere = self._lire()
-                while caractere == "\n": # En cas de plusieurs retours à la ligne
-                    caractere = self._lire()
-                if caractere == "$": # Et que celle-ci commence par un $
-                    nom = self._identifiant()
-                    if nom != "": # N'enregistre pas dans le cas d'une ligne
-                        # de paramètre anonyme
-                        self._table[nom] = self._script_actuel.tell()
-                    if nom == identifiant : # Si il s'agit de ce que l'on
-                        # cherchait
-                        break # Fin de la fonction
+                    while caractere != "\n": # Recherche d'une fin de ligne
+                        caractere = self._lire()
+                    while caractere == "\n": # En cas de plusieurs retours à la ligne
+                        caractere = self._lire()
+                    if caractere == "$": # Et que celle-ci commence par un $
+                        nom = self._identifiant()
+                        if nom != "": # N'enregistre pas dans le cas d'une ligne
+                            # de paramètre anonyme
+                            self._table[nom] = self._script_actuel.tell()
+                        if nom == identifiant : # Si il s'agit de ce que l'on
+                            # cherchait
+                            break # Fin de la fonction
 
     def _passage_fichier(self, fichier: str) -> None:
         u"""
@@ -430,10 +433,12 @@ class Parser:
             Changement du fichier dans lequel le parser est placé et de son nom
             Sortie : Aucune
         """
-        self._script_nom = fichier # Enregistre le nom du script actuel
+        dossier = os.path.dirname(self._script_nom)
+        # Enregistre le nom du script actuel en donnant sa route
+        self._script_nom = os.path.join(dossier, fichier)
         self._script_actuel.close()
-        self._script_actuel = open(fichier,"r")
-        self._table[fichier] = {}
+        self._script_actuel = open(self._script_nom,"r")
+        self._table[self._script_nom] = {}
 
     def _remplacement(self,contenu: str) -> str:
         u"""

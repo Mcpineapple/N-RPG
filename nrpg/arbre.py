@@ -186,17 +186,23 @@ class Arbre:
             # Garde l'endroit de la bifurcation
             arbre.fils_gauche = ""
             # Récursion
-            parser.choisir(0)
-            arbre.fils_gauche.construire(parser)
+            try : # Arrête si le tronçon d'histoire n'existe pas
+                parser.choisir(0)
+                arbre.fils_gauche.construire(parser)
+            except :
+                pass
             if contenu.get("1") :
                 parser = Parser(position["fichier"], position["position"])
                 arbre.arete_droit = contenu["1"]["texte"]
                 arbre.fils_droit = ""
-                parser.continuer() # Charge le choix
-                parser.choisir(1)
-                arbre.fils_droit.construire(parser)
+                try : # Idem
+                    parser.continuer() # Charge le choix
+                    parser.choisir(1)
+                    arbre.fils_droit.construire(parser)
+                except :
+                    pass
 
-    def afficher(self, route: str = "") -> None:
+    def afficher(self, route: str = "", suivant: bool = False) -> None:
         u"""
         Méthode d'impression, imprime l'arbre par parcours en profondeur infixe
         afin de pouvoir le visualiser, avec des marques. Le résultat peut être
@@ -204,27 +210,29 @@ class Arbre:
         un shell.
         Préconditions :
             L'arbre est rempli convenablement et contient des informations
-            Paramètres : Aucun
+            Paramètres :
+                route : str, la route de choix suivie pour arriver à ce
+                    fragment. Par défaut vide.
+                suivant : bool, si l'arbre descend en ligne droite plutôt que
+                    droit, permettant de ne pas réafficher la route. Par défaut
+                    Faux.
         Postconditions :
             Impression vers la sortie standard de l'arbre, de façon
              visualisable. Il s'agit néanmoins probablement d'une mauvaise idée
              sur un très grand arbre.
             Sortie : Aucune
         """
-        print(f"-- {route} --")
+        if not(suivant):
+            print(f"-- {route} --")
         print(self.texte)
-        while True:
-            if self.fils_droit is not None:
-                print() # Retour à la ligne pour la lisibilité
-                print(f"({self.arete_gauche})")
-                self.fils_gauche.afficher(route + "0")
-                print() # Retour à la ligne pour la lisibilité
-                print(f"({self.arete_droit})")
-                self.fils_droit.afficher(route + "1")
-                print() # Retour à la ligne pour la lisibilité
-                break
-            elif self.fils_gauche is not None:
-                print(self.fils_gauche)
-                self = self.fils_gauche # Changement de racine
-            else : # Fin de l'arbre
-                break
+        if self.fils_droit is not None:
+            print() # Retour à la ligne pour la lisibilité
+            print(f"({self.arete_gauche})")
+            self.fils_gauche.afficher(route + "0")
+            print() # Retour à la ligne pour la lisibilité
+            print(f"({self.arete_droit})")
+            self.fils_droit.afficher(route + "1")
+            print() # Retour à la ligne pour la lisibilité
+        elif self.fils_gauche is not None:
+            self.fils_gauche.afficher(route, True)
+        # Sinon, l'arbre est fini et la récursion se finit

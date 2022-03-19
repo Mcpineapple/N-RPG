@@ -10,12 +10,12 @@ import os
 import sys
 from nrpg.arbre import Arbre
 
-position_script = os.path.join(os.path.dirname(__file__), '..', 
+position_script = os.path.join(os.path.dirname(__file__), '..',
         '..', 'script', 'depart.md')
 
 arbre = Arbre("JOLIE PETITE HISTOIRE")
 
-arbre.construire(None, position_script)
+arbre.construire(None, {"fichier": position_script, "position": 0})
 arbre.afficher()
 
 """
@@ -29,4 +29,12 @@ Ce test a permis de régler les bugs suivants :
     - Mauvais modèle de récursion dans la construction de l'arbre
     - Problème du parser dans la recherche d'identifiant
     - Mauvaise gestion de la fin de fichier du parser
+    - Chemin vers les liens incomplet
+    - Identifiant vide recheché en changeant de fichier
+    - Mauvaise gestion de l'indexage dans la table
+    - Récursion infinie et mauvais gestion de l'affichage en ligne droite dans
+      l'affichage de l'arbre
+Une fois que ce test s'est montré fonctionnel, il a permis de trouver les
+problèmes suivants :
+    -
 """
