@@ -144,8 +144,7 @@ class Arbre:
 
         self._arete_droit = texte
 
-    def construire(self, parser: Parser = None, script: str = None, \
-            position: int = None) -> None:
+    def construire(self, parser: Parser = None, position: dict = None) -> None:
         u"""
         Construit l'arbre pour accueillir le contenu complet d'un script. Agit
         de façon récursive pour construire l'arbre à travers les différentes
@@ -156,9 +155,9 @@ class Arbre:
                 script précisé
             Un script écrit en VNMD à préciser dans cette fonction
             Paramètres :
-                script : str, le chemin vers un script en VNMD
-                position : int, endroit du script auquel la lecture du parser
-                    doit commencer
+                position : dict, un dictionnaire contenant le fichier lu et la
+                    position dans le fichier, avec le même modèle que les
+                    sauvegardes
         Postconditions :
             Peuplement de la structure de l'arbre sur lequel est appelée cette
             méthode avec l'ensemble des contenus et des choix du scipt entré.
@@ -166,9 +165,8 @@ class Arbre:
             l'histoire, les choix et les différentes routes.
             Sortie : Aucune
         """
-        print("Nouveau")
         if parser is None : # Création de parser au début
-            parser = Parser(script, position)
+            parser = Parser(position["fichier"], position["position"])
         arbre = self # Suivi de la racine de cet arbre
         information = parser.continuer()
         while (information is None) or (((contenu := json.loads(information)) \
@@ -177,10 +175,12 @@ class Arbre:
                 arbre.texte = information
                 arbre.fils_gauche = ""
                 arbre = arbre.fils_gauche
-            position = parser.sauvegarder()
+            # Conservation de la dernière position pour pouvoir revenir en
+            # arrière, permettant d'accéder à l'autre choix et de recharger les
+            # choix disponibles
+            position = json.loads(parser.sauvegarder())
             information = parser.continuer()
         if contenu["type"] != "fin":
-            bifurcation = json.loads(position)
             # À l'arivée d'un choix
             arbre.arete_gauche = contenu["0"]["texte"]
             # Garde l'endroit de la bifurcation
@@ -189,14 +189,12 @@ class Arbre:
             parser.choisir(0)
             arbre.fils_gauche.construire(parser)
             if contenu.get("1") :
-                print("Choix")
-                print(contenu)
-                parser = Parser(bifurcation["fichier"], bifurcation["position"])
+                parser = Parser(position["fichier"], position["position"])
                 arbre.arete_droit = contenu["1"]["texte"]
-                arbre.fls_droit = ""
+                arbre.fils_droit = ""
+                parser.continuer() # Charge le choix
                 parser.choisir(1)
                 arbre.fils_droit.construire(parser)
-        print("Sortie")
 
     def afficher(self, route: str = "") -> None:
         u"""
