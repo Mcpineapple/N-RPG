@@ -28,7 +28,7 @@ class FinError(Exception):
     pass
 
 class Parser:
-    def __init__(self, script: str, position: int = None) -> None:
+    def __init__(self, script: str, position: int = None, aliases: dict = {}) -> None:
         u"""
         Initialisation d'un parser à utiliser pour lire le script et le
         transformer en appels au moteur de jeu.
@@ -41,6 +41,8 @@ class Parser:
             Paramètres :
                 script : str, le chemin vers le fichier de script VNMD qui est lu
                 position : int, la position dans le fichier lu (par défaut, 0)
+                aliases : dict, un dictionnaire d'aliases pré-enregistrés. Par
+                    défaut un dictionnaire vide.
         Postconditions :
             Création d'un objet parser, auquel est envoyé la méthode continuer,
             qui exécute la prochaine partie du script, la méthode sauvegarder
@@ -69,7 +71,7 @@ class Parser:
         La position retenue est le premier caractère des paramètres de la ligne,
         que le parser analysera alors et enverra alors.
         """
-        self._aliases = {} # Aliases à remplacer
+        self._aliases = aliases # Aliases à remplacer
         self._choix = [] # Options entre lesquelles choisir
 
     def _fin(func):
@@ -205,8 +207,11 @@ class Parser:
                     }
             return json.dumps(sortie)
 
-        elif caractere == "*":
-            self._table[self._identifiant()] = self._contenu()
+        elif caractere == "<":
+            identifiant = self._identifiant()
+            contenu = self._contenu()
+            if identifiant != "":
+                self._aliases[identifiant] = contenu
 
         elif caractere == "=":
             identifiant = self._identifiant()
@@ -234,7 +239,7 @@ class Parser:
             return json.dumps(sortie)
 
         else: # Dans le cas de texte normal
-            contenu = caractere + self._contenu(True)
+            contenu = self._contenu(caractere, True)
             sortie = {
                     "type": "texte",
                     "remplacer": 0,
@@ -293,7 +298,7 @@ class Parser:
         Préconditions :
             Existence d'un script ouvert sous forme d'un objet file
                 self._script_actuel
-            Le pointeursur le fichier devrait êtreau premier caractère à la
+            Le pointeur sur le fichier devrait êtreau premier caractère à la
                 suite d'un caractère qui précède un identifiant.
             Paramètres : Aucun
         Postconditions :
@@ -316,7 +321,7 @@ class Parser:
             caractere = self._lire()
         return self._remplacement(identifiant)
 
-    def _contenu(self, stop=False) -> str:
+    def _contenu(self, premier: str = "", stop: bool = False) -> str:
         u"""
         Lit le contenu jusqu'à la fin de la ligne, et le renvoie. Permet aussi
         évetuellement de prendre en compte les pauses dans le texte. Prend en
@@ -328,8 +333,10 @@ class Parser:
             Le positionnement doit être sur une ligne de contenu, après que les
                 autres informations aient été lues.
             Paramètres :
+                premier : str, le premier caractère, qui a pu être pris lors du
+                    premier caractere appelé. Par défaut, une chaine vide.
                 stop : bool, note s'il faut s'arêter en rencontrant un symbole
-                de pause. Par défaut, la valeur est "False".
+                    de pause. Par défaut, la valeur est "False".
         Postconditions :
             Positionnement du pointeur dans le fichier au début d'une nouvelle
             ligne.
@@ -337,7 +344,7 @@ class Parser:
                 contenu : str, texte lu jusqu'à la fin de la ligne.
         """
         # Trouver un moyen de bien s'occuper de la fin du fichier !
-        contenu = ""
+        contenu = premier
         while True:
             caractere = self._lire()
             if caractere == "\\": # Caractère d'échappement
@@ -422,6 +429,11 @@ class Parser:
                         if nom == identifiant : # Si il s'agit de ce que l'on
                             # cherchait
                             break # Fin de la fonction
+                    elif caractere == "<": # Scanne aussi les aliases
+                        identifiant = self._identifiant()
+                        contenu = self._contenu()
+                        if identifiant != "":
+                            self._aliases[identifiant] = contenu
 
     def _passage_fichier(self, fichier: str) -> None:
         u"""
@@ -458,8 +470,8 @@ class Parser:
                 sortie.append("")
                 actuel += 1
             elif i == "}" and actuel != 0:
-                remplacement = self._table.get(sortie[actuel])
-                if remplacement:
+                remplacement = self._aliases.get(sortie[actuel])
+                if remplacement != "":
                     sortie[actuel-1] += remplacement
                 else:
                     sortie[actuel-1] += sortie[actuel]

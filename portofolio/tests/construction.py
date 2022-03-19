@@ -34,7 +34,9 @@ Ce test a permis de régler les bugs suivants :
     - Mauvaise gestion de l'indexage dans la table
     - Récursion infinie et mauvais gestion de l'affichage en ligne droite dans
       l'affichage de l'arbre
+    - Mavaise gestion des aliases, qui n'étaient pas passés
 Une fois que ce test s'est montré fonctionnel, il a permis de trouver les
 problèmes suivants :
-    -
+    - Problème d'enregistrement des aliases
+    - Prise des aliases lors d'une recherche d'identifiant
 """

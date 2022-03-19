@@ -181,6 +181,7 @@ class Arbre:
             position = json.loads(parser.sauvegarder())
             information = parser.continuer()
         if contenu["type"] != "fin":
+            aliases = parser._aliases
             # À l'arivée d'un choix
             arbre.arete_gauche = contenu["0"]["texte"]
             # Garde l'endroit de la bifurcation
@@ -192,7 +193,8 @@ class Arbre:
             except :
                 pass
             if contenu.get("1") :
-                parser = Parser(position["fichier"], position["position"])
+                parser = Parser(position["fichier"], position["position"], \
+                        aliases)
                 arbre.arete_droit = contenu["1"]["texte"]
                 arbre.fils_droit = ""
                 try : # Idem
