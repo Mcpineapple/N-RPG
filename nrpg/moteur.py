@@ -1,7 +1,8 @@
-from time import sleep
-from tkinter import * 
+from tkinter import *
+import os.path
+from nrpg.arbre import *
+from nrpg.parser import *
 from PIL import Image, ImageTk
-import pathlib
 from playsound import playsound
 from pydub import AudioSegment
 from pydub.playback import play
@@ -112,16 +113,26 @@ class MoteurGUI(Label):
         - La gestion des sauvegardes
         - Adaptation selon la taille
     """
-    def __init__(self, master) -> None:
+
+    def __init__(self, text_intro) -> None :
         u"""
-        Crée un objet MoteurGUI, et initialise une interface utilisateur de
-        base, extensible et personnalisable. Un menu permettant d'autres actions
-        peut être passé.
+        Créer le moteur en récupérant l'arbre.
+        Préconditions :
+            Aucunes
+        """
+        self.text_intro = text_intro
+
+
+    def lancer_interface(self, master, image_init : str, musique_init : str) -> None:
+        u"""
+        Initialise l'interface utilisateur.
         Préconditions :
             Le module standard python Tkinter doit être disponible
             Une fenêtre graphique doit pouvoir s'afficher via Tkinter
             Paramètres :
-                master : recoit l'objet Tk() 
+                master : recoit l'objet Tk()
+                image_init : str, recoit l'emplacement de la première image affichée
+                musique_init : str, recoit l'emplacement de la musique jouée
         Postconditions :
             Création d'une fenêtre de jeu active, éventuellement en affichant un
             menu de jeu. Cette fenêtre possède des options classiques
@@ -131,20 +142,22 @@ class MoteurGUI(Label):
 
         Label.__init__(self, master)
 
+        self.fenetre = master
+
         # Paramètres de la fenêtre master (root), l'objet Tk
-        largeur,hauteur = 800, 800 
+        largeur,hauteur = 800, 800
         master.minsize(width=largeur, height=hauteur)
         master.maxsize(width=largeur, height=hauteur)
         master.title("N-RPG")
 
         # Musique du menu
-        self.jouer_musique("media/sfx/Duckpoxode_Syrup.mp3")
+        self.jouer_musique(musique_init)
 
         # Image menu.
         # L'image originale est récupérée et traité puis afficher dans le label
-        image = Image.open("media/images/lagiacrus.jpg")
+        image = Image.open(image_init)
         image = image.resize((800, 350), Image.ANTIALIAS)
-        self.image = ImageTk.PhotoImage(image) 
+        self.image = ImageTk.PhotoImage(image)
 
         self.config(image = self.image)
 
@@ -158,8 +171,8 @@ class MoteurGUI(Label):
         # Valeur initiales des StringVar
         self.texte_bouton_gauche.set("Quitter")
         self.texte_bouton_droit.set("Commencer")
-        self.texte_afficher.set(u"Vous pensez que ce Lagiacrus est impressionant ?\n Attendez de voir le Deviljho.")
- 
+        self.texte_afficher.set(self.text_intro)
+
         self.affichage_texte = Label(master, font=("Firacode",15), textvariable = self.texte_afficher, anchor=N, height=15)
         self.affichage_texte.pack(side=TOP)
 
@@ -197,7 +210,8 @@ class MoteurGUI(Label):
             self.musique contient la musique qui joue.
         """
         try :
-            musique = AudioSegment.from_mp3(pathlib.Path(emplacement))
+            musique = AudioSegment.from_mp3(emplacement)
+            musique = musique * 5
             self.musique = _play_with_simpleaudio(musique)
         except :
             print(f"Erreur dans le lancement de la musique {emplacement}.")
@@ -230,11 +244,11 @@ class MoteurGUI(Label):
         except :
             print("Erreur lors de l'ouverture de l'image {emplacement}.")
 
-        image = image.resize((600,600), Image.ANTIALIAS)
-       
+        image = image.resize((800,350), Image.ANTIALIAS)
+
         self.image2 = ImageTk.PhotoImage(image)
-        self.label.configure(image=self.image2)
-        self.label.image=self.image2
+        self.configure(image=self.image2)
+        self.image=self.image2
 
     def changer_texte(self, text : str) -> None:
         u"""
@@ -276,13 +290,13 @@ class MoteurGUI(Label):
         Postcontions :
             self.texte_bouton_droit texte recoit la valeur entrée.
             La valeur entrée s'affiche sur le bouton droit.
-        """       
+        """
         try :
             self.texte_bouton_droit.set(text)
         except:
             print("Erreur lors du changement du texte du bouton de droite.")
-        
-    def fonc_bouton_gauche(self):
+
+    def fonc_bouton_gauche(self) -> None:
         u"""
         Fonctions exécutées lorsque on appuie sur le bouton gauche.
         Préconditions :
@@ -290,12 +304,15 @@ class MoteurGUI(Label):
         Postconditions :
             La commande associée au bouton gauche est executée.
         """
-        global root
         self.jouer_bruitage("media/sfx/button-3.wav")
         if self.commande_bouton_gauche == "delete":
-            root.destroy()
-        elif self.commande_bouton_gauche == "previous":
-            pass
+            self.fenetre.destroy()
+        elif self.commande_bouton_gauche == "gauche":
+            self.arbre = self.arbre.fils_gauche()
+            self.changer_texte(self.arbre.texte)
+            self.changer_texte_bouton_gauche(self.arbre.arete_gauche())
+            self.changer_texte_bouton_droit(self.arbre.arete_droit())
+
 
     def fonc_bouton_droit(self):
         u"""
@@ -306,21 +323,25 @@ class MoteurGUI(Label):
             La commande associée au bouton gauche est executée.       """
         self.jouer_bruitage("media/sfx/button-3.wav")
         if self.commande_bouton_droit ==  "start":
-            self.commande_bouton_gauche = "previous"
-            self.commande_bouton_droit = "next"
-            self.changer_texte_bouton_gauche(u"Précédent.")
-            self.changer_texte_bouton_droit(u"Prochain.")
-        elif self.commande_bouton_droit == "next":
-            pass
+            self.commande_bouton_gauche = "gauche"
+            self.commande_bouton_droit = "droite"
 
-    def __del__(self) -> None:
-        u"""
-        Détruit un objet MoteurGUI en effectuant les maintenances nécessaires et
-        en nettoyant les fenêtres grahiques affichées à l'écran.
-        """
-        pass
+            position_script = os.path.join(os.path.dirname(__file__), 'media', 'script', 'depart.md')
+
+            self.arbre = Arbre("JOLIE PETITE HISTOIRE")
+
+            self.arbre.construire(None, {"fichier": position_script, "position": 0})
+
+            self.changer_texte(self.arbre.texte)
+            self.changer_texte_bouton_gauche(self.arbre.arete_gauche())
+            self.changer_texte_bouton_droit(self.arbre.arete_droit())
+
+        elif self.commande_bouton_droit == "droite":
+
+            self.arbre = self.arbre.fils_droit()
+            self.changer_texte(self.arbre.texte)
+            self.changer_texte_bouton_gauche(self.arbre.arete_gauche())
+            self.changer_texte_bouton_droit(self.arbre.arete_droit())
 
 
-root = Tk()
-test = MoteurGUI(master=root)
-test.mainloop()
+
