@@ -47,7 +47,7 @@ Remember to put on protection
 / place.
 / Celui-ci n'est pas identifié, mais sera juste lu à la suite du dernier,
 / puisque rien n'est spécifié.
-Ley down your pieces
+Lay down your pieces
 And let's begin object creation
 - Fill in my data
 / Voici un choix ! Il commence par un -. Cliquer l'un d'eux permet d'accéder à
@@ -80,6 +80,9 @@ $Mais_si_on_se_répète...
 ## Le début n'est pas trop ennuyeux
 / Plus il y a de #, plus il s'agit d'une petite subdivision
 / On peut donner des identificateurs et des paramètres à une division
+
+##ou-pas Bref
+/ Un titre peut aussi recevoir un paramètre selon l'implémentation
 
 $ char=parleur bg=plage_d'hiver
 / On peut ne pas identifier un bloc et y attacher des paramètres.
@@ -142,6 +145,11 @@ Fin de ce document
 - Ne faut-il pas rajouter des choses ?
 =Vers_des_améliorations_encore_inconnues_...
 
+/ Il est néanmoins possible de mettre une vraie fin :
+| Je ne sais pas comment vous en êtres arrivé là
+/ La fin s'affiche alors, et le jeu s'arrête.
+|ah-bon Aucune de ces fins ne sera lue ...
+/ On peut attacher un paramètre aux fins pour des ajouts sylistiques
 
 / Cette syntaxe est encore sujette à amélioration, changements et extension.
 / Nous espérons avoir atteint nos buts avec cette spécification pour écrire
