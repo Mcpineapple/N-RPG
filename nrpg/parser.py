@@ -23,6 +23,10 @@ fonctions.
 
 import json, sys
 
+# Erreur en fin de fichier
+class FinError(Exception):
+    pass
+
 class Parser:
     def __init__(self, script: str, position: int = None) -> None:
         u"""
@@ -68,6 +72,36 @@ class Parser:
         self._aliases = {} # Aliases à remplacer
         self._choix = [] # Options entre lesquelles choisir
 
+    def _fin(func):
+        """
+        Décorateur permettant de prendre en charge l'erreur en arrivant en fin de
+        fichier.
+        Préconditions :
+            Décorer une fonction qui fait appel à self._lire(), directemet ou
+                indirectement, et renvoie une valeur vers l'extérieur.
+            Paramètres :
+                func : func, la fonction décorée
+        Postconditions :
+            Si tout s'est bien passé, ne modifie pas la sortie de la fonction
+                précédente. Si une erreur de fin de fichier est levée, renvoie
+                une fin vide.
+        Sortie :
+            sortie : str, soit la sortie de la fonction, soit une fin vide
+        """
+        def inner(self):
+            try :
+                sortie = func(self)
+            except(FinError): 
+                sortie = json.dumps({
+                'type': 'fin',
+                'parametres': '',
+                'texte': ''
+                })
+            finally:
+                return sortie
+        return inner
+
+    @_fin
     def continuer(self) -> None:
         u"""
         Lit la ligne suivante et analyse le texte.
@@ -225,6 +259,7 @@ class Parser:
         if destination != "": # Par defaut, laisse au paragraphe suivant
             self._rechercher(destination)
 
+    @_fin
     def sauvegarder(self) -> None:
         u"""
         Donne la position actuelle du parser afin de pouvoir réutiliser cette
@@ -327,13 +362,13 @@ class Parser:
             Paramètres : Aucun
         Postconditions:
             Avancement d'une position du pointeur dans le fichier
-            Appel à _fin si la fin du fichier est atteinte.
+            Renvoie une erreur de fin de fichier si on ne lit plus rien
             Sortie :
                 _ : str, le caractere lu.
         """
         caractere = self._script_actuel.read(1)
         if caractere == "":
-            self._fin()
+            raise FinError
         return caractere
 
     def _rechercher(self, identifiant: str) -> None:
@@ -425,11 +460,3 @@ class Parser:
             else:
                 sortie[actuel] += i
         return sortie[0]
-
-    def _fin(self) -> None:
-        # Action lorsque la fin du fichier est trouvée
-        sys.exit(json.dumps({
-            "type": "fin",
-            "parametres": "",
-            "texte": ""
-            }))
