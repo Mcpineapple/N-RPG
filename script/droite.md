@@ -1,6 +1,6 @@
 $couloir1 char= bg=couloirtournantgauche music=suspense
 Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.
-- tourner
+- Tourner
 =
 
 $couloir2 bg=couloirporte
