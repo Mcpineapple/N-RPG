@@ -203,7 +203,7 @@ class Arbre:
                 except :
                     pass
         else :
-            arbre.texte = contenu
+            arbre.texte = information
 
     def afficher(self, route: str = "", suivant: bool = False) -> None:
         u"""
