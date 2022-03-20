@@ -37,6 +37,7 @@ Tristan|Code (nettoyage)|19/03|1h30|Arbre et GUI nettoyés et merge + Tests de l
 François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes de l'arbre
 François|Media (fonds)|20/03|2h|Recherche d'images libres de droit
 François|Compte-rendu|20/03|0h05|Ajout des appels json à la spécification de l'API
+François|Media (fonds, musiques)|20/03|0h30|Ajout du crédit et des images et musique
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
@@ -47,6 +48,7 @@ Codage (console)|25/02|Facile|Création d'un moteur primitif CLI
 Codage (structure)|09/03|Facile|Création de l'arbre binaire
 Script|12/03|Moyen (avec étude)|Choix du synopsis de l'histoire
 Codage (parser et arbre)|20/03|Difficile (Difficultés sur le modèle technique)|Création et finition du parser et de l'arbre
+Media|20/03|Difficile (licences à contrôler)|Ajout d'images et de musiques libres de droit
 
 ## Récapitulatif du travail
 Type|Temps|Difficulté
