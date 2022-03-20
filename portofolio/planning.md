@@ -14,6 +14,7 @@ François|Design|16/02|2h|Spécification du VN Markdown pour les scripts
 François|Codage (console)|23/02|2h|Premier prototype de moteur CLI
 François|Organisation|24/02|2h|Mise en place des modules
 François|Codage (console)|25/02|h30|Debugging du moteur CLI
+François|Code (graphique)|27/02|2h|Ébauche du moteur de jeu graphique
 François|Organisation|28/02|1h|Spécification de l'API du parser
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
 François|Codage (parser)|9/03|1h|Fin du parser
@@ -32,6 +33,7 @@ François|Codage (Modules)|16/03|1h|Debugging de l'arbre et de ses méthodes
 Pierre|écriture|17/03|3h|écriture du script
 François|Codage (parser)|18/03|0h40|Ajout des liens
 François|Codage (parser)|18/03|2h|Debugging des liens, de la construction de l'arbre et du parser
+Tristan|Code (nettoyage)|19/03|1h30|Arbre et GUI nettoyés et merge + Tests de l'interface
 François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes de l'arbre
 
 ## Étapes de développement

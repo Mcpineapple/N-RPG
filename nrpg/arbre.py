@@ -138,10 +138,8 @@ class Arbre:
             Le texte de l'arête droite devient le texte entré.
             Sortie : Aucune
         """
-
         assert isinstance(texte, str), u"L'arête doit \
             contenir une chaîne de caractères"
-
         self._arete_droit = texte
 
     def construire(self, parser: Parser = None, position: dict = None) -> None:
@@ -165,6 +163,7 @@ class Arbre:
             l'histoire, les choix et les différentes routes.
             Sortie : Aucune
         """
+
         if parser is None : # Création de parser au début
             parser = Parser(position["fichier"], position["position"])
         arbre = self # Suivi de la racine de cet arbre
