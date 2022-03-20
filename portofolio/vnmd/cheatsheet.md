@@ -72,6 +72,8 @@ Lien vers un autre fichier | X | []
 Ces symboles ne peuvent s'utiliser qu'à la suite d'une ligne avec =. Si vous
 souhaitez séparer votre script entre plusieurs fichiers, vous pouvez mettre
 dedans le nom d'un autre ficher, et le script continuera vers ce dernier.
+On peut faire suivre ces crochets d'un identifiant normal, qui sera cherché dans
+le nouveau fichier.
 
 Remplace un alias par son contenu | X | {}
 Tout mot entre ces symboles sera interprété comme ce que le remplacement de

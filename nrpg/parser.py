@@ -21,10 +21,14 @@ fonctions.
 # d'actionner un nombre limité d'appels au moteur (une spécification du moteur
 # polyvalente et réduite)
 
-import json, sys
+import json, sys, os.path
+
+# Erreur en fin de fichier
+class FinError(Exception):
+    pass
 
 class Parser:
-    def __init__(self, script: str, position: int = None) -> None:
+    def __init__(self, script: str, position: int = None, aliases: dict = {}) -> None:
         u"""
         Initialisation d'un parser à utiliser pour lire le script et le
         transformer en appels au moteur de jeu.
@@ -37,12 +41,15 @@ class Parser:
             Paramètres :
                 script : str, le chemin vers le fichier de script VNMD qui est lu
                 position : int, la position dans le fichier lu (par défaut, 0)
+                aliases : dict, un dictionnaire d'aliases pré-enregistrés. Par
+                    défaut un dictionnaire vide.
         Postconditions :
-            Création d'un objet parser, auquel est envoyé la méthode suivant,
-            qui exécute la prochaine partie du script, la méthode sauvegarde
-            ou bien la méthode choix avec un paramètre dans le cas des choix.
+            Création d'un objet parser, auquel est envoyé la méthode continuer,
+            qui exécute la prochaine partie du script, la méthode sauvegarder
+            ou bien la méthode choisir avec un paramètre dans le cas des choix.
             Ces commandes entraînent un renvoi, défini sleon la spécification,
             reçu par le moteur.
+            Sortie : Aucune
         """
         self._script_nom = script # Enregistre le nom du script actuel
         self._script_actuel = open(script,"r") # Une amélioration peut
@@ -64,10 +71,45 @@ class Parser:
         La position retenue est le premier caractère des paramètres de la ligne,
         que le parser analysera alors et enverra alors.
         """
-        self._aliases = {} # Aliases à remplacer
+        self._aliases = aliases # Aliases à remplacer
         self._choix = [] # Options entre lesquelles choisir
+        self._trouve = False # Marqueur, permettant de lire une ligne comme des
+        # parametres plutôt que du texte après une recherche
 
-    def suivant(self) -> None:
+    def _fin(func):
+        u"""
+        Décorateur permettant de prendre en charge l'erreur en arrivant en fin de
+        fichier.
+        Préconditions :
+            Décorer une fonction qui fait appel à self._lire(), directemet ou
+                indirectement, et renvoie une valeur vers l'extérieur.
+            Paramètres :
+                func : func, la fonction décorée
+        Postconditions :
+            Si tout s'est bien passé, ne modifie pas la sortie de la fonction
+                précédente. Si une erreur de fin de fichier est levée, renvoie
+                une fin vide.
+        Sortie :
+            sortie : str, soit la sortie de la fonction, soit une fin vide
+        """
+        def inner(self):
+            try :
+                sortie = func(self)
+            except(FinError):
+                sortie = json.dumps({
+                'type': 'fin',
+                'parametres': '',
+                'texte': ''
+                })
+            except (Exception) as e:
+                # Dans le cas d'une autre erreur, la laisse passer normalement
+                raise
+            finally:
+                return sortie
+        return inner
+
+    @_fin
+    def continuer(self) -> None:
         u"""
         Lit la ligne suivante et analyse le texte.
         Fonction principale du parser, elle est appelée par le moteur de jeu
@@ -101,7 +143,8 @@ class Parser:
                     }
             return json.dumps(contenu)
 
-        elif caractere == "$":
+        elif self._trouve or caractere == "$" :
+            self._trouve = False
             identifiant = self._identifiant()
             sortie = {
                     "type": "parametres"
@@ -167,8 +210,11 @@ class Parser:
                     }
             return json.dumps(sortie)
 
-        elif caractere == "*":
-            self._table[self._identifiant()] = self._contenu()
+        elif caractere == "<":
+            identifiant = self._identifiant()
+            contenu = self._contenu()
+            if identifiant != "":
+                self._aliases[identifiant] = contenu
 
         elif caractere == "=":
             identifiant = self._identifiant()
@@ -196,7 +242,7 @@ class Parser:
             return json.dumps(sortie)
 
         else: # Dans le cas de texte normal
-            contenu = caractere + self._contenu(True)
+            contenu = self._contenu(caractere, True)
             sortie = {
                     "type": "texte",
                     "remplacer": 0,
@@ -204,7 +250,7 @@ class Parser:
                     }
             return json.dumps(sortie)
 
-    def choix(self, choix: int = None) -> None:
+    def choisir(self, choix: int = None) -> None:
         u"""
         Permet de selectionner l'un des choix disponibles. Les identifiants vers
         lequels les choix menent sont enregistres dans self._choix.
@@ -223,8 +269,10 @@ class Parser:
         destination = self._choix[choix]
         if destination != "": # Par defaut, laisse au paragraphe suivant
             self._rechercher(destination)
+        self._choix = []
 
-    def sauvegarde(self) -> None:
+    @_fin
+    def sauvegarder(self) -> None:
         u"""
         Donne la position actuelle du parser afin de pouvoir réutiliser cette
         position. Le processus de sauvegarde et de gestion des autres
@@ -253,7 +301,7 @@ class Parser:
         Préconditions :
             Existence d'un script ouvert sous forme d'un objet file
                 self._script_actuel
-            Le pointeursur le fichier devrait êtreau premier caractère à la
+            Le pointeur sur le fichier devrait êtreau premier caractère à la
                 suite d'un caractère qui précède un identifiant.
             Paramètres : Aucun
         Postconditions :
@@ -276,7 +324,7 @@ class Parser:
             caractere = self._lire()
         return self._remplacement(identifiant)
 
-    def _contenu(self, stop=False) -> str:
+    def _contenu(self, premier: str = "", stop: bool = False) -> str:
         u"""
         Lit le contenu jusqu'à la fin de la ligne, et le renvoie. Permet aussi
         évetuellement de prendre en compte les pauses dans le texte. Prend en
@@ -288,8 +336,10 @@ class Parser:
             Le positionnement doit être sur une ligne de contenu, après que les
                 autres informations aient été lues.
             Paramètres :
+                premier : str, le premier caractère, qui a pu être pris lors du
+                    premier caractere appelé. Par défaut, une chaine vide.
                 stop : bool, note s'il faut s'arêter en rencontrant un symbole
-                de pause. Par défaut, la valeur est "False".
+                    de pause. Par défaut, la valeur est "False".
         Postconditions :
             Positionnement du pointeur dans le fichier au début d'une nouvelle
             ligne.
@@ -297,7 +347,7 @@ class Parser:
                 contenu : str, texte lu jusqu'à la fin de la ligne.
         """
         # Trouver un moyen de bien s'occuper de la fin du fichier !
-        contenu = ""
+        contenu = premier
         while True:
             caractere = self._lire()
             if caractere == "\\": # Caractère d'échappement
@@ -305,6 +355,7 @@ class Parser:
                 # Ne passe pas par les autres vérifications
             elif caractere == "\n":
                 if self._lire() == " ":
+                    contenu += " " # Laisse un espace
                     continue # Si la ligne est étendue
                 else :
                     self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
@@ -325,13 +376,13 @@ class Parser:
             Paramètres : Aucun
         Postconditions:
             Avancement d'une position du pointeur dans le fichier
-            Appel à _fin si la fin du fichier est atteinte.
+            Renvoie une erreur de fin de fichier si on ne lit plus rien
             Sortie :
                 _ : str, le caractere lu.
         """
         caractere = self._script_actuel.read(1)
         if caractere == "":
-            self._fin()
+            raise FinError
         return caractere
 
     def _rechercher(self, identifiant: str) -> None:
@@ -350,26 +401,60 @@ class Parser:
             Indexage des identifiants rencontrés
             Sortie : Aucune
         """
-        position = self._table.get(identifiant) # None si la clé n'est pas
-        # présente
-        if position is not None:
-            self._script_actuel.seek(position)
-        else:
-            while True:
-                caractere = self._lire()
-                if caractere == "\n": # Si on revient à la ligne
+        # Passe sur l'identifiant pour y trouver un lien
+        if identifiant[0] == '[':
+            compteur = 1
+            lien = ""
+            while (lettre := identifiant[compteur]) != ']': # Passage dans les
+                                                            # crochets
+                lien += lettre
+                compteur += 1
+            self._passage_fichier(lien)
+            identifiant = identifiant[compteur+1:] # Recoupage de l'identifiant
+        if identifiant != "": # Dans le cas où on change de fichier sans aller
+            # vers un nouvel identifiant, mais juste le début du fichier
+            self._trouve = True
+            position = self._table.get(identifiant) # None si la clé n'est pas
+            # présente
+            if position is not None:
+                self._script_actuel.seek(position)
+            else:
+                while True:
                     caractere = self._lire()
+                    while caractere != "\n": # Recherche d'une fin de ligne
+                        caractere = self._lire()
+                    while caractere == "\n": # En cas de plusieurs retours à la ligne
+                        caractere = self._lire()
                     if caractere == "$": # Et que celle-ci commence par un $
                         nom = self._identifiant()
                         if nom != "": # N'enregistre pas dans le cas d'une ligne
                             # de paramètre anonyme
-                            self._table[nom : self._script_actuel.tell()]
+                            self._table[nom] = self._script_actuel.tell()
                         if nom == identifiant : # Si il s'agit de ce que l'on
                             # cherchait
                             break # Fin de la fonction
-                elif caractere == "": # Arrivée en fin de fichier : ne lit plus
-                    # aucun caractère
-                    self._fin()
+                    elif caractere == "<": # Scanne aussi les aliases
+                        identifiant = self._identifiant()
+                        contenu = self._contenu()
+                        if identifiant != "":
+                            self._aliases[identifiant] = contenu
+
+    def _passage_fichier(self, fichier: str) -> None:
+        u"""
+        Change le fichier dans lequel travaille actuellement le parser.
+        Préconditions :
+            Paramètres :
+                fichier : str, le nom du fichier vers lequel on passe
+        Postconditions:
+            Changement du fichier dans lequel le parser est placé et de son nom
+            Sortie : Aucune
+        """
+        dossier = os.path.dirname(self._script_nom)
+        # Enregistre le nom du script actuel en donnant sa route
+        self._script_nom = os.path.join(dossier, fichier)
+        self._script_actuel.close()
+        self._script_actuel = open(self._script_nom,"r")
+        self._table[self._script_nom] = {}
 
     def _remplacement(self,contenu: str) -> str:
         u"""
@@ -389,8 +474,8 @@ class Parser:
                 sortie.append("")
                 actuel += 1
             elif i == "}" and actuel != 0:
-                remplacement = self._table.get(sortie[actuel])
-                if remplacement:
+                remplacement = self._aliases.get(sortie[actuel])
+                if remplacement != "":
                     sortie[actuel-1] += remplacement
                 else:
                     sortie[actuel-1] += sortie[actuel]
@@ -399,11 +484,3 @@ class Parser:
             else:
                 sortie[actuel] += i
         return sortie[0]
-
-    def _fin(self) -> None:
-        # Action lorsque la fin du fichier est trouvée
-        sys.exit(json.dumps({
-            "type": "fin",
-            "parametres": "",
-            "texte": ""
-            }))

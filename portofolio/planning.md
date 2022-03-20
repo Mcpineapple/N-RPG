@@ -19,18 +19,22 @@ François|Organisation|28/02|1h|Spécification de l'API du parser
 François|Codage (parser)|1 au 7/03|6h|Codage du parser
 François|Codage (parser)|9/03|1h|Fin du parser
 Tristan|Codage (arbre)|03/03|1h|Création de l'arbre binaire
-François|Codage (parser)|1 au 7/03|6h|Codage du parser
 Tristan|Codage (arbre)|09/03|0h20|Amélioration de l'arbre
 Tristan|Codage (interface)|09/03|1h|Base de l'interface tkinter
+Pierre|écriture|11/03|1h|écriture du synopsis de l'histoire
 Tristan|Codage (interface)|12/03|0h40|Amélioration de l'interface graphique, passage de canvas à label
 Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interface graphique, ajout d'une méthode pour changer l'image afficher
 Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
-Tristan|Documentation et tests (interface et son)|16/03|0h45|Documenations/tests ajoutés dans la branche Son puis merge de Son dans GUI
+Tristan|Documentation et tests (interface et son)|16/03|0h45|Documentations/tests ajoutés dans la branche Son puis merge de Son dans GUI
 François|Design|16/03|0h30|Ajout d'un appel "fin" pour la fin d'un script, et d'une représentation en VNMD
+François|Codage (Modules)|16/03|1h|Debugging de l'arbre et de ses méthodes
+Pierre|écriture|17/03|3h|écriture du script
+François|Codage (parser)|18/03|0h40|Ajout des liens
+François|Codage (parser)|18/03|2h|Debugging des liens, de la construction de l'arbre et du parser
 Tristan|Code (nettoyage)|19/03|1h30|Arbre et GUI nettoyés et merge + Tests de l'interface
-
+François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes de l'arbre
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
@@ -38,6 +42,9 @@ Type|Date|Difficulté|Contenu
 Organisation|14/02|Facile|Ouverture du dépôt GitHub
 Organisation|24/02|Facile, avec recherche|Organisation du module
 Codage (console)|25/02|Facile|Création d'un moteur primitif CLI
+Codage (structure)|09/03|Facile|Création de l'arbre binaire
+Script|12/03|Moyen (avec étude)|Choix du synopsis de l'histoire
+Codage (parser et arbre)|20/03|Difficile (Difficultés sur le modèle technique)|Création et finition du parser et de l'arbre
 
 ## Récapitulatif du travail
 Type|Temps|Difficulté

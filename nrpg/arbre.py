@@ -127,7 +127,6 @@ class Arbre:
                 contenir une chaîne de caractères ou être vide."
             self._fils_droit = Arbre(texte)
 
-            
     @arete_droit.setter
     def arete_droit(self, texte : str) -> None :
         u"""
@@ -141,9 +140,7 @@ class Arbre:
         """
         assert isinstance(texte, str), u"L'arête doit \
             contenir une chaîne de caractères"
-
         self._arete_droit = texte
-
 
     def construire(self, parser: Parser = None, position: dict = None) -> None:
         u"""
@@ -166,7 +163,7 @@ class Arbre:
             l'histoire, les choix et les différentes routes.
             Sortie : Aucune
         """
-        
+
         if parser is None : # Création de parser au début
             parser = Parser(position["fichier"], position["position"])
         arbre = self # Suivi de la racine de cet arbre
@@ -183,6 +180,7 @@ class Arbre:
             position = json.loads(parser.sauvegarder())
             information = parser.continuer()
         if contenu["type"] != "fin":
+            aliases = parser._aliases
             # À l'arivée d'un choix
             arbre.arete_gauche = contenu["0"]["texte"]
             # Garde l'endroit de la bifurcation
@@ -194,7 +192,8 @@ class Arbre:
             except :
                 pass
             if contenu.get("1") :
-                parser = Parser(position["fichier"], position["position"])
+                parser = Parser(position["fichier"], position["position"], \
+                        aliases)
                 arbre.arete_droit = contenu["1"]["texte"]
                 arbre.fils_droit = ""
                 try : # Idem
@@ -226,7 +225,8 @@ class Arbre:
         """
         if not(suivant):
             print(f"-- {route} --")
-        print(self.texte)
+        if self.texte != "":
+            print(json.loads(self.texte))
         if self.fils_droit is not None:
             print() # Retour à la ligne pour la lisibilité
             print(f"({self.arete_gauche})")

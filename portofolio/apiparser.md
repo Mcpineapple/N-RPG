@@ -20,10 +20,15 @@ demandes d'avancer ou de faire un choix, et transmet via un paquet contenant la
 commande à effectuer et le contenu de celle-ci les informations qu'attend le
 moteur de jeu.
 
-
 ## Structure technique de la communication
 
+=== Cette description n'est valable que dans la version python pure, et sera
+modifiée par un nouveau fonctionnement par IPC ===
 
+La communication entre les deux processus se fait alors par des appels via
+l'importation du module Parser par le module Moteur, qui appelle sa fonction
+".continuer()", et reçoit ainsi l'information. L'information renvoyée par le
+parser est encodée en json, puis décodée pour être lue par le Moteur.
 
 ## Côté client
 
