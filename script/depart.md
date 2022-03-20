@@ -73,4 +73,4 @@ Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessen
  pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait
  pendant des années.
 
-|Couard
+| Couard

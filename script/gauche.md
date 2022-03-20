@@ -72,7 +72,7 @@ En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond,
  vous glissez sur la mousse environnant le puits.
  Vous mourrez après la meilleure expérience de chute libre de votre vie (et la plus courte).
 
-|-"Freefall" Freefall
+| Freefall
 
 <couloirréacteur2 Vous arrivez dans un couloir sombre avec une porte au bout.
 
@@ -192,7 +192,7 @@ $dévoré
 La créature va plus vite que vous et vous rattrape, vous sentez votre corps se faire
  dissoudre dans le plasma noir qui forme le corps de la créature.
 
-|Dévoré
+| Dévoré
 
 <fuite1 Vous commencez à courir alors que vous entendez la créature se lever et crier et commencer à vous poursuivre
 
@@ -291,7 +291,7 @@ $freefall2
 Vous menez la créature au puit du réacteur et l'entrainez dedans, 
  malheureusement vous tombez aussi, "Au moins j'ai sauvé la ville" est votre dernière pensée.
  Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
-|Freefall 2
+| Freefall 2
 
 <couloirréacteur2fuite Vous arrivez juste à temps à traverser la salle. Vous arrivez maintenant dans le couloir menant au laboratoire
 
@@ -373,7 +373,7 @@ Bert monte dans la voiture
 $fuite music=calm
 Vous et Bert vous enfuyez en prévenant le central, la créature arrête de vous 
  poursuivre. Le lendemain, des militaires sont sur la zone.
-|Fuite
+| Fuite
 
 $choixfuite
 Vous courez à toute vitesse
@@ -385,13 +385,13 @@ Vous courez à toute vitesse
 $amiabandonné music=sad
 Vous fuyez en voiture sans demander votre reste et voyez Bert se faire dévorer
  vivant par la créature. Le lendemain, des militaires sont sur la zone.
-|Ami Abandonné
+| Ami Abandonné
 
 $siproche
 Vous décidez de vous enfuir à travers la forêt, vous trébuchez sur une racine 
  et la créature vous rattrape. Vous sentez votre corps se faire dissoudre dans
  le plasma noir qui forme le corps de la créature.
-|Si Proche
+| Si Proche
 
 $proposition bg=hill music=calm
 Vous sortez du complexe, au moment où vous sortez, des militaires rentrent. 
@@ -418,10 +418,10 @@ Je vois, après tout, nous ne pouvons pas vous forcer.
 
 $ char= music=
 Bert se fait escorter vers un fourgon, McTharney sort un browning et fait feu.
-|Eliminé
+| Eliminé
 
 $Recruté char=McTharney
 Parfait, nous allons vous faire subir une formation intensive pendant les mois
  suivants. Vous partez tout de suite, désolé mais vous ne pourrez pas faire vos
  adieux.
-|Recruté
+| Recruté
