@@ -35,6 +35,8 @@ François|Codage (parser)|18/03|0h40|Ajout des liens
 François|Codage (parser)|18/03|2h|Debugging des liens, de la construction de l'arbre et du parser
 Tristan|Code (nettoyage)|19/03|1h30|Arbre et GUI nettoyés et merge + Tests de l'interface
 François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes de l'arbre
+François|Media (fonds)|20/03|2h|Recherche d'images libres de droit
+François|Compte-rendu|20/03|0h05|Ajout des appels json à la spécification de l'API
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
