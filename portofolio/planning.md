@@ -27,6 +27,7 @@ Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interfac
 Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
+
 Tristan|Documentation et tests (interface et son)|16/03|0h45|Documentations/tests ajoutés dans la branche Son puis merge de Son dans GUI
 François|Design|16/03|0h30|Ajout d'un appel "fin" pour la fin d'un script, et d'une représentation en VNMD
 François|Codage (Modules)|16/03|1h|Debugging de l'arbre et de ses méthodes
@@ -37,6 +38,7 @@ Tristan|Code (nettoyage)|19/03|1h30|Arbre et GUI nettoyés et merge + Tests de l
 François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes de l'arbre
 François|Media (fonds)|20/03|2h|Recherche d'images libres de droit
 François|Compte-rendu|20/03|0h05|Ajout des appels json à la spécification de l'API
+Pierre|écriture|20/03|4h|écriture du script
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
