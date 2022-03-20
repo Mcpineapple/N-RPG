@@ -344,6 +344,10 @@ class MoteurGUI(Label):
             self.arbre = self.arbre.fils_gauche
 
             self.appliquer_parser()
+
+        elif self.commande_bouton_droit == "delete" :
+            
+            self.fenetre.destroy()
     
     def appliquer_parser(self):
         u"""
@@ -405,7 +409,7 @@ class MoteurGUI(Label):
             self.changer_texte(contenu["contenu"])
             
             self.changer_texte_bouton_droit("Bye !")
-            self.commande_bouton_droit = None
+            self.commande_bouton_droit = "delete"
 
             self.changer_texte_bouton_gauche("Quitter")
             self.commande_bouton_gauche = "delete"
