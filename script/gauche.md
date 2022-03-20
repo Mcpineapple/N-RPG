@@ -60,8 +60,7 @@ $couloirréacteur1 bg=couloirporte
 =réacteur
 
 <réacteur Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits.
-$réacteur bg=réacteur music=birds
-/ Le birds est censé être des chants d'oiseaux au loin
+$réacteur bg=réacteur music=calm
 {réacteur}
 - Regarder au fond du réacteur
 =Freefall

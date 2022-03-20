@@ -92,22 +92,21 @@ $couloirréacteur1logs bg=couloirporte
 =réacteurlogs
 
 <réacteur Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits.
-$réacteur bg=réacteur music=birds
-/ Le birds est censé être des chants d'oiseaux au loin
+$réacteur bg=réacteur music=calm
 {réacteur}
 - Regarder au fond du réacteur
 =Freefall
 - Continuer
 =couloirréacteur2
 
-$réacteurlogs bg=réacteur music=birds
+$réacteurlogs bg=réacteur music=calm
 {réacteur}
 - Regarder au fond du réacteur
 =Freefall
 - Continuer
 =couloirréacteur2logs
 
-$Freefall bg=puits
+$Freefall bg=réacteur
 En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond,
  vous glissez sur la mousse environnant le puits.
  Vous mourrez après la meilleure expérience de chute libre de votre vie (et la plus courte).
