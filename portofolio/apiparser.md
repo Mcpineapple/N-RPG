@@ -106,3 +106,50 @@ choix | liste des choix et leurs paramètres | Permet d'afficher différents cho
 parametres | liste de parametres | Envoie diverses informations, nottament média ou personnages
 titre | paramètre, texte et taille du titre | Permet d'afficher un titre
 fin | paramètre et texte | Affiche une fin
+
+## Formatage en json
+### Côté serveur
+#### texte
+{
+	"type": "texte",
+	"remplacer": 1 s'il faut nettoyer l'écran, 0 sinon,
+	"contenu": le texte à afficher
+}
+
+#### choix
+{
+	"type": "choix",
+	numero du choix: {
+		"parametres": nom du parametre
+		"texte": texte du choix
+	}
+	...
+}
+Il y a autant d'objets "numero du choix" que de choix, et ils sont décomptés à
+partir de 0. C'est le nombre du choix sélectionné qui sera renvoyé au parser
+avec l'appel .choisir(numero).
+
+#### parametres
+{
+	"type": "parametre",
+	nom du parametre: valeur du parametre,
+	...
+}
+Les paramètres ont chacun le nom de ce qu'ils représentent, et ont pour valeur
+la valeur à appliquer à ce paramètre.
+
+#### titre
+{
+	"type": "titre",
+	"parametres": parametres éventuels,
+	"ordre": la taille du titre, dans le style markdown, 1 étant le plus gros et
+		de plus en plus petit plus le nombre est grand,
+	"contenu": texte du titre
+}
+
+#### fin
+{
+	"type": "fin",
+	"parametres": parametre attaché éventuel,
+	"contenu": texte de la fin
+}
