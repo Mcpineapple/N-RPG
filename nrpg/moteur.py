@@ -242,14 +242,15 @@ class MoteurGUI(Label):
         """
         try :
             image = Image.open(emplacement)
+            image = image.resize((800,350), Image.ANTIALIAS)
+
+            self.image2 = ImageTk.PhotoImage(image)
+            self.configure(image=self.image2)
+            self.image=self.image2
+
         except :
-            print("Erreur lors de l'ouverture de l'image {emplacement}.")
+            print(f"Erreur lors de l'ouverture de l'image {emplacement}.")
 
-        image = image.resize((800,350), Image.ANTIALIAS)
-
-        self.image2 = ImageTk.PhotoImage(image)
-        self.configure(image=self.image2)
-        self.image=self.image2
 
     def changer_texte(self, text : str) -> None:
         u"""
@@ -330,7 +331,6 @@ class MoteurGUI(Label):
 
             self.arbre.construire(None, {"fichier": position_script, "position": 0})
 
-            self.arbre.afficher()
             self.appliquer_parser()
 
         elif self.commande_bouton_droit == "droite":
@@ -349,6 +349,7 @@ class MoteurGUI(Label):
             
             self.fenetre.destroy()
     
+
     def appliquer_parser(self):
         u"""
         """
@@ -360,7 +361,7 @@ class MoteurGUI(Label):
             self.commande_bouton_gauche = "delete"
             self.changer_texte_bouton_gauche("Quitter")
 
-            return
+            pass
 
         elif self.arbre.arete_gauche != u"" and self.arbre.arete_droit != u"":
 
@@ -370,7 +371,7 @@ class MoteurGUI(Label):
             self.changer_texte_bouton_droit(self.arbre.arete_droit)
             self.commande_bouton_droit = "droite"
 
-            return
+            pass
 
         contenu = json.loads(self.arbre.texte)
         
@@ -389,7 +390,20 @@ class MoteurGUI(Label):
         elif contenu["type"] == "parametres" :
 
             #
+            if contenu.get("music"):
 
+                if contenu["music"] == "":
+                    self.arreter_musique()
+                else :
+                    self.jouer_musique(os.path.join(os.path.dirname(__file__), '..', 'media', 'music',contenu["music"] + ".mp3"))
+
+            if contenu.get("bg"):
+
+                self.changer_image(os.path.join(os.path.dirname(__file__), '..', 'media', 'images', contenu["bg"] + ".jpg"))
+
+            if contenu.get("char"):
+                
+                self.changer_texte(self.texte_afficher.get() + "\n" + contenu["char"] + " :")
 
             #
 
@@ -406,9 +420,12 @@ class MoteurGUI(Label):
 
         elif contenu["type"] == "fin" :
 
-            self.changer_texte(contenu["contenu"])
+            try:
+                self.changer_texte(contenu["contenu"])
+            except:
+                print("Fin")
             
-            self.changer_texte_bouton_droit("Bye !")
+            self.changer_texte_bouton_droit("Fin")
             self.commande_bouton_droit = "delete"
 
             self.changer_texte_bouton_gauche("Quitter")
