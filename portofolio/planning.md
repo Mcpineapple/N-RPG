@@ -40,6 +40,7 @@ François|Compte-rendu|20/03|0h05|Ajout des appels json à la spécification de 
 Pierre|écriture|20/03|4h|écriture du script
 Pierre|Media(fonds,musique)|20/03|0h30|Recherche de medias, images et musiques
 François|Media (fonds, musiques)|20/03|0h30|Ajout du crédit et des images et musique
+Tristan|Moteur|20/03|4h|Raccordage du moteur et de l'interface avec le parser et l'arbre
 
 
 ## Étapes de développement
