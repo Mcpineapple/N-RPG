@@ -1,6 +1,6 @@
 $couloir1 char= bg=couloirtournantgauche music=suspense
 Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.
-- tourner
+- Tourner
 =
 
 $couloir2 bg=couloirporte
@@ -24,7 +24,6 @@ Vous lisez l'entrée située en dessous du tube, Il est écrit:
 "Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188
  forme non constante, aucun organe repéré. Composée d'une "espèce de plasma noir"
  selon le docteur Jeff O'Hale, responsable de la créature #3188 et affiliés"
-
 - Arrêter de lire
 =lab2
 - Lire le suivant
@@ -36,10 +35,8 @@ Vous lisez l'entrée située en dessous du tube, Il est écrit:
  particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de
  nourriture qui a été posé au dessus d'elle. Cette expérience montre la flexibilité
  des créatures #3188."
-
 - Arrêter de lire
 =lab2
-
 - Lire le suivant
 =
 
@@ -50,10 +47,8 @@ Vous lisez l'entrée située en dessous du tube, Il est écrit:
  capacités conservatrices. Fait surprenant, les créatures #3188bis semblent
  entrer dans une forme d'hibernation, montrant un organisme complexe, bien
  que difficile à examiner"
-
 - Arrêter de lire
 =lab2
-
 - Lire le suivant
 =
 
@@ -65,7 +60,6 @@ Vous lisez l'entrée située en dessous du tube, Il est écrit:
  tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs,
  le plasma noir qui compose la créature est très inflammable et réagit
  violemment avec le feu."
-
 - Arrêter de lire
 =lab2logs
 
@@ -152,32 +146,26 @@ $caserne1logs
 
 $corps
 {corps}
-
 - prendre le paquet
 =explosifs
-
 - ne pas continuer
 =caserne2
 
 $corpslogs
 {corps}
-
 - prendre le paquet
 =explosifslogs
-
 - ne pas continuer
 =caserne2
 
 <explosifs vous récupérez le paquet, il contient des explosifs.
 $explosifs
 {explosifs} Cependant, vous ne savez pas comment ils pourraient vous être utiles
-
 - continuer
 =caserne2
 
 $explosifslogs
 {explosifs} Vous apercevez un insigne étrange sur l'uniforme du militaire.
-
 - examiner l'insigne
 =insigne
 
@@ -186,7 +174,6 @@ $explosifslogs
 
 $insigne bg=insigne
 {insigne}
-
 - continuer
 =caserne2logs
 
@@ -194,19 +181,16 @@ $insigne bg=insigne
 
 $caserne2 bg=caserne
 {caserne2}
-
 - prendre la porte droit devant
 =derniercouloirgauche
 
 $caserne2logs bg=caserne
 {caserne2}
-
 - prendre la porte droit devant
 =derniercouloirgauchelogs
 
 $derniercouloirdroit bg=couloirtournantgauche
 Vous arrivez dans un couloir avec un tournant à gauche au bout.
-
 - prendre le tournant
 =sas
 
@@ -214,13 +198,11 @@ Vous arrivez dans un couloir avec un tournant à gauche au bout.
 
 $derniercouloirgauche bg=couloirtournantdroit
 {derniercouloirgauche}
-
 - prendre le tournant
 =sas
 
 $derniercouloirgauchelogs bg=couloirtournantdroit
 {derniercouloirgauche}
-
 - prendre le tournant
 =saslogs
 
@@ -228,19 +210,15 @@ $derniercouloirgauchelogs bg=couloirtournantdroit
 
 $sas bg=sas
 {sas}
-
 - appuyer sur le bouton
 =ouverture
-
 - se faufiler
 =cellule
 
 $saslogs bg=sas
 {sas}
-
 - appuyer sur le bouton
 =ouverturelogs
-
 - se faufiler
 =cellulelogs
 
@@ -248,13 +226,11 @@ $saslogs bg=sas
 
 $ouverture
 {ouverture}
-
 - entrer
 =cellulebout
 
 $ouverturelogs
 {ouverture}
-
 - entrer
 =cellulelogsbout
 
@@ -262,37 +238,29 @@ $ouverturelogs
 
 $cellule bg=cellule char= music=
 {cellule}
-
 - l'observer
 =créature
-
 - s'enfuir
 =fuite1
 
 $cellulelogs bg=cellule char= music=
 {cellule}
-
 - l'observer
 =créature
-
 - s'enfuir
 =fuite1logs
 
 $cellulebout bg=cellule char= music=
 {cellule}
-
 - l'observer
 =créature
-
 - s'enfuir
 =fuite1bout
 
 $cellulelogsbout bg=cellule char= music=
 {cellule}
-
 - l'observer
 =créature
-
 - s'enfuir
 =fuite1logsbout
 
@@ -310,19 +278,15 @@ La créature va plus vite que vous et vous rattrape, vous sentez votre corps se 
 
 $fuite1 bg=entrée music=fuite
 {fuite1}
-
 - aller à droite
 =fuite2droite
-
 - aller à gauche
 =fuite2gauche
 
 $fuite1logs bg=entrée music=fuite
 {fuite1}
-
 - aller à droite
 =fuite2droitelogs
-
 - aller à gauche
 =fuite2gauchelogs
 
@@ -334,10 +298,8 @@ $fuite1bout bg=entrée music=fuite
 
 $fuite1logsbout bg=entrée music=fuite
 {fuite1}
-
 - aller à droite
 =fuite2droitelogsbout
-
 - aller à gauche
 =fuite2gauchelogsbout
 
@@ -345,25 +307,19 @@ $fuite1logsbout bg=entrée music=fuite
 
 $fuite2droite bg=couloirtournantgauche
 {fuite2}
-
 - prendre le tournant
 =fuite3droite
-
 $fuite2droitelogs bg=couloirtournantgauche
 {fuite2}
-
 - prendre le tournant
 =fuite3droitelogs
 
 $fuite2droitebout bg=couloirtournantgauche
 {fuite2}
-
 - prendre le tournant
 =fuite3droitebout
-
 $fuite2droitelogsbout bg=couloirtournantgauche
 {fuite2}
-
 - prendre le tournant
 =fuite3droitelogsbout
 
@@ -371,25 +327,21 @@ $fuite2droitelogsbout bg=couloirtournantgauche
 
 $fuite3droite bg=couloirporte
 {fuite3}
-
 - pousser la porte
 =casernefuite1
 
 $fuite3droitelogs bg=couloirporte
 {fuite3}
-
 - pousser la porte
 =casernefuite1logs
 
 $fuite3droitebout bg=couloirporte
 {fuite3}
-
 - pousser la porte
 =casernefuite1bout
 
 $fuite3droitelogsbout bg=couloirporte
 {fuite3}
-
 - pousser la porte
 =casernefuite1logsbout
 
@@ -398,33 +350,27 @@ $fuite3droitelogsbout bg=couloirporte
 
 $caserne1fuite bg=caserne1
 {caserne1fuite}
-
 - continuer
 =caserne2
 
 $caserne1fuitebout bg=caserne1
 {caserne1fuite}
-
 - continuer
 =caserne2bout
 
 $caserne1fuitelogs bg=caserne1
 {caserne1fuite}
 >{opportunité}
-
 - continuer
 =caserne2fuitelogs
-
 - lancer les explosifs
 =mort
 
 $caserne1fuitelogsbout bg=caserne1
 {caserne1fuite}
 >{opportunité}
-
 - continuer
 =caserne2fuitelogsbout
-
 - lancer les explosifs
 =mortbout
 
@@ -432,38 +378,36 @@ $caserne1fuitelogsbout bg=caserne1
 
 $caserne2fuite
 {caserne2fuite}
-
 - prendre la porte droit devant
 =dévoré
 
 - prendre la porte de gauche
+
 =couloirréacteurfuite1
 
 $caserne2fuitelogs
 {caserne2fuite}
-
 - prendre la porte droit devant
 =dévoré
-
 -prendre la porte de gauche
 =couloirréacteurfuite1logs
 
 $caserne2fuitebout
 {caserne2fuite}
-
 - prendre la porte droit devant
 =dévoré
 
 - prendre la porte de gauche
+
 =couloirréacteurfuite1bout
 
 $caserne2fuitelogsbout
 {caserne2fuite}
-
 - prendre la porte droit devant
 =dévoré
 
 - prendre la porte de gauche
+
 =couloirréacteurfuite1logsbout
 
 <couloirréacteurfuite1 Vous courez en direction du réacteur
