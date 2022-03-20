@@ -278,17 +278,13 @@ La créature va plus vite que vous et vous rattrape, vous sentez votre corps se 
 
 $fuite1 bg=entrée music=fuite
 {fuite1}
-- aller à droite
+- revenir sur vos pas
 =fuite2droite
-- aller à gauche
-=fuite2gauche
 
 $fuite1logs bg=entrée music=fuite
 {fuite1}
-- aller à droite
+- revenir sur vos pas
 =fuite2droitelogs
-- aller à gauche
-=fuite2gauchelogs
 
 $fuite1bout bg=entrée music=fuite
 {fuite1}
@@ -298,10 +294,9 @@ $fuite1bout bg=entrée music=fuite
 
 $fuite1logsbout bg=entrée music=fuite
 {fuite1}
-- aller à droite
+- revenir sur vos pas
 =fuite2droitelogsbout
-- aller à gauche
-=fuite2gauchelogsbout
+
 
 <fuite2 vous courez alors que la créature se lance à vos trousses
 
@@ -380,9 +375,7 @@ $caserne2fuite
 {caserne2fuite}
 - prendre la porte droit devant
 =dévoré
-
 - prendre la porte de gauche
-
 =couloirréacteurfuite1
 
 $caserne2fuitelogs
@@ -396,43 +389,35 @@ $caserne2fuitebout
 {caserne2fuite}
 - prendre la porte droit devant
 =dévoré
-
 - prendre la porte de gauche
-
 =couloirréacteurfuite1bout
 
 $caserne2fuitelogsbout
 {caserne2fuite}
 - prendre la porte droit devant
 =dévoré
-
 - prendre la porte de gauche
-
 =couloirréacteurfuite1logsbout
 
 <couloirréacteurfuite1 Vous courez en direction du réacteur
 
 $couloirréacteurfuite1 bg=couloirporte
 {couloirréacteurfuite1}
-
 - pousser la porte
 =réacteurfuite
 
 $couloirréacteurfuite1logs bg=couloirporte
 {couloirréacteurfuite1}
-
 - pousser la porte
 =réacteurfuitelogs
 
 $couloirréacteurfuite1bout bg=couloirporte
 {couloirréacteurfuite1}
-
 - pousser la porte
 =réacteurfuitebout
 
-$couloirréacteurfuite1logsbout1 bg=couloirporte
-{couloirréacteurfuite1}
-
+$couloirréacteurfuite1logsbout bg=couloirporte
+{couloirréacteurfuite1} 
 - pousser la portelogsbout
 =réacteurfuitelogsbout
 
@@ -440,37 +425,29 @@ $couloirréacteurfuite1logsbout1 bg=couloirporte
 
 $réacteurfuite bg=réacteur
 {réacteurfuite}
-
 - faire le tour
 =couloirréacteur2fuite
-
 - tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitelogs bg=réacteur
 {réacteurfuite}
-
 - faire le tour
 =couloirréacteur2fuitelogs
-
 - tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitebout bg=réacteur
 {réacteurfuite}
-
 - faire le tour
 =couloirréacteur2fuitebout
-
 - tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitelogsbout bg=réacteur
 {réacteurfuite}
-
 - faire le tour
 =couloirréacteur2fuitelogsbout
-
 - tenter de sauter au dessus du puits
 =freefall2
 
@@ -484,25 +461,21 @@ Vous menez la créature au puit du réacteur et l'entrainez dedans,
 
 $couloirréacteur2fuite bg=couloirporte
 {couloirréacteur2fuite}
-
 - pousser la porte
 =lab1fuite
 
 $couloirréacteur2fuitelogs bg=couloirporte
 {couloirréacteur2fuite}
-
 - pousser la porte
 =lab1fuitelogs
 
 $couloirréacteur2fuitebout bg=couloirporte
 {couloirréacteur2fuite}
-
 - pousser la porte
 =lab1fuitebout
 
 $couloirréacteur2fuitelogsbout bg=couloirporte
 {couloirréacteur2fuite}
-
 - pousser la porte
 =lab1fuitelogsbout
 
@@ -510,33 +483,27 @@ $couloirréacteur2fuitelogsbout bg=couloirporte
 
 $lab1fuite bg=lab
 {lab1fuite}
-
 - continuer
 =lab2fuite
 
 $lab1fuitebout bg=lab
 {lab1fuite}
-
 - continuer
 =lab2fuitebout
 
 $lab1logs bg=lab
 {lab1fuite}
 >{opportunité}
-
 - lancer les explosifs
 =mort
-
 - continuer
 =lab2fuite
 
 $lab1logsbout
 {lab1fuite}
 >{opportunité}
-
 - lancer les explosifs
 =mortbout
-
 - continuer
 =lab2fuitebout
 
@@ -561,7 +528,6 @@ Vous sortez du complexe rempli de soulagement, vous choisissez
 
 $lab2fuite
 {lab2fuite}
-
 - pousser la porte
 =derniercouloirfuite1
 
@@ -608,7 +574,7 @@ $ char=
 Bert monte dans la voiture
 - le suivre
 =fuite
--fuir par la forêt
+- fuir par la forêt
 =siproche
 
 $fuite music=calm

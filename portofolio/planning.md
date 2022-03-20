@@ -28,6 +28,8 @@ Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
 Pierre|écriture|17/03|3h|écriture du script 
+Pierre|écriture|20/03|4h|écriture du script
+
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
 ----|----|----------|-------
