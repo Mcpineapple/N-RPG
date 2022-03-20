@@ -310,7 +310,7 @@ class MoteurGUI(Label):
         if self.commande_bouton_gauche == "delete":
             self.fenetre.destroy()
         elif self.commande_bouton_gauche == "gauche":
-            
+
             self.arbre = self.arbre.fils_gauche
 
             self.appliquer_parser()
@@ -321,7 +321,8 @@ class MoteurGUI(Label):
          Préconditions :
             Aucune
         Postconditions :
-            La commande associée au bouton gauche est executée.       """
+            La commande associée au bouton droit est executée.
+        """
         self.jouer_bruitage("media/sfx/button-3.wav")
         if self.commande_bouton_droit ==  "start":
 
@@ -346,9 +347,9 @@ class MoteurGUI(Label):
             self.appliquer_parser()
 
         elif self.commande_bouton_droit == "delete" :
-            
+
             self.fenetre.destroy()
-    
+
 
     def appliquer_parser(self):
         u"""
@@ -361,7 +362,7 @@ class MoteurGUI(Label):
             self.commande_bouton_gauche = "delete"
             self.changer_texte_bouton_gauche("Quitter")
 
-            pass
+            return
 
         elif self.arbre.arete_gauche != u"" and self.arbre.arete_droit != u"":
 
@@ -371,10 +372,10 @@ class MoteurGUI(Label):
             self.changer_texte_bouton_droit(self.arbre.arete_droit)
             self.commande_bouton_droit = "droite"
 
-            pass
+            return
 
         contenu = json.loads(self.arbre.texte)
-        
+
         if contenu["type"] == "texte":
             if contenu["remplacer"] == 1:
                 self.changer_texte("")
@@ -382,7 +383,7 @@ class MoteurGUI(Label):
             self.changer_texte(self.texte_afficher.get() + "\n" + contenu["contenu"])
 
             self.changer_texte_bouton_gauche("Quitter")
-            self.commande_bouton_gauche = "delete" 
+            self.commande_bouton_gauche = "delete"
 
             self.changer_texte_bouton_droit("Continuer")
             self.commande_bouton_droit = "continue"
@@ -395,6 +396,7 @@ class MoteurGUI(Label):
                 if contenu["music"] == "":
                     self.arreter_musique()
                 else :
+                    self.arreter_musique()
                     self.jouer_musique(os.path.join(os.path.dirname(__file__), '..', 'media', 'music',contenu["music"] + ".mp3"))
 
             if contenu.get("bg"):
@@ -402,7 +404,7 @@ class MoteurGUI(Label):
                 self.changer_image(os.path.join(os.path.dirname(__file__), '..', 'media', 'images', contenu["bg"] + ".jpg"))
 
             if contenu.get("char"):
-                
+
                 self.changer_texte(self.texte_afficher.get() + "\n" + contenu["char"] + " :")
 
             #
@@ -410,7 +412,7 @@ class MoteurGUI(Label):
             self.arbre = self.arbre.fils_gauche
 
             self.changer_texte_bouton_gauche("Quitter")
-            self.commande_bouton_gauche = "delete" 
+            self.commande_bouton_gauche = "delete"
 
             self.changer_texte_bouton_droit("Continuer")
             self.commande_bouton_droit = "continue"
@@ -424,16 +426,9 @@ class MoteurGUI(Label):
                 self.changer_texte(contenu["contenu"])
             except:
                 print("Fin")
-            
+
             self.changer_texte_bouton_droit("Fin")
             self.commande_bouton_droit = "delete"
 
             self.changer_texte_bouton_gauche("Quitter")
             self.commande_bouton_gauche = "delete"
-
-        
-
-
-
-
-
