@@ -118,7 +118,7 @@ En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond,
  vous glissez sur la mousse environnant le puits.
  Vous mourrez après la meilleure expérience de chute libre de votre vie (et la plus courte).
 
-|-"Freefall" Freefall
+|Freefall 
 
 <couloirréacteur2 Vous arrivez dans un couloir sombre avec une porte au bout.
 
@@ -304,7 +304,7 @@ $dévoré
 La créature va plus vite que vous et vous rattrape, vous sentez votre corps se faire
  dissoudre dans le plasma noir qui forme le corps de la créature.
 
-|Fin échouée: Dévoré
+|Dévoré
 
 <fuite1 Vous commencez à courir alors que vous entendez la créature se lever et crier et commencer à vous poursuivre
 
@@ -329,11 +329,8 @@ $fuite1logs bg=entrée music=fuite
 $fuite1bout bg=entrée music=fuite
 {fuite1}
 
-- aller à droite
+- revenir sur vos pas
 =fuite2droitebout
-
-- aller à gauche
-=fuite2gauchebout
 
 $fuite1logsbout bg=entrée music=fuite
 {fuite1}
@@ -439,7 +436,7 @@ $caserne2fuite
 - prendre la porte droit devant
 =dévoré
 
--prendre la porte de gauche
+- prendre la porte de gauche
 =couloirréacteurfuite1
 
 $caserne2fuitelogs
@@ -457,7 +454,7 @@ $caserne2fuitebout
 - prendre la porte droit devant
 =dévoré
 
--prendre la porte de gauche
+- prendre la porte de gauche
 =couloirréacteurfuite1bout
 
 $caserne2fuitelogsbout
@@ -466,7 +463,262 @@ $caserne2fuitelogsbout
 - prendre la porte droit devant
 =dévoré
 
--prendre la porte de gauche
+- prendre la porte de gauche
 =couloirréacteurfuite1logsbout
 
-<couloirréacteurfuite1
+<couloirréacteurfuite1 Vous courez en direction du réacteur
+
+$couloirréacteurfuite1 bg=couloirporte
+{couloirréacteurfuite1}
+
+- pousser la porte
+=réacteurfuite
+
+$couloirréacteurfuite1logs bg=couloirporte
+{couloirréacteurfuite1}
+
+- pousser la porte
+=réacteurfuitelogs
+
+$couloirréacteurfuite1bout bg=couloirporte
+{couloirréacteurfuite1}
+
+- pousser la porte
+=réacteurfuitebout
+
+$couloirréacteurfuite1logsbout1 bg=couloirporte
+{couloirréacteurfuite1}
+
+- pousser la portelogsbout
+=réacteurfuitelogsbout
+
+<réacteurfuite Vous arrivez devant le puits du réacteur, la créature se rapproche, vous n'êtes pas sûr d'avoir le temps de faire le tour du puits
+
+$réacteurfuite bg=réacteur
+{réacteurfuite}
+
+- faire le tour
+=couloirréacteur2fuite
+
+- tenter de sauter au dessus du puits
+=freefall2
+
+$réacteurfuitelogs bg=réacteur
+{réacteurfuite}
+
+- faire le tour
+=couloirréacteur2fuitelogs
+
+- tenter de sauter au dessus du puits
+=freefall2
+
+$réacteurfuitebout bg=réacteur
+{réacteurfuite}
+
+- faire le tour
+=couloirréacteur2fuitebout
+
+- tenter de sauter au dessus du puits
+=freefall2
+
+$réacteurfuitelogsbout bg=réacteur
+{réacteurfuite}
+
+- faire le tour
+=couloirréacteur2fuitelogsbout
+
+- tenter de sauter au dessus du puits
+=freefall2
+
+$freefall2
+Vous menez la créature au puit du réacteur et l'entrainez dedans, 
+ malheureusement vous tombez aussi, "Au moins j'ai sauvé la ville" est votre dernière pensée.
+ Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
+|Freefall 2
+
+<couloirréacteur2fuite Vous arrivez juste à temps à traverser la salle. Vous arrivez maintenant dans le couloir menant au laboratoire
+
+$couloirréacteur2fuite bg=couloirporte
+{couloirréacteur2fuite}
+
+- pousser la porte
+=lab1fuite
+
+$couloirréacteur2fuitelogs bg=couloirporte
+{couloirréacteur2fuite}
+
+- pousser la porte
+=lab1fuitelogs
+
+$couloirréacteur2fuitebout bg=couloirporte
+{couloirréacteur2fuite}
+
+- pousser la porte
+=lab1fuitebout
+
+$couloirréacteur2fuitelogsbout bg=couloirporte
+{couloirréacteur2fuite}
+
+- pousser la porte
+=lab1fuitelogsbout
+
+<lab1fuite Vous entrez dans le laboratoire.
+
+$lab1fuite bg=lab
+{lab1fuite}
+
+- continuer
+=lab2fuite
+
+$lab1fuitebout bg=lab
+{lab1fuite}
+
+- continuer
+=lab2fuitebout
+
+$lab1logs bg=lab
+{lab1fuite}
+>{opportunité}
+
+- lancer les explosifs
+=mort
+
+- continuer
+=lab2fuite
+
+$lab1logsbout
+{lab1fuite}
+>{opportunité}
+
+- lancer les explosifs
+=mortbout
+
+- continuer
+=lab2fuitebout
+
+<mort La créature s'enflamme et se consume dans des râles d'agonie. Vous et la ville êtes saufs.
+$mort
+{mort}
+- sortir
+=purifiéparlefeu
+
+$mortbout
+{mort}
+- sortir
+=proposition
+
+$purifiéparlefeu bg=hill
+Vous sortez du complexe rempli de soulagement, vous choisissez
+ de ne pas raconter l'histoire à Bert, il ne vous croirai pas.
+ Cependant, les disparitions cessent, tout le monde va bien.
+|Purifié par le feu
+
+<lab2fuite Vous continuez à courir à travers le laboratoire
+
+$lab2fuite
+{lab2fuite}
+
+- pousser la porte
+=derniercouloirfuite1
+
+$labfuitebout
+{lab2fuite}
+- pousser la porte
+=derniercouloirfuite1bout
+
+<derniercouloirfuite1 Vous continuez à courir dans le couloir, vous serez bientôt dehors.
+
+$derniercouloirfuite1 bg=couloirtournantdroit
+{derniercouloirfuite1}
+- tourner
+=derniercouloirfuite2
+
+$derniercouloirfuite1bout bg=couloirtournantdroit
+{derniercouloirfuite1}
+- tourner
+=derniercouloirfuite2bout
+
+<derniercouloirfuite2 Vous arrivez proche de la dernière échelle. Vous y êtes presque.
+
+$derniercouloirfuite2
+{derniercouloirfuite2}
+- gravir l'échelle
+=sortie
+
+$derniercouloirfuite2bout
+{derniercouloirfuite2}
+- gravir l'échelle
+=proposition
+
+$sortie bg=hill
+Vous vous précipitez à l'extérieur, Bert est assis sur une souche non loin
+- le prévenir
+=Bert1
+- s'enfuir seul
+=choixfuite
+
+$Bert1 char=Bert
+Qu'est ce qu'il y a patron? Oh mon Dieu... qu'est ce que c'est que ce truc?!
+
+$ char=
+Bert monte dans la voiture
+- le suivre
+=fuite
+-fuir par la forêt
+=siproche
+
+$fuite music=calm
+Vous et Bert vous enfuyez en prévenant le central, la créature arrête de vous 
+ poursuivre. Le lendemain, des militaires sont sur la zone.
+|Fuite
+
+$choixfuite
+Vous courez à toute vitesse
+- prendre la voiture
+=amiabandonné
+- fuir par la forêt
+=siproche
+
+$amiabandonné music=sad
+Vous fuyez en voiture sans demander votre reste et voyez Bert se faire dévorer
+ vivant par la créature. Le lendemain, des militaires sont sur la zone.
+|Ami Abandonné
+
+$siproche
+Vous décidez de vous enfuir à travers la forêt, vous trébuchez sur une racine 
+ et la créature vous rattrape. Vous sentez votre corps se faire dissoudre dans
+ le plasma noir qui forme le corps de la créature.
+|Si Proche
+
+$proposition bg=hill music=calm
+Vous sortez du complexe, au moment où vous sortez, des militaires rentrent. 
+Un homme s'approche de vous.
+
+$ char=McTharney
+Bonjour, je me nomme John McTharney, je suis agent de l'Agence Mondiale
+d'Exploration et de Neutralisation de l'Occulte ou AMENO. Lorsque vous avez 
+réactivé les mécanismes de cette base, nous avons été prévenus et nous sommes
+rendus sur les lieux au plus vite.
+
+$
+Vous avez découvert ici un spécimen Top secret que l'on croyait disparu. Par
+conséquent, Nous ne pouvons pas vous laisser gambader avec de telles informations.
+Que diriez-vous donc, vous et votre adjoint de nous rejoindre?
+- Refuser
+=Elimination
+- Accepter
+=Recruté
+
+$Elimination char=McTharney
+Je vois, après tout, nous ne pouvons pas vous forcer.
+>Au revoir, Shériff.
+
+$ char= music=
+Bert se fait escorter vers un fourgon, McTharney sort un browning et fait feu.
+|Eliminé
+
+$Recruté char=McTharney
+Parfait, nous allons vous faire subir une formation intensive pendant les mois
+ suivants. Vous partez tout de suite, désolé mais vous ne pourrez pas faire vos
+ adieux.
+|Recruté
