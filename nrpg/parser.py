@@ -73,9 +73,11 @@ class Parser:
         """
         self._aliases = aliases # Aliases à remplacer
         self._choix = [] # Options entre lesquelles choisir
+        self._trouve = False # Marqueur, permettant de lire une ligne comme des
+        # parametres plutôt que du texte après une recherche
 
     def _fin(func):
-        """
+        u"""
         Décorateur permettant de prendre en charge l'erreur en arrivant en fin de
         fichier.
         Préconditions :
@@ -141,7 +143,8 @@ class Parser:
                     }
             return json.dumps(contenu)
 
-        elif caractere == "$":
+        elif self._trouve or caractere == "$" :
+            self._trouve = False
             identifiant = self._identifiant()
             sortie = {
                     "type": "parametres"
@@ -410,6 +413,7 @@ class Parser:
             identifiant = identifiant[compteur+1:] # Recoupage de l'identifiant
         if identifiant != "": # Dans le cas où on change de fichier sans aller
             # vers un nouvel identifiant, mais juste le début du fichier
+            self._trouve = True
             position = self._table.get(identifiant) # None si la clé n'est pas
             # présente
             if position is not None:
