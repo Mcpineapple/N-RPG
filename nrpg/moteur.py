@@ -7,6 +7,7 @@ from playsound import playsound
 from pydub import AudioSegment
 from pydub.playback import play
 from pydub.playback import _play_with_simpleaudio
+import json
 u"""
 Ce fichier est le moteur de jeu.
 Son but est de recevoir :
@@ -173,7 +174,7 @@ class MoteurGUI(Label):
         self.texte_bouton_droit.set("Commencer")
         self.texte_afficher.set(self.text_intro)
 
-        self.affichage_texte = Label(master, font=("Firacode",15), textvariable = self.texte_afficher, anchor=N, height=15)
+        self.affichage_texte = Label(master, font=("Firacode",15), textvariable = self.texte_afficher, anchor=N, height=15, wraplength = 800)
         self.affichage_texte.pack(side=TOP)
 
         self.bouton_gauche = Button(master, bg="grey", textvariable = self.texte_bouton_gauche, command=self.fonc_bouton_gauche, width = 45)
@@ -308,11 +309,10 @@ class MoteurGUI(Label):
         if self.commande_bouton_gauche == "delete":
             self.fenetre.destroy()
         elif self.commande_bouton_gauche == "gauche":
-            self.arbre = self.arbre.fils_gauche()
-            self.changer_texte(self.arbre.texte)
-            self.changer_texte_bouton_gauche(self.arbre.arete_gauche())
-            self.changer_texte_bouton_droit(self.arbre.arete_droit())
+            
+            self.arbre = self.arbre.fils_gauche
 
+            self.appliquer_parser()
 
     def fonc_bouton_droit(self):
         u"""
@@ -323,25 +323,96 @@ class MoteurGUI(Label):
             La commande associée au bouton gauche est executée.       """
         self.jouer_bruitage("media/sfx/button-3.wav")
         if self.commande_bouton_droit ==  "start":
-            self.commande_bouton_gauche = "gauche"
-            self.commande_bouton_droit = "droite"
 
-            position_script = os.path.join(os.path.dirname(__file__), 'media', 'script', 'depart.md')
+            position_script = os.path.join(os.path.dirname(__file__), '..', 'script', 'depart.md')
 
             self.arbre = Arbre("JOLIE PETITE HISTOIRE")
 
             self.arbre.construire(None, {"fichier": position_script, "position": 0})
 
-            self.changer_texte(self.arbre.texte)
-            self.changer_texte_bouton_gauche(self.arbre.arete_gauche())
-            self.changer_texte_bouton_droit(self.arbre.arete_droit())
+            self.arbre.afficher()
+            self.appliquer_parser()
 
         elif self.commande_bouton_droit == "droite":
 
-            self.arbre = self.arbre.fils_droit()
-            self.changer_texte(self.arbre.texte)
-            self.changer_texte_bouton_gauche(self.arbre.arete_gauche())
-            self.changer_texte_bouton_droit(self.arbre.arete_droit())
+            self.arbre = self.arbre.fils_droit
+
+            self.appliquer_parser()
+
+        elif self.commande_bouton_droit == "continue" :
+
+            self.arbre = self.arbre.fils_gauche
+
+            self.appliquer_parser()
+    
+    def appliquer_parser(self):
+        u"""
+        """
+        if self.arbre.arete_gauche != u"" and self.arbre.arete_droit == u"":
+
+            self.changer_texte_bouton_droit(self.arbre.arete_gauche)
+            self.commande_bouton_droit = "continue"
+
+            self.commande_bouton_gauche = "delete"
+            self.changer_texte_bouton_gauche("Quitter")
+
+            return
+
+        elif self.arbre.arete_gauche != u"" and self.arbre.arete_droit != u"":
+
+            self.changer_texte_bouton_gauche(self.arbre.arete_gauche)
+            self.commande_bouton_gauche = "gauche"
+
+            self.changer_texte_bouton_droit(self.arbre.arete_droit)
+            self.commande_bouton_droit = "droite"
+
+            return
+
+        contenu = json.loads(self.arbre.texte)
+        
+        if contenu["type"] == "texte":
+            if contenu["remplacer"] == 1:
+                self.changer_texte("")
+
+            self.changer_texte(self.texte_afficher.get() + "\n" + contenu["contenu"])
+
+            self.changer_texte_bouton_gauche("Quitter")
+            self.commande_bouton_gauche = "delete" 
+
+            self.changer_texte_bouton_droit("Continuer")
+            self.commande_bouton_droit = "continue"
+
+        elif contenu["type"] == "parametres" :
+
+            #
+
+
+            #
+
+            self.arbre = self.arbre.fils_gauche
+
+            self.changer_texte_bouton_gauche("Quitter")
+            self.commande_bouton_gauche = "delete" 
+
+            self.changer_texte_bouton_droit("Continuer")
+            self.commande_bouton_droit = "continue"
+
+            self.appliquer_parser()
+
+
+        elif contenu["type"] == "fin" :
+
+            self.changer_texte(contenu["contenu"])
+            
+            self.changer_texte_bouton_droit("Bye !")
+            self.commande_bouton_droit = None
+
+            self.changer_texte_bouton_gauche("Quitter")
+            self.commande_bouton_gauche = "delete"
+
+        
+
+
 
 
 
