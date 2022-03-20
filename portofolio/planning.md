@@ -29,9 +29,10 @@ Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
 Tristan|Documentation et tests (interface et son)|16/03|0h45|Documentations/tests ajoutés dans la branche Son puis merge de Son dans GUI
 François|Design|16/03|0h30|Ajout d'un appel "fin" pour la fin d'un script, et d'une représentation en VNMD
 François|Codage (Modules)|16/03|1h|Debugging de l'arbre et de ses méthodes
-Pierre|écriture|17/03|3h|écriture du script 
+Pierre|écriture|17/03|3h|écriture du script
 François|Codage (parser)|18/03|0h40|Ajout des liens
 François|Codage (parser)|18/03|2h|Debugging des liens, de la construction de l'arbre et du parser
+François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes de l'arbre
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
@@ -41,6 +42,7 @@ Organisation|24/02|Facile, avec recherche|Organisation du module
 Codage (console)|25/02|Facile|Création d'un moteur primitif CLI
 Codage (structure)|09/03|Facile|Création de l'arbre binaire
 Script|12/03|Moyen (avec étude)|Choix du synopsis de l'histoire
+Codage (parser et arbre)|20/03|Difficile (Difficultés sur le modèle technique)|Création et finition du parser et de l'arbre
 
 ## Récapitulatif du travail
 Type|Temps|Difficulté

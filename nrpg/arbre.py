@@ -226,7 +226,8 @@ class Arbre:
         """
         if not(suivant):
             print(f"-- {route} --")
-        print(self.texte)
+        if self.texte != "":
+            print(json.loads(self.texte))
         if self.fils_droit is not None:
             print() # Retour à la ligne pour la lisibilité
             print(f"({self.arete_gauche})")
