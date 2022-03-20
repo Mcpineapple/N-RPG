@@ -202,6 +202,8 @@ class Arbre:
                     arbre.fils_droit.construire(parser)
                 except :
                     pass
+        else :
+            arbre.texte = contenu
 
     def afficher(self, route: str = "", suivant: bool = False) -> None:
         u"""

@@ -27,7 +27,6 @@ Tristan|Codage (interface)|12/03|2h30|Changement du fonctionnement de l'interfac
 Tristan|Codage (interface)|12/03|0h20|Rajout de l'affichage de texte
 Tristan|Codage (interface)|14/03|1h15|Amélioration de l'interface
 Tristan|Codage (audio)|15/03|2h|Ajout de fonctionnalités audio dans le moteur
-
 Tristan|Documentation et tests (interface et son)|16/03|0h45|Documentations/tests ajoutés dans la branche Son puis merge de Son dans GUI
 François|Design|16/03|0h30|Ajout d'un appel "fin" pour la fin d'un script, et d'une représentation en VNMD
 François|Codage (Modules)|16/03|1h|Debugging de l'arbre et de ses méthodes
@@ -39,6 +38,7 @@ François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes
 François|Media (fonds)|20/03|2h|Recherche d'images libres de droit
 François|Compte-rendu|20/03|0h05|Ajout des appels json à la spécification de l'API
 Pierre|écriture|20/03|4h|écriture du script
+François|Media (fonds, musiques)|20/03|0h30|Ajout du crédit et des images et musique
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
@@ -50,6 +50,7 @@ Codage (structure)|09/03|Facile|Création de l'arbre binaire
 Script|12/03|Moyen (avec étude)|Choix du synopsis de l'histoire
 Codage (parser et arbre)|20/03|Difficile (Difficultés sur le modèle technique)|Création et finition du parser et de l'arbre
 Script|20/03|Complétion du script
+Media|20/03|Difficile (licences à contrôler)|Ajout d'images et de musiques libres de droit
 
 ## Récapitulatif du travail
 Type|Temps|Difficulté
