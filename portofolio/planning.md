@@ -38,7 +38,9 @@ François|Codage (parser et arbre)|20/03|3h|Debugging du parser et des méthodes
 François|Media (fonds)|20/03|2h|Recherche d'images libres de droit
 François|Compte-rendu|20/03|0h05|Ajout des appels json à la spécification de l'API
 Pierre|écriture|20/03|4h|écriture du script
+Pierre|Media(fonds,musique)|20/03|0h30|Recherche de medias, images et musiques
 François|Media (fonds, musiques)|20/03|0h30|Ajout du crédit et des images et musique
+
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
