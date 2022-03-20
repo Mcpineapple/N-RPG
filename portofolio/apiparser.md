@@ -20,10 +20,15 @@ demandes d'avancer ou de faire un choix, et transmet via un paquet contenant la
 commande à effectuer et le contenu de celle-ci les informations qu'attend le
 moteur de jeu.
 
-
 ## Structure technique de la communication
 
+=== Cette description n'est valable que dans la version python pure, et sera
+modifiée par un nouveau fonctionnement par IPC ===
 
+La communication entre les deux processus se fait alors par des appels via
+l'importation du module Parser par le module Moteur, qui appelle sa fonction
+".continuer()", et reçoit ainsi l'information. L'information renvoyée par le
+parser est encodée en json, puis décodée pour être lue par le Moteur.
 
 ## Côté client
 
@@ -52,6 +57,7 @@ Les identifiants qui peuvent être envoyés au moteur sont :
 - choix
 - parametres
 - titre
+- fin
 
 L'identifiant texte permet d'envoyer un texte qui doit être affiché : il peut
 recevoir un argument supplémentaire, permettant d'ajouter le texte au texte déjà
@@ -63,9 +69,11 @@ L'identifiant parametres est l'un des plus importants pour tous les aspects
 avancés d'un moteur de jeu : il permet d'envoyer les paramètres après un "$",
 que ce soit pour des éléments graphiques, de personnages, etc... Ceux-ci seront
 interprétés par le client.
-L'identifiant titre enfin, correspond aux tires à afficher spécialement à
+L'identifiant titre correspond aux tires à afficher spécialement à
 l'écran. Ceux-ci se comportant assez différemment des textes et des paramètres,
 ils sont envoyés séparéments.
+L'identifiant fin, dernièrement, permet de caractériser l'une des fins du
+programme et doit amener à un arrêt.
 
 ## Recommendations pour le nom des paramètres
 
@@ -96,4 +104,52 @@ Nom de l'identifiant | Contenu | Effets
 texte | texte et "ajoute" | Permet d'afficher du texte, en nettoyant la zone de texte ou non
 choix | liste des choix et leurs paramètres | Permet d'afficher différents choix
 parametres | liste de parametres | Envoie diverses informations, nottament média ou personnages
-titre | texte et taille du titre | Permet d'afficher un titre
+titre | paramètre, texte et taille du titre | Permet d'afficher un titre
+fin | paramètre et texte | Affiche une fin
+
+## Formatage en json
+### Côté serveur
+#### texte
+{
+	"type": "texte",
+	"remplacer": 1 s'il faut nettoyer l'écran, 0 sinon,
+	"contenu": le texte à afficher
+}
+
+#### choix
+{
+	"type": "choix",
+	numero du choix: {
+		"parametres": nom du parametre
+		"texte": texte du choix
+	}
+	...
+}
+Il y a autant d'objets "numero du choix" que de choix, et ils sont décomptés à
+partir de 0. C'est le nombre du choix sélectionné qui sera renvoyé au parser
+avec l'appel .choisir(numero).
+
+#### parametres
+{
+	"type": "parametre",
+	nom du parametre: valeur du parametre,
+	...
+}
+Les paramètres ont chacun le nom de ce qu'ils représentent, et ont pour valeur
+la valeur à appliquer à ce paramètre.
+
+#### titre
+{
+	"type": "titre",
+	"parametres": parametres éventuels,
+	"ordre": la taille du titre, dans le style markdown, 1 étant le plus gros et
+		de plus en plus petit plus le nombre est grand,
+	"contenu": texte du titre
+}
+
+#### fin
+{
+	"type": "fin",
+	"parametres": parametre attaché éventuel,
+	"contenu": texte de la fin
+}

@@ -10,20 +10,37 @@ import sys
 
 from nrpg.parser import Parser
 
-position_script = os.path.join(os.path.dirname(__file__), '..', 'vnmd',
-        'prototype.vnmd')
-parser = Parser(position_script)
+if int(input()) == 0 :
+    position_script = os.path.join(os.path.dirname(__file__), '..', 'vnmd',
+            'prototype.vnmd')
+    parser = Parser(position_script)
 
-compteur = 0
-a = ""
-while a != "fin":
-    a = parser.suivant()
-    if a is not None :
-        print(a)
-    # print(parser.sauvegarde())
-    # Alourdit l'affichage, à activer en cas de problème
-    compteur += 1
-    print(compteur)
+    compteur = 0
+    a = ""
+    while a != "fin":
+        a = parser.continuer()
+        if a is not None :
+            print(a)
+        # print(parser.sauvegarde())
+        # Alourdit l'affichage, à activer en cas de problème
+        compteur += 1
+        print(compteur)
+
+else :
+    position_script = os.path.join(os.path.dirname(__file__), '..', '..',
+            'script', 'depart.md')
+    print(position_script)
+    parser = Parser(position_script)
+
+    compteur = 0
+    a = ""
+    while a != "fin":
+        a = parser.continuer()
+        if a is not None :
+            print(a)
+        # print(parser.sauvegarde())
+        # Alourdit l'affichage, à activer en cas de problème
+        compteur += 1
 
 """
 Ce test a permis de régler les bugs suivants :
