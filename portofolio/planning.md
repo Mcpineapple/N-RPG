@@ -49,6 +49,7 @@ Codage (console)|25/02|Facile|Création d'un moteur primitif CLI
 Codage (structure)|09/03|Facile|Création de l'arbre binaire
 Script|12/03|Moyen (avec étude)|Choix du synopsis de l'histoire
 Codage (parser et arbre)|20/03|Difficile (Difficultés sur le modèle technique)|Création et finition du parser et de l'arbre
+Script|20/03|Complétion du script
 
 ## Récapitulatif du travail
 Type|Temps|Difficulté
