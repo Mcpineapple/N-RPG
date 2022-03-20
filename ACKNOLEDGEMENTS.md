@@ -3,7 +3,24 @@ Ce fichier contient le crédit aux personnes ayant droit sur les différents
 contacter à francois.gallois.pro@gmail.com
 
 ## Musique
+
+suspense :
+https://pixabay.com/music/thriller-ambient-14563/
+"Thriller Ambient", par "unfa" sur Pixabay
+Conditions : Pixabay license : https://pixabay.com/service/terms/#license
+
+calm :
+https://pixabay.com/music/birds-in-forest-on-sunny-day-14444/
+"Birds in forest on sunny day", par "Kosmoso" sur Pixabay
+Conditions : Pixabay license : https://pixabay.com/service/terms/#license
+
+fuite :
+https://pixabay.com/music/dramatic-reveal-21469/
+"Dramatic Reveal", par "SergeQuadrado" sur Pixabay
+Conditions : Pixabay license : https://pixabay.com/service/terms/#license
+
 ## Effets sonores
+
 ## Images
 
 couloirtounantgauche et couloirtournantdroit :
