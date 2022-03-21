@@ -30,11 +30,11 @@ $corps
 - Ne pas continuer
 =caserne2
 
-<explosifs Vous récupérez le paquet, il contient des explosifs, Cependant, vous ne savez pas comment ils pourraient vous être utiles
+<explosifs Vous récupérez le paquet, il contient des explosifs. Cependant, vous ne savez pas comment ils pourraient vous être utiles
 
 $explosifs
 {explosifs}
-- examiner l'insigne
+- Examiner l'insigne
 =insigne
 
 <insigne vous examinez l'insigne du militaire, il ne vous dit absolument rien.
@@ -158,30 +158,30 @@ $derniercouloirdroit bg=couloirtournantgauche
 
 $sas bg=sas
 {sas}
--appuyer sur le bouton
+- Appuyer sur le bouton
 =ouverture
--se faufiler
+- Se faufiler
 =cellule
 
 $ouverture
 Vous appuyez sur le bouton, la porte s'ouvre doucement avec un grand fracas.
-- entrer
+- Entrer
 =cellulebout
 
 <cellule Vous entrz dans la cellule, devant vous se trouve un cube en béton avec une étrange créature noire
 
 $cellule bg=cellule char= music=
 {cellule}
-- l'observer
+- L'observer
 =créature
-- s'enfuir
+- S'enfuir
 =fuite1
 
 $cellulebout bg=cellule char= music=
 {cellule}
-- l'observer
+- L'observer
 =créature
-- s'enfuir
+- S'enfuir
 =fuite1bout
 
 $créature char=créature
@@ -198,55 +198,55 @@ La créature va plus vite que vous et vous rattrape, vous sentez votre corps se 
 
 $fuite1 bg=entrée music=fuite
 {fuite1}
-- revenir sur vos pas
+- Revenir sur vos pas
 =fuite2droite
 
 $fuite1bout bg=entrée music=fuite
 {fuite1}
-- revenir sur vos pas
+- Revenir sur vos pas
 =fuite2droitebout
 
 <fuite2 vous courez alors que la créature se lance à vos trousses
 
 $fuite2droite bg=couloirtournantdroit
 {fuite2}
-- prendre le tournant
+- Prendre le tournant
 =fuite3droite
 
 $fuite2droitebout bg=couloirtournantdroit
 {fuite2}
-- prendre le tournant
+- Prendre le tournant
 =fuite3droitebout
 
 <fuite3 Vous continuez en direction de la porte devant vous
 
 $fuite3droite bg=couloirporte
 {fuite3}
-- pousser la porte
+- Pousser la porte
 =labfuite1
 
 $fuite3droitebout bg=couloirporte
 {fuite3}
-- pousser la porte
+- Pousser la porte
 =labfuite1bout
 
 <lab1fuite Vous entrez dans le laboratoire.
 
 $lab1fuite bg=lab
 {lab1fuite}
-- continuer
+- Continuer
 =lab2fuite
 
 $lab1fuitebout bg=lab
 {lab1fuite}
-- continuer
+- Continuer
 =lab2fuitebout
 
 <lab2fuite Vous continuez à courir à travers le laboratoire
 
 $lab2fuite
 {lab2fuite}
-- continuer tout droit
+- Continuer tout droit
 =dévoré
 - aller à droite
 =couloirréacteurfuite1
@@ -254,42 +254,42 @@ $lab2fuite
 
 $labfuitebout
 {lab2fuite}
-- continuer tout droit
+- Continuer tout droit
 =dévoré
-- aller à droite
+- Aller à droite
 =couloirfréacteuruite1bout
 
 <couloirréacteurfuite1 Vous courez en direction du réacteur
 
 $couloirréacteurfuite1 bg=couloirporte
 {couloirréacteurfuite1}
-- pousser la porte
+- Vousser la porte
 =réacteurfuite
 
 $couloirréacteurfuite1bout bg=couloirporte
 {couloirréacteurfuite1}
-- pousser la porte
+- Pousser la porte
 =réacteurfuitebout
 
 <réacteurfuite Vous arrivez devant le puits du réacteur, la créature se rapproche, vous n'êtes pas sûr d'avoir le temps de faire le tour du puits
 
 $réacteurfuite bg=réacteur
 {réacteurfuite}
-- faire le tour
+- Faire le tour
 =couloirréacteur2fuite
-- tenter de sauter au dessus du puits
+- Tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitebout bg=réacteur
 {réacteurfuite}
-- faire le tour
+- Faire le tour
 =couloirréacteur2fuitebout
-- tenter de sauter au dessus du puits
+- Tenter de sauter au dessus du puits
 =freefall2
 
 $freefall2
 Vous menez la créature au puit du réacteur et l'entrainez dedans, 
- malheureusement vous tombez aussi, "Au moins j'ai sauvé la ville" est votre dernière pensée.
+ malheureusement vous tombez aussi. "Au moins j'ai sauvé la ville" est votre dernière pensée.
  Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
 | Freefall 2
 
@@ -297,67 +297,67 @@ Vous menez la créature au puit du réacteur et l'entrainez dedans,
 
 $couloirréacteur2fuite bg=couloirporte
 {couloirréacteur2fuite}
-- pousser la porte
+- Pousser la porte
 =caserne1fuite
 
 $couloirréacteur2fuitebout bg=couloirporte
 {couloirréacteur2fuite}
-- pousser la porte
+- Pousser la porte
 =caserne1fuitebout
 
 <caserne1fuite Vous entrez dans la caserne, alors que la créature continue à vous poursuivre.
 
 $caserne1fuite bg=caserne1
 {caserne1fuite}
-- continuer
+- Continuer
 =caserne2
 
 $caserne1fuitebout bg=caserne1
 {caserne1fuite}
-- continuer
+- Continuer
 =caserne2bout
 
 <caserne2fuite vous continuez à courir à travers la caserne.
 
 $caserne2fuite
 {caserne2fuite}
-- prendre la porte à droite
+- Prendre la porte à droite
 =derniercouloirfuite1
 
 $caserne2fuitebout
 {caserne2fuite}
-- prendre la porte à droite
+- Prendre la porte à droite
 =derniercouloirfuite1
 
 <derniercouloirfuite1 Vous continuez à courir dans le couloir, vous serez bientôt dehors.
 
 $derniercouloirfuite1 bg=couloirtournantgauche
 {derniercouloirfuite1}
-- tourner
+- Tourner
 =derniercouloirfuite2
 
 $derniercouloirfuite1bout bg=couloirtournantgauche
 {derniercouloirfuite1}
-- tourner
+- Tourner
 =derniercouloirfuite2bout
 
 <derniercouloirfuite2 Vous arrivez proche de la dernière échelle. Vous y êtes presque.
 
 $derniercouloirfuite2
 {derniercouloirfuite2}
-- gravir l'échelle
+- Gravir l'échelle
 =sortie
 
 $derniercouloirfuite2bout
 {derniercouloirfuite2}
-- gravir l'échelle
+- Gravir l'échelle
 =proposition
 
 $sortie bg=hill
 Vous vous précipitez à l'extérieur, Bert est assis sur une souche non loin
-- le prévenir
+- Le prévenir
 =Bert1
-- s'enfuir seul
+- S'enfuir seul
 =choixfuite
 
 $Bert1 char=Bert
@@ -365,9 +365,9 @@ Qu'est ce qu'il y a patron? Oh mon Dieu... qu'est ce que c'est que ce truc?!
 
 $ char=
 Bert monte dans la voiture
-- le suivre
+- Le suivre
 =fuite
-- fuir par la forêt
+- Fuir par la forêt
 =siproche
 
 $fuite music=calm
@@ -377,17 +377,17 @@ Vous et Bert vous enfuyez en prévenant le central, la créature arrête de vous
 
 $choixfuite
 Vous courez à toute vitesse
-- prendre la voiture
+- Prendre la voiture
 =amiabandonné
-- fuir par la forêt
+- Fuir par la forêt
 =siproche
 
-$amiabandonné music=sad
+$amiabandonné music=
 Vous fuyez en voiture sans demander votre reste et voyez Bert se faire dévorer
  vivant par la créature. Le lendemain, des militaires sont sur la zone.
 | Ami Abandonné
 
-$siproche
+$siproche music=fuite
 Vous décidez de vous enfuir à travers la forêt, vous trébuchez sur une racine 
  et la créature vous rattrape. Vous sentez votre corps se faire dissoudre dans
  le plasma noir qui forme le corps de la créature.

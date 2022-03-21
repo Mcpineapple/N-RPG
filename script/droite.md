@@ -451,7 +451,7 @@ $réacteurfuitelogsbout bg=réacteur
 
 $freefall2
 Vous menez la créature au puit du réacteur et l'entrainez dedans, 
- malheureusement vous tombez aussi, "Au moins j'ai sauvé la ville" est votre dernière pensée.
+ malheureusement vous tombez aussi. "Au moins j'ai sauvé la ville" est votre dernière pensée.
  Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
 | Freefall 2
 
