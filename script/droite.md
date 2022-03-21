@@ -6,7 +6,6 @@ Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la g
 $couloir2 bg=couloirporte
 Vous continuez à avancer.
 Devant vous se trouve une porte en acier fermée.
-
 - Pousser la porte
 =
 
@@ -88,7 +87,7 @@ $couloirréacteur1 bg=couloirporte
 
 $couloirréacteur1logs bg=couloirporte
 {couloirréacteur1}
--pousser la porte
+- Pousser la porte
 =réacteurlogs
 
 <réacteur Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits.
@@ -145,27 +144,27 @@ $caserne1logs
 
 $corps
 {corps}
-- prendre le paquet
+- Prendre le paquet
 =explosifs
-- ne pas continuer
+- Ne pas continuer
 =caserne2
 
 $corpslogs
 {corps}
-- prendre le paquet
+- Prendre le paquet
 =explosifslogs
-- ne pas continuer
+- Ne pas continuer
 =caserne2
 
 <explosifs vous récupérez le paquet, il contient des explosifs.
 $explosifs
 {explosifs} Cependant, vous ne savez pas comment ils pourraient vous être utiles
-- continuer
+- Continuer
 =caserne2
 
 $explosifslogs
 {explosifs} Vous apercevez un insigne étrange sur l'uniforme du militaire.
-- examiner l'insigne
+- Examiner l'insigne
 =insigne
 
 <insigne vous examinez l'insigne du militaire, il ne vous dit absolument rien.
@@ -173,94 +172,94 @@ $explosifslogs
 
 $insigne bg=insigne
 {insigne}
-- continuer
+- Continuer
 =caserne2logs
 
 <caserne2 La clé du mystère n'est pas ici, il faut continuer
 
 $caserne2 bg=caserne
 {caserne2}
-- prendre la porte droit devant
+- Prendre la porte droit devant
 =derniercouloirgauche
 
 $caserne2logs bg=caserne
 {caserne2}
-- prendre la porte droit devant
+- Prendre la porte droit devant
 =derniercouloirgauchelogs
 
 $derniercouloirdroit bg=couloirtournantgauche
 Vous arrivez dans un couloir avec un tournant à gauche au bout.
-- prendre le tournant
+- Prendre le tournant
 =sas
 
 <derniercouloirgauche Vous arrivez dans un couloir avec un tournant à droite au bout.
 
 $derniercouloirgauche bg=couloirtournantdroit
 {derniercouloirgauche}
-- prendre le tournant
+- Prendre le tournant
 =sas
 
 $derniercouloirgauchelogs bg=couloirtournantdroit
 {derniercouloirgauche}
-- prendre le tournant
+- Prendre le tournant
 =saslogs
 
 <sas Vous arrivez devant une grande porte en acier entrouverte avec un bouton à gauche.
 
 $sas bg=sas
 {sas}
-- appuyer sur le bouton
+- Appuyer sur le bouton
 =ouverture
-- se faufiler
+- Se faufiler
 =cellule
 
 $saslogs bg=sas
 {sas}
-- appuyer sur le bouton
+- Appuyer sur le bouton
 =ouverturelogs
-- se faufiler
+- Se faufiler
 =cellulelogs
 
 <ouverture Vous appuyez sur le bouton, la porte s'ouvre doucement avec un grand fracas.
 
 $ouverture
 {ouverture}
-- entrer
+- Entrer
 =cellulebout
 
 $ouverturelogs
 {ouverture}
-- entrer
+- Entrer
 =cellulelogsbout
 
 <cellule Vous entrz dans la cellule, devant vous se trouve un cube en béton avec une étrange créature noire
 
 $cellule bg=cellule char= music=
 {cellule}
-- l'observer
+- L'observer
 =créature
-- s'enfuir
+- S'enfuir
 =fuite1
 
 $cellulelogs bg=cellule char= music=
 {cellule}
-- l'observer
+- L'observer
 =créature
-- s'enfuir
+- S'enfuir
 =fuite1logs
 
 $cellulebout bg=cellule char= music=
 {cellule}
-- l'observer
+- L'observer
 =créature
-- s'enfuir
+- S'enfuir
 =fuite1bout
 
 $cellulelogsbout bg=cellule char= music=
 {cellule}
-- l'observer
+- L'observer
 =créature
-- s'enfuir
+- S'enfuir
 =fuite1logsbout
 
 $créature char=créature
@@ -277,23 +276,23 @@ La créature va plus vite que vous et vous rattrape, vous sentez votre corps se 
 
 $fuite1 bg=entrée music=fuite
 {fuite1}
-- revenir sur vos pas
+- Revenir sur vos pas
 =fuite2droite
 
 $fuite1logs bg=entrée music=fuite
 {fuite1}
-- revenir sur vos pas
+- Revenir sur vos pas
 =fuite2droitelogs
 
 $fuite1bout bg=entrée music=fuite
 {fuite1}
 
-- revenir sur vos pas
+- Revenir sur vos pas
 =fuite2droitebout
 
 $fuite1logsbout bg=entrée music=fuite
 {fuite1}
-- revenir sur vos pas
+- Revenir sur vos pas
 =fuite2droitelogsbout
 
 
@@ -301,42 +300,42 @@ $fuite1logsbout bg=entrée music=fuite
 
 $fuite2droite bg=couloirtournantgauche
 {fuite2}
-- prendre le tournant
+- Prendre le tournant
 =fuite3droite
 $fuite2droitelogs bg=couloirtournantgauche
 {fuite2}
-- prendre le tournant
+- Prendre le tournant
 =fuite3droitelogs
 
 $fuite2droitebout bg=couloirtournantgauche
 {fuite2}
-- prendre le tournant
+- Prendre le tournant
 =fuite3droitebout
 $fuite2droitelogsbout bg=couloirtournantgauche
 {fuite2}
-- prendre le tournant
+- Prendre le tournant
 =fuite3droitelogsbout
 
 <fuite3 Vous continuez en direction de la porte devant vous
 
 $fuite3droite bg=couloirporte
 {fuite3}
-- pousser la porte
+- Pousser la porte
 =casernefuite1
 
 $fuite3droitelogs bg=couloirporte
 {fuite3}
-- pousser la porte
+- Pousser la porte
 =casernefuite1logs
 
 $fuite3droitebout bg=couloirporte
 {fuite3}
-- pousser la porte
+- Pousser la porte
 =casernefuite1bout
 
 $fuite3droitelogsbout bg=couloirporte
 {fuite3}
-- pousser la porte
+- Pousser la porte
 =casernefuite1logsbout
 
 <caserne1fuite Vous entrez dans la caserne, alors que la créature continue à vous poursuivre.
@@ -344,110 +343,110 @@ $fuite3droitelogsbout bg=couloirporte
 
 $caserne1fuite bg=caserne1
 {caserne1fuite}
-- continuer
+- Continuer
 =caserne2
 
 $caserne1fuitebout bg=caserne1
 {caserne1fuite}
-- continuer
+- Continuer
 =caserne2bout
 
 $caserne1fuitelogs bg=caserne1
 {caserne1fuite}
 >{opportunité}
-- continuer
+- Continuer
 =caserne2fuitelogs
-- lancer les explosifs
+- Lancer les explosifs
 =mort
 
 $caserne1fuitelogsbout bg=caserne1
 {caserne1fuite}
 >{opportunité}
-- continuer
+- Continuer
 =caserne2fuitelogsbout
-- lancer les explosifs
+- Lancer les explosifs
 =mortbout
 
 <caserne2fuite vous continuez à courir à travers la caserne.
 
 $caserne2fuite
 {caserne2fuite}
-- prendre la porte droit devant
+- Prendre la porte droit devant
 =dévoré
-- prendre la porte de gauche
+- Prendre la porte de gauche
 =couloirréacteurfuite1
 
 $caserne2fuitelogs
 {caserne2fuite}
-- prendre la porte droit devant
+- Prendre la porte droit devant
 =dévoré
--prendre la porte de gauche
+- Prendre la porte de gauche
 =couloirréacteurfuite1logs
 
 $caserne2fuitebout
 {caserne2fuite}
-- prendre la porte droit devant
+- Prendre la porte droit devant
 =dévoré
-- prendre la porte de gauche
+- Prendre la porte de gauche
 =couloirréacteurfuite1bout
 
 $caserne2fuitelogsbout
 {caserne2fuite}
-- prendre la porte droit devant
+- Prendre la porte droit devant
 =dévoré
-- prendre la porte de gauche
+- Prendre la porte de gauche
 =couloirréacteurfuite1logsbout
 
 <couloirréacteurfuite1 Vous courez en direction du réacteur
 
 $couloirréacteurfuite1 bg=couloirporte
 {couloirréacteurfuite1}
-- pousser la porte
+- Pousser la porte
 =réacteurfuite
 
 $couloirréacteurfuite1logs bg=couloirporte
 {couloirréacteurfuite1}
-- pousser la porte
+- Pousser la porte
 =réacteurfuitelogs
 
 $couloirréacteurfuite1bout bg=couloirporte
 {couloirréacteurfuite1}
-- pousser la porte
+- Pousser la porte
 =réacteurfuitebout
 
 $couloirréacteurfuite1logsbout bg=couloirporte
 {couloirréacteurfuite1} 
-- pousser la portelogsbout
+- Pousser la portelogsbout
 =réacteurfuitelogsbout
 
 <réacteurfuite Vous arrivez devant le puits du réacteur, la créature se rapproche, vous n'êtes pas sûr d'avoir le temps de faire le tour du puits
 
 $réacteurfuite bg=réacteur
 {réacteurfuite}
-- faire le tour
+- Faire le tour
 =couloirréacteur2fuite
-- tenter de sauter au dessus du puits
+- Tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitelogs bg=réacteur
 {réacteurfuite}
-- faire le tour
+- Faire le tour
 =couloirréacteur2fuitelogs
-- tenter de sauter au dessus du puits
+- Tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitebout bg=réacteur
 {réacteurfuite}
-- faire le tour
+- Faire le tour
 =couloirréacteur2fuitebout
-- tenter de sauter au dessus du puits
+- Tenter de sauter au dessus du puits
 =freefall2
 
 $réacteurfuitelogsbout bg=réacteur
 {réacteurfuite}
-- faire le tour
+- Faire le tour
 =couloirréacteur2fuitelogsbout
-- tenter de sauter au dessus du puits
+- Tenter de sauter au dessus du puits
 =freefall2
 
 $freefall2
@@ -460,61 +459,61 @@ Vous menez la créature au puit du réacteur et l'entrainez dedans,
 
 $couloirréacteur2fuite bg=couloirporte
 {couloirréacteur2fuite}
-- pousser la porte
+- Pousser la porte
 =lab1fuite
 
 $couloirréacteur2fuitelogs bg=couloirporte
 {couloirréacteur2fuite}
-- pousser la porte
+- Pousser la porte
 =lab1fuitelogs
 
 $couloirréacteur2fuitebout bg=couloirporte
 {couloirréacteur2fuite}
-- pousser la porte
+- Pousser la porte
 =lab1fuitebout
 
 $couloirréacteur2fuitelogsbout bg=couloirporte
 {couloirréacteur2fuite}
-- pousser la porte
+- Pousser la porte
 =lab1fuitelogsbout
 
 <lab1fuite Vous entrez dans le laboratoire.
 
 $lab1fuite bg=lab
 {lab1fuite}
-- continuer
+- Continuer
 =lab2fuite
 
 $lab1fuitebout bg=lab
 {lab1fuite}
-- continuer
+- Continuer
 =lab2fuitebout
 
 $lab1logs bg=lab
 {lab1fuite}
 >{opportunité}
-- lancer les explosifs
+- Lancer les explosifs
 =mort
-- continuer
+- Continuer
 =lab2fuite
 
 $lab1logsbout
 {lab1fuite}
 >{opportunité}
-- lancer les explosifs
+- Lancer les explosifs
 =mortbout
-- continuer
+- Continuer
 =lab2fuitebout
 
 <mort La créature s'enflamme et se consume dans des râles d'agonie. Vous et la ville êtes saufs.
 $mort
 {mort}
-- sortir
+- Sortir
 =purifiéparlefeu
 
 $mortbout
 {mort}
-- sortir
+- Sortir
 =proposition
 
 $purifiéparlefeu bg=hill
@@ -527,43 +526,43 @@ Vous sortez du complexe rempli de soulagement, vous choisissez
 
 $lab2fuite
 {lab2fuite}
-- pousser la porte
+- Pousser la porte
 =derniercouloirfuite1
 
 $labfuitebout
 {lab2fuite}
-- pousser la porte
+- Pousser la porte
 =derniercouloirfuite1bout
 
 <derniercouloirfuite1 Vous continuez à courir dans le couloir, vous serez bientôt dehors.
 
 $derniercouloirfuite1 bg=couloirtournantdroit
 {derniercouloirfuite1}
-- tourner
+- Tourner
 =derniercouloirfuite2
 
 $derniercouloirfuite1bout bg=couloirtournantdroit
 {derniercouloirfuite1}
-- tourner
+- Tourner
 =derniercouloirfuite2bout
 
 <derniercouloirfuite2 Vous arrivez proche de la dernière échelle. Vous y êtes presque.
 
 $derniercouloirfuite2
 {derniercouloirfuite2}
-- gravir l'échelle
+- Gravir l'échelle
 =sortie
 
 $derniercouloirfuite2bout
 {derniercouloirfuite2}
-- gravir l'échelle
+- Gravir l'échelle
 =proposition
 
 $sortie bg=hill
 Vous vous précipitez à l'extérieur, Bert est assis sur une souche non loin
-- le prévenir
+- Le prévenir
 =Bert1
-- s'enfuir seul
+- S'enfuir seul
 =choixfuite
 
 $Bert1 char=Bert
@@ -571,9 +570,9 @@ Qu'est ce qu'il y a patron? Oh mon Dieu... qu'est ce que c'est que ce truc?!
 
 $ char=
 Bert monte dans la voiture
-- le suivre
+- Le suivre
 =fuite
-- fuir par la forêt
+- Fuir par la forêt
 =siproche
 
 $fuite music=calm
@@ -583,9 +582,9 @@ Vous et Bert vous enfuyez en prévenant le central, la créature arrête de vous
 
 $choixfuite
 Vous courez à toute vitesse
-- prendre la voiture
+- Prendre la voiture
 =amiabandonné
-- fuir par la forêt
+- Fuir par la forêt
 =siproche
 
 $amiabandonné music=sad
