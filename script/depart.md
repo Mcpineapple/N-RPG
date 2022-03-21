@@ -19,7 +19,6 @@ Ouais, et lorsque j'ai vu cette trappe, ca m'a fichu les jetons.
 
 $invit
 Je pense que la clé du mystère est là-dessous.
-
 - Et c'est moi qui vais devoir m'y coller?
 =descente
 - Ah?
@@ -34,7 +33,6 @@ Du coup vous voulez bien descendre?
 Bah si, c'est vous le shériff, et moi je dois rester en contact avec le
  central...
 Allez boss...
-
 - Bon ok...
 =
 
@@ -48,13 +46,11 @@ Vous descendez lentement l'échelle et allumez votre lampe torche.
 
 $2 char=talkie
 All... Vo... ...nt...ndez..
-
 - Bert ?
 =
 
 $3 char=
 le contact est coupé.
-
 - Remonter
 =couard
 - Pousser la porte
