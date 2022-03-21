@@ -57,7 +57,7 @@ Conditions : CC-BY 2.0 (https://creativecommons.org/licenses/by/2.0/)
 insigne :
 Local
 "Insigne de l'AMENO", par Pierre Chain (GitHub : PCwarrior05)
-Conditions : 
+Conditions : CC0 (domaine public)
 
 corps :
 https://www.groundreport.com/to-the-american-soldier-i-am-sorry-to-say-if-we-dont-do-our-job-in-congress-you-will-be-there-until-2024-says-rep-jones/
