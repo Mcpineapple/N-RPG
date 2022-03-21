@@ -1,20 +1,20 @@
-# Importations des moteurs de jeu
-# Importation du parser de script (transforme le script en arbre)
-# ^ Ce précédent fichier se charge d'importer la structure d'arbre binaire
+# Importation du moteur qui fait tourner le jeu
+from nrpg.moteur import *
+# Importation du module os.path, essentiel pour proprement indiquer l'emplacement d'un fichier
+import os.path
 
-# Une fois commencé, le jeu évolue à l'aide d'une fonction récursive : un choix
-# ou un passage de texte appelle la fonction de lecture du moteur vers le texte
-# suivant
+# Création d'objets contenant l'emplacement du son et de l'image d'introduction
+image = os.path.join(os.path.dirname(__file__), 'media', 'images', 'imagemenu.jpg')
+son = os.path.join(os.path.dirname(__file__), 'media', 'sfx', 'Duckpoxode_Syrup.mp3')
 
-# Structure : Une fonction init/main, qui crée la fenêtre et appelle le jeu
-# Lorsque le jeu se termine, il est appelé à nouveau si on rejoue
+# Création de l'objet tkinter
+root = Tk()
 
-# La fonction de jeu est récursive, et fait les appels au moteur de jeu
+# Création du moteur
+moteur = MoteurGUI("Bonjour !\n")
 
-# En fonction des implications, la fenêtre de jeu pourra être une classe, un
-# module ou simplement des fonctions
+# Lancement de l'interface
+moteur.lancer_interface(root, image, son)
 
-# Ce fichier, comme toujours, est le fichier principal qui appelle tous le
-# autres composants :
-# Le moins possible doit être défini ici, et il annonce simplement la façon dont
-# les composants intéragissent
+# Boucle principale de l'objet root pour afficher l'interface graphique
+root.mainloop()
