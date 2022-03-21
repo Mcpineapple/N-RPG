@@ -41,6 +41,7 @@ Pierre|écriture|20/03|4h|écriture du script
 Pierre|Media(fonds,musique)|20/03|0h30|Recherche de medias, images et musiques
 François|Media (fonds, musiques)|20/03|0h30|Ajout du crédit et des images et musique
 Tristan|Moteur|20/03|4h|Raccordage du moteur et de l'interface avec le parser et l'arbre
+François|Compte-Rendu|21/03|0h30|Rédaction du compte-rendu
 François|Media (fonds, musique)|21/03|1h30|Ajout des dernières images et musiques et crédit
 
 
@@ -59,14 +60,12 @@ Media|20/03|Difficile (licences à contrôler)|Ajout d'images et de musiques lib
 ## Récapitulatif du travail
 Type|Temps|Difficulté
 ----|-----|----------
-Organisation||
-Codage (interne)||
-Codage (structures)||
-Codage (console)||
-Codage (graphique)||
-Codage (modules)||
-Media (graphismes, etc.)||
-Script||
-Conception||
-Compte-rendu||
-Présentation||
+Organisation|4h30|Facile
+Codage (arbre)|1h20|Facile
+Codage (console)|2h30|Facile
+Codage (graphique)|10h45|Difficile
+Codage (modules)|1h|Facile
+Media (graphismes, etc.)|5h30|Difficile
+Script|7h|Moyen
+Conception|2h|Moyen
+Compte-rendu|0h30|Facile
