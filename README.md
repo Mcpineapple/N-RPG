@@ -9,7 +9,7 @@ Puis entrez dans le dossier et rendez modulaire le dossier :
 `pip install .`
 
 ## Contenu
-Il contiendra la présentation et le sommaire, les noms, les rôles
+Il contiendra la présentation et le sommaire, les noms, les rôles.
 Il documentera aussi comment lancer le jeu, l'installer ainsi que quelques
 informations de fonctionnement général montrant le plan du projet et comment le
 modifier.
