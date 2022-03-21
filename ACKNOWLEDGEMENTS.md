@@ -19,6 +19,11 @@ https://pixabay.com/music/dramatic-reveal-21469/
 "Dramatic Reveal", par "SergeQuadrado" sur Pixabay
 Conditions : Pixabay license : https://pixabay.com/service/terms/#license
 
+Duckpoxode_Syrup :
+http://ccmixter.org/files/duckett/64760
+"Duckpoxode Syrup (Protean Mix)", par duckett feat. Apoxode sur CCmixter
+Conditions : CC-BY-NC 3.0 (https://creativecommons.org/licenses/by-nc/3.0/)
+
 ## Effets sonores
 
 ## Images
