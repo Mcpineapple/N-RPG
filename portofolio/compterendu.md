@@ -84,3 +84,59 @@ source de notre projet via le logiciel libre de gestion de versions Git, par
 Linus Torvalds, et en l'hébergeant sur la plateforme renommée GitHub. Nous avons
 autrement utilisé Discord pour organiser notre discussion sur le projet et
 rester en contact.
+Il nous a semblé important, dans la dynamique du système créé, de créer un
+système le plus modulaire possible : des appels standards régis par des
+conventions précisées sont échangés entre le parser et le moteur.
+Afin de nous rapprocher de la consigne de l'arbre binaire, nous avons ensuite
+décidé d'utiliser l'arbre binaire comme intermédiaire entre le parser et le
+moteur, de façon à obtenir toute l'histoire pour l'utilisation du moteur.
+Les appels échangés au niveau du parser sont encodés en JavaScript Object
+Notation, car il s'agit d'un standard solide disponible pour tous les systèmes,
+qu'il est très simple à mettre en place, facilite la compréhension, s'adapte
+bien au système de paramètres, et se calque avec beaucoup de transparence sur
+les dictionnaires python.
+Enfin, nous avons décidé de modifier les éléments non-textuels du jeu par un
+système de variables, qui son explicitement modifiées par l'écrivain lorsqu'il
+ne s'agit pas de la même chose qu'avant. Ce système facilite l'écriture et
+"reste hors du chemin" de quelqu'un qui écrit une histoire.
+De nombreux fichiers textes sont présents dans le projet et des le portofolio :
+le format d'écriture selectionné est le MarkDown en fichier de texte brut.
+Celui-ci est bien plus portable, adapté à son utilisation via Git, simple et
+lisible, et est l'une des inspirations principales du projet. L'utilisation de
+taritement de texte étant ainsi simplement mauvaise pour ce type de projet,
+couteuse et inefficace, le MarkDown est la solution générale pour l'écriture
+dans ce projet.
+
+## Difficultés rencontrées
+Bien qu'intéressant, il a été impossible de mettre en place un Inter-Process
+Communication du parser vers d'autres moteurs : la technicité de ce type de
+méthode dépassait les demandes du projet.
+Il fut assez difficile de trouver des éléments médias libres de droits et sous
+licenses libres de droits sur internet : beaucoup de sites détiennent la
+propriété d'images qui ne sont obtenues que contre un droit à la licence
+onéreux.
+Le parser a été conçu de façon a permettre à un utilisateur en communication via
+le moteur d'effectuer une progression linéaire : ce système ne convenait pas à
+l'approche de stockage dans un arbre binaire qui fut choisi, et a donc nécessité
+des méthodes plus compliquées pour faire fonctionner ce modèle.
+
+
+## Conclusion
+Ce projet, destiné à le création d'un jeu vidéo, nous a permis de nous organiser
+à l'utilisation de nombreux outils : outils de gestion de version, plateformes
+d'hébergements, logiciels pour le son et la musique, banques média, modules
+standards python, utilisation de spécifications pour encadrer le développement,
+services de messagerie ... Cette approche plus "professionelle" au projet nous a
+permis d'aller plus loin et produire un jeu aussi bien qu'un système de qualité,
+perenne, et efficace.
+Pour le contenu même du jeu, nous avons pu obtenir des résultats satisfaisants
+quant à nos attentes : nous profitons désormais d'un bon scénario avec un
+système facile d'utilisation, intuitif et intéractif. Les thèmes choisis nous
+ont semblé effectivement parfaitement convenir au format recherché.
+Ce projet de Numérique et Sciences Informatiques nous a ainsi de permis de
+réaliser une oeuvre vidéoludique satisfaisante, se pliant à des exigeances à la
+fois de fonctionnalités requises et de fonctionnement, d'extensibilité et de
+fonctionnement en tant que groupe. Nous avons pu utiliser tout au long du projet
+des outils professionnels, augmentant grandement l'efficacité du développement
+et de l'organisation.
+Il ne reste plus qu'au joueur d'en profiter !
