@@ -1,0 +1,3929 @@
+--  --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'music': 'calm', 'bg': 'hill', 'char': 'Bert'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Ah vous voilà patron!'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous avez compris ce que j'ai dit au téléphone?"}
+
+(Oui, tout était clair!)
+-- 0 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Et c'est moi qui vais devoir m'y coller?)
+-- 00 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je vais essayer de rester en contact avec vous mais on doit pas capter grand chose là-dessous !'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': '', 'music': '', 'bg': 'entrée'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous descendez lentement l'échelle et allumez votre lampe torche."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': 'talkie'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'All... Vo... ...nt...ndez..'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': ''}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'le contact est coupé.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Remonter)
+-- 000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'fin', 'parametres': '', 'texte': ''}
+
+(Pousser la porte)
+-- 001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir en acier.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Où continuer ?'}
+
+(À droite)
+-- 0010 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantgauche', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'bg': 'lab'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans ce qui semble être un laboratoire désaffecté.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Sur le mur de droite se trouvent des cylindres brillants remplis d'un fluide vert dans lequel baignent d'étranges créatures."}
+
+(Continuer)
+-- 00100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 001000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0010000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00100000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00100001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0010001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00100010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00100011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 001001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0010010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00100100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00100101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0010011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00100110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00100111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Regarder une créature)
+-- 00101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188 forme non constante, aucun organe repéré. Composée d\'une "espèce de plasma noir" selon le docteur Jeff O\'Hale, responsable de la créature #3188 et affiliés"'}
+
+(Arrêter de lire)
+-- 001010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 00101000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001010000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001010001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 00101001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001010010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001010011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 0010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 00101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 00101011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001010110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 001011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. On remarque chez ce spécimen une forme ovale particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de nourriture qui a été posé au dessus d\'elle. Cette expérience montre la flexibilité des créatures #3188."'}
+
+(Arrêter de lire)
+-- 0010110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 00101100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 001011000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0010110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0010110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 001011001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0010110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0010110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 00101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 001011010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0010110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0010110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 001011011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0010110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0010110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 0010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Le fluide dans lequel elle est conservée se trouve être un dérivé du formol, appelé héxacétyloformol, choisi pour ses capacités conservatrices. Fait surprenant, les créatures #3188bis semblent entrer dans une forme d\'hibernation, montrant un organisme complexe, bien que difficile à examiner"'}
+
+(Arrêter de lire)
+-- 00101110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 001011100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0010111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00101110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00101110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0010111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00101110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00101110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 001011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0010111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00101110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00101110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0010111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00101110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00101110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 00101111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Malgré une constitution quasiment indestructible, la créature #3188 dispose de 2 points faibles. Le premier est la chute, en effet quelques dizaines de mètres de chute sont suffisant pour tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs, le plasma noir qui compose la créature est très inflammable et réagit violemment avec le feu."'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 001011110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'calm'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits."}
+
+(Regarder au fond du réacteur)
+-- 0010111100 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 00101111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001011110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001011110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 00101111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001011110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001011110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Continuer)
+-- 0010111101 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 00101111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001011110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001011110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 00101111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 001011110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 001011110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Celle de droite)
+-- 001011111 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0010111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00101111100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00101111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0010111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 00101111110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 00101111111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+
+
+(À gauche)
+-- 0011 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantdroit', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la droite.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.'}
+
+(Inspecter le corps)
+-- 00110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Prendre le paquet)
+-- 001100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(Ne pas continuer)
+-- 001101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 00111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Ah?)
+-- 01 --
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Du coup vous voulez bien descendre?'}
+
+(Euh, D'accord...)
+-- 010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je vais essayer de rester en contact avec vous mais on doit pas capter grand chose là-dessous !'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': '', 'music': '', 'bg': 'entrée'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous descendez lentement l'échelle et allumez votre lampe torche."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': 'talkie'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'All... Vo... ...nt...ndez..'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': ''}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'le contact est coupé.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Remonter)
+-- 0100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'fin', 'parametres': '', 'texte': ''}
+
+(Pousser la porte)
+-- 0101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir en acier.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Où continuer ?'}
+
+(À droite)
+-- 01010 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantgauche', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'bg': 'lab'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans ce qui semble être un laboratoire désaffecté.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Sur le mur de droite se trouvent des cylindres brillants remplis d'un fluide vert dans lequel baignent d'étranges créatures."}
+
+(Continuer)
+-- 010100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0101000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01010000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010100000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010100001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01010001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010100010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010100011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 0101001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01010010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010100100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010100101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01010011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010100110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010100111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Regarder une créature)
+-- 010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188 forme non constante, aucun organe repéré. Composée d\'une "espèce de plasma noir" selon le docteur Jeff O\'Hale, responsable de la créature #3188 et affiliés"'}
+
+(Arrêter de lire)
+-- 0101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 01010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 010101000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101010000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101010001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 010101001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101010010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101010011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 01010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 010101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 010101011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101010110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 0101011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. On remarque chez ce spécimen une forme ovale particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de nourriture qui a été posé au dessus d\'elle. Cette expérience montre la flexibilité des créatures #3188."'}
+
+(Arrêter de lire)
+-- 01010110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 010101100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0101011000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01010110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01010110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0101011001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01010110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01010110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 010101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0101011010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01010110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01010110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0101011011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01010110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01010110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 01010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Le fluide dans lequel elle est conservée se trouve être un dérivé du formol, appelé héxacétyloformol, choisi pour ses capacités conservatrices. Fait surprenant, les créatures #3188bis semblent entrer dans une forme d\'hibernation, montrant un organisme complexe, bien que difficile à examiner"'}
+
+(Arrêter de lire)
+-- 010101110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0101011100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01010111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010101110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010101110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01010111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010101110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010101110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 0101011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01010111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010101110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010101110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01010111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010101110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010101110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 010101111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Malgré une constitution quasiment indestructible, la créature #3188 dispose de 2 points faibles. Le premier est la chute, en effet quelques dizaines de mètres de chute sont suffisant pour tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs, le plasma noir qui compose la créature est très inflammable et réagit violemment avec le feu."'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0101011110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'calm'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits."}
+
+(Regarder au fond du réacteur)
+-- 01010111100 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 010101111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101011110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101011110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 010101111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101011110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101011110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Continuer)
+-- 01010111101 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 010101111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101011110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101011110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 010101111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0101011110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0101011110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Celle de droite)
+-- 0101011111 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01010111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010101111100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010101111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01010111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 010101111110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 010101111111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+
+
+(À gauche)
+-- 01011 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantdroit', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la droite.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.'}
+
+(Inspecter le corps)
+-- 010110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Prendre le paquet)
+-- 0101100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(Ne pas continuer)
+-- 0101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 010111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Ah oui mais non!)
+-- 011 --
+{'type': 'texte', 'remplacer': 0, 'contenu': "Bah si, c'est vous le shériff, et moi je dois rester en contact avec le central..."}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Allez boss...'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Allez boss, courage!'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je vais essayer de rester en contact avec vous mais on doit pas capter grand chose là-dessous !'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': '', 'music': '', 'bg': 'entrée'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous descendez lentement l'échelle et allumez votre lampe torche."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': 'talkie'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'All... Vo... ...nt...ndez..'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': ''}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'le contact est coupé.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Remonter)
+-- 0110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'fin', 'parametres': '', 'texte': ''}
+
+(Pousser la porte)
+-- 0111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir en acier.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Où continuer ?'}
+
+(À droite)
+-- 01110 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantgauche', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'bg': 'lab'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans ce qui semble être un laboratoire désaffecté.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Sur le mur de droite se trouvent des cylindres brillants remplis d'un fluide vert dans lequel baignent d'étranges créatures."}
+
+(Continuer)
+-- 011100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0111000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01110000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011100000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011100001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01110001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011100010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011100011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 0111001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01110010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011100100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011100101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01110011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011100110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011100111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Regarder une créature)
+-- 011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188 forme non constante, aucun organe repéré. Composée d\'une "espèce de plasma noir" selon le docteur Jeff O\'Hale, responsable de la créature #3188 et affiliés"'}
+
+(Arrêter de lire)
+-- 0111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 01110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 011101000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111010000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111010001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 011101001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111010010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111010011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 01110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 011101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 011101011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111010110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 0111011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. On remarque chez ce spécimen une forme ovale particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de nourriture qui a été posé au dessus d\'elle. Cette expérience montre la flexibilité des créatures #3188."'}
+
+(Arrêter de lire)
+-- 01110110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 011101100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0111011000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01110110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01110110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0111011001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01110110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01110110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 011101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 0111011010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01110110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01110110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 0111011011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 01110110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 01110110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 01110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Le fluide dans lequel elle est conservée se trouve être un dérivé du formol, appelé héxacétyloformol, choisi pour ses capacités conservatrices. Fait surprenant, les créatures #3188bis semblent entrer dans une forme d\'hibernation, montrant un organisme complexe, bien que difficile à examiner"'}
+
+(Arrêter de lire)
+-- 011101110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0111011100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01110111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011101110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011101110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01110111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011101110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011101110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 0111011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01110111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011101110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011101110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01110111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011101110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011101110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 011101111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Malgré une constitution quasiment indestructible, la créature #3188 dispose de 2 points faibles. Le premier est la chute, en effet quelques dizaines de mètres de chute sont suffisant pour tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs, le plasma noir qui compose la créature est très inflammable et réagit violemment avec le feu."'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 0111011110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'calm'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits."}
+
+(Regarder au fond du réacteur)
+-- 01110111100 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 011101111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111011110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111011110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 011101111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111011110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111011110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Continuer)
+-- 01110111101 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 011101111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111011110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111011110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 011101111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 0111011110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 0111011110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Celle de droite)
+-- 0111011111 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 01110111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011101111100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011101111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 01110111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 011101111110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 011101111111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+
+
+(À gauche)
+-- 01111 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantdroit', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la droite.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.'}
+
+(Inspecter le corps)
+-- 011110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Prendre le paquet)
+-- 0111100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(Ne pas continuer)
+-- 0111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 011111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+(Euh,Non...)
+-- 1 --
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Eh bien, vous voyez comment les disparitions étaient agencées sur la carte ?'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Avouez que c'était un peu étrange non? Eh bien ca formait un cercle, et le centre du cercle"}
+{'type': 'texte', 'remplacer': 0, 'contenu': ", c'est ici!"}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Ouais, et lorsque j'ai vu cette trappe, ca m'a fichu les jetons."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je pense que la clé du mystère est là-dessous.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Et c'est moi qui vais devoir m'y coller?)
+-- 10 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je vais essayer de rester en contact avec vous mais on doit pas capter grand chose là-dessous !'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': '', 'music': '', 'bg': 'entrée'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous descendez lentement l'échelle et allumez votre lampe torche."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': 'talkie'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'All... Vo... ...nt...ndez..'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': ''}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'le contact est coupé.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Remonter)
+-- 100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'fin', 'parametres': '', 'texte': ''}
+
+(Pousser la porte)
+-- 101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir en acier.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Où continuer ?'}
+
+(À droite)
+-- 1010 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantgauche', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'bg': 'lab'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans ce qui semble être un laboratoire désaffecté.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Sur le mur de droite se trouvent des cylindres brillants remplis d'un fluide vert dans lequel baignent d'étranges créatures."}
+
+(Continuer)
+-- 10100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 101000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1010000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10100000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10100001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1010001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10100010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10100011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 101001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1010010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10100100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10100101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1010011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10100110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10100111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Regarder une créature)
+-- 10101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188 forme non constante, aucun organe repéré. Composée d\'une "espèce de plasma noir" selon le docteur Jeff O\'Hale, responsable de la créature #3188 et affiliés"'}
+
+(Arrêter de lire)
+-- 101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 10101000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101010000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101010001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 10101001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101010010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101010011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 1010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 10101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 10101011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101010110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 101011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. On remarque chez ce spécimen une forme ovale particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de nourriture qui a été posé au dessus d\'elle. Cette expérience montre la flexibilité des créatures #3188."'}
+
+(Arrêter de lire)
+-- 1010110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 10101100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 101011000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1010110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1010110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 101011001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1010110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1010110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 10101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 101011010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1010110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1010110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 101011011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1010110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1010110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 1010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Le fluide dans lequel elle est conservée se trouve être un dérivé du formol, appelé héxacétyloformol, choisi pour ses capacités conservatrices. Fait surprenant, les créatures #3188bis semblent entrer dans une forme d\'hibernation, montrant un organisme complexe, bien que difficile à examiner"'}
+
+(Arrêter de lire)
+-- 10101110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 101011100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1010111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10101110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10101110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1010111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10101110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10101110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 101011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1010111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10101110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10101110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1010111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10101110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10101110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 10101111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Malgré une constitution quasiment indestructible, la créature #3188 dispose de 2 points faibles. Le premier est la chute, en effet quelques dizaines de mètres de chute sont suffisant pour tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs, le plasma noir qui compose la créature est très inflammable et réagit violemment avec le feu."'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 101011110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'calm'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits."}
+
+(Regarder au fond du réacteur)
+-- 1010111100 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 10101111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101011110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101011110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 10101111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101011110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101011110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Continuer)
+-- 1010111101 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 10101111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101011110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101011110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 10101111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 101011110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 101011110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Celle de droite)
+-- 101011111 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1010111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10101111100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10101111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1010111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 10101111110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 10101111111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+
+
+(À gauche)
+-- 1011 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantdroit', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la droite.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.'}
+
+(Inspecter le corps)
+-- 10110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Prendre le paquet)
+-- 101100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(Ne pas continuer)
+-- 101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 10111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Ah?)
+-- 11 --
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Du coup vous voulez bien descendre?'}
+
+(Euh, D'accord...)
+-- 110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je vais essayer de rester en contact avec vous mais on doit pas capter grand chose là-dessous !'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': '', 'music': '', 'bg': 'entrée'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous descendez lentement l'échelle et allumez votre lampe torche."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': 'talkie'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'All... Vo... ...nt...ndez..'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': ''}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'le contact est coupé.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Remonter)
+-- 1100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'fin', 'parametres': '', 'texte': ''}
+
+(Pousser la porte)
+-- 1101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir en acier.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Où continuer ?'}
+
+(À droite)
+-- 11010 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantgauche', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'bg': 'lab'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans ce qui semble être un laboratoire désaffecté.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Sur le mur de droite se trouvent des cylindres brillants remplis d'un fluide vert dans lequel baignent d'étranges créatures."}
+
+(Continuer)
+-- 110100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1101000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11010000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110100000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110100001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11010001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110100010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110100011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 1101001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11010010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110100100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110100101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11010011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110100110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110100111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Regarder une créature)
+-- 110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188 forme non constante, aucun organe repéré. Composée d\'une "espèce de plasma noir" selon le docteur Jeff O\'Hale, responsable de la créature #3188 et affiliés"'}
+
+(Arrêter de lire)
+-- 1101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 11010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 110101000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101010000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101010001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 110101001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101010010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101010011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 11010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 110101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 110101011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101010110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 1101011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. On remarque chez ce spécimen une forme ovale particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de nourriture qui a été posé au dessus d\'elle. Cette expérience montre la flexibilité des créatures #3188."'}
+
+(Arrêter de lire)
+-- 11010110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 110101100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1101011000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11010110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11010110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1101011001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11010110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11010110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 110101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1101011010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11010110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11010110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1101011011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11010110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11010110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 11010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Le fluide dans lequel elle est conservée se trouve être un dérivé du formol, appelé héxacétyloformol, choisi pour ses capacités conservatrices. Fait surprenant, les créatures #3188bis semblent entrer dans une forme d\'hibernation, montrant un organisme complexe, bien que difficile à examiner"'}
+
+(Arrêter de lire)
+-- 110101110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1101011100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11010111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110101110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110101110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11010111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110101110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110101110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 1101011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11010111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110101110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110101110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11010111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110101110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110101110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 110101111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Malgré une constitution quasiment indestructible, la créature #3188 dispose de 2 points faibles. Le premier est la chute, en effet quelques dizaines de mètres de chute sont suffisant pour tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs, le plasma noir qui compose la créature est très inflammable et réagit violemment avec le feu."'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1101011110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'calm'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits."}
+
+(Regarder au fond du réacteur)
+-- 11010111100 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 110101111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101011110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101011110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 110101111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101011110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101011110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Continuer)
+-- 11010111101 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 110101111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101011110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101011110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 110101111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1101011110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1101011110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Celle de droite)
+-- 1101011111 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11010111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110101111100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110101111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11010111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 110101111110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 110101111111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+
+
+(À gauche)
+-- 11011 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantdroit', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la droite.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.'}
+
+(Inspecter le corps)
+-- 110110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Prendre le paquet)
+-- 1101100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(Ne pas continuer)
+-- 1101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 110111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Ah oui mais non!)
+-- 111 --
+{'type': 'texte', 'remplacer': 0, 'contenu': "Bah si, c'est vous le shériff, et moi je dois rester en contact avec le central..."}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Allez boss...'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Allez boss, courage!'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Je vais essayer de rester en contact avec vous mais on doit pas capter grand chose là-dessous !'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': '', 'music': '', 'bg': 'entrée'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous descendez lentement l'échelle et allumez votre lampe torche."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': 'talkie'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'All... Vo... ...nt...ndez..'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'char': ''}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'le contact est coupé.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Remonter)
+-- 1110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'fin', 'parametres': '', 'texte': ''}
+
+(Pousser la porte)
+-- 1111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir en acier.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Où continuer ?'}
+
+(À droite)
+-- 11110 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantgauche', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la gauche.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres', 'bg': 'lab'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans ce qui semble être un laboratoire désaffecté.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Sur le mur de droite se trouvent des cylindres brillants remplis d'un fluide vert dans lequel baignent d'étranges créatures."}
+
+(Continuer)
+-- 111100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1111000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11110000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111100000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111100001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11110001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111100010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111100011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 1111001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11110010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111100100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111100101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11110011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111100110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111100111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Regarder une créature)
+-- 111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Trouvée non loin du nid de la créature #3188 forme non constante, aucun organe repéré. Composée d\'une "espèce de plasma noir" selon le docteur Jeff O\'Hale, responsable de la créature #3188 et affiliés"'}
+
+(Arrêter de lire)
+-- 1111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 11110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 111101000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111010000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111010001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 111101001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111010010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111010011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 11110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 111101010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111010100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111010101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 111101011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111010110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111010111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 1111011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. On remarque chez ce spécimen une forme ovale particulière, rappelant la poire. Cette forme a été acquise suite à un morceau de nourriture qui a été posé au dessus d\'elle. Cette expérience montre la flexibilité des créatures #3188."'}
+
+(Arrêter de lire)
+-- 11110110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 111101100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1111011000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11110110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11110110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1111011001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11110110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11110110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 111101101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 1111011010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11110110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11110110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 1111011011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 11110110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 11110110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 11110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Le fluide dans lequel elle est conservée se trouve être un dérivé du formol, appelé héxacétyloformol, choisi pour ses capacités conservatrices. Fait surprenant, les créatures #3188bis semblent entrer dans une forme d\'hibernation, montrant un organisme complexe, bien que difficile à examiner"'}
+
+(Arrêter de lire)
+-- 111101110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1111011100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11110111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111101110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111101110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11110111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111101110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111101110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Celle de droite)
+-- 1111011101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11110111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111101110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111101110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11110111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111101110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111101110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Lire le suivant)
+-- 111101111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous lisez l'entrée située en dessous du tube, Il est écrit:"}
+{'type': 'texte', 'remplacer': 0, 'contenu': '"Spécimen de la créature #3188bis. Malgré une constitution quasiment indestructible, la créature #3188 dispose de 2 points faibles. Le premier est la chute, en effet quelques dizaines de mètres de chute sont suffisant pour tuer la créature #3188 et associés. Le deuxième est le feu et les explosifs, le plasma noir qui compose la créature est très inflammable et réagit violemment avec le feu."'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Celle de gauche)
+-- 1111011110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Devant vous s'étend un couloir avec une porte à la fin"}
+{'type': 'parametres', 'music': 'calm'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "Vous arrivez dans une grande salle circulaire avec un gigantesque puits, un trou au plafond a laissé filtrer l'air et la pluie. Vous apercevez de la mousse aux abords du puits."}
+
+(Regarder au fond du réacteur)
+-- 11110111100 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 111101111000 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111011110000 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111011110001 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 111101111001 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111011110010 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111011110011 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+(Continuer)
+-- 11110111101 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 111101111010 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111011110100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111011110101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 111101111011 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 1111011110110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 1111011110111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+(Celle de droite)
+-- 1111011111 --
+{'type': 'parametres', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans un couloir sombre avec une porte au bout.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(Inspecter le corps)
+-- 11110111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111101111100 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111101111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 11110111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+
+(prendre le paquet)
+-- 111101111110 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(ne pas continuer)
+-- 111101111111 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
+
+
+(À gauche)
+-- 11111 --
+{'type': 'parametres', 'char': '', 'bg': 'couloirtournantdroit', 'music': 'suspense'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous avancez dans le couloir sombre. Devant vous se trouve un tournant vers la droite.'}
+{'type': 'parametres', 'bg': 'couloirporte'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous continuez à avancer.'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Devant vous se trouve une porte en acier fermée.'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': 'Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.'}
+
+(Inspecter le corps)
+-- 111110 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+
+(Prendre le paquet)
+-- 1111100 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+(Ne pas continuer)
+-- 1111101 --
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+(Continuer)
+-- 111111 --
+{'type': 'texte', 'remplacer': 1, 'contenu': ''}
+{'type': 'parametres'}
+{'type': 'parametres'}
+{'type': 'texte', 'remplacer': 0, 'contenu': "vous examinez l'insigne du militaire, il ne vous dit absolument rien."}
+{'type': 'parametres'}
+
+
+
+
+
+
