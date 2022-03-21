@@ -41,6 +41,7 @@ Pierre|écriture|20/03|4h|écriture du script
 Pierre|Media(fonds,musique)|20/03|0h30|Recherche de medias, images et musiques
 François|Media (fonds, musiques)|20/03|0h30|Ajout du crédit et des images et musique
 Tristan|Moteur|20/03|4h|Raccordage du moteur et de l'interface avec le parser et l'arbre
+François|Media (fonds, musique)|21/03|1h30|Ajout des dernières images et musiques et crédit
 
 
 ## Étapes de développement
