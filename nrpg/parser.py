@@ -75,6 +75,9 @@ class Parser:
         self._choix = [] # Options entre lesquelles choisir
         self._trouve = False # Marqueur, permettant de lire une ligne comme des
         # parametres plutôt que du texte après une recherche
+        self._laver = 0 # Valeur, qui en étant de 0 ou de 1, indique si l'écran
+        # doit être lavé. C'est le cas après un retour à la ligne, ou une
+        # recherche.
 
     def _fin(func):
         u"""
@@ -137,12 +140,18 @@ class Parser:
 
         if caractere == "\n":
             self._trouve = False
-            contenu = {
-                    "type": "texte",
-                    "remplacer": 1,
-                    "contenu": ""
-                    }
-            return json.dumps(contenu)
+            if self._laver == 1 :
+                self._laver = 0
+                contenu = {
+                        "type": "texte",
+                        "remplacer": 1,
+                        "contenu": ""
+                        }
+                return json.dumps(contenu)
+            else :
+                self._laver = 1
+                # Relance un appel
+                return self.continuer()
 
         elif self._trouve or caractere == "$" :
             self._trouve = False
@@ -190,6 +199,7 @@ class Parser:
                     self._choix[compteur] = self._identifiant()
                     self._contenu() # Ignorer la fin de la ligne
                 elif caractere == "\n":
+                    self._laver = 1
                     break
                 else:
                     self._contenu()
@@ -246,9 +256,12 @@ class Parser:
             contenu = self._contenu(caractere, True)
             sortie = {
                     "type": "texte",
-                    "remplacer": 0,
+                    "remplacer": self._laver,
                     "contenu": contenu
                     }
+            # Ne lave l'écran qu'une seule fois
+            if self._laver == 1:
+                self._laver = 0
             return json.dumps(sortie)
 
     def choisir(self, choix: int = None) -> None:
@@ -401,6 +414,7 @@ class Parser:
             Indexage des identifiants rencontrés
             Sortie : Aucune
         """
+        self._laver = 1 # Lave l'écran après un changement
         # Passe sur l'identifiant pour y trouver un lien
         if identifiant[0] == '[':
             compteur = 1
