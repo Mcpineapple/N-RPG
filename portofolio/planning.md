@@ -44,7 +44,7 @@ Tristan|Moteur|20/03|4h|Raccordage du moteur et de l'interface avec le parser et
 François|Compte-Rendu|21/03|0h30|Rédaction du compte-rendu
 François|Media (fonds, musique)|21/03|1h30|Ajout des dernières images et musiques et crédit
 Pierre|planning|21/03|1h|rédaction des arbres binaires décrivant l'histoire
-
+Pierre|script|1h|correction syntaxique et ajout d'un fond noir
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu

@@ -64,7 +64,7 @@ Où continuer ?
 - À gauche
 =[gauche.md]
 
-$couard bg=black
+$couard bg=noir
 Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent
  pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait
  pendant des années.

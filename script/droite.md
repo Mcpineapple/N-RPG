@@ -105,12 +105,12 @@ $réacteurlogs bg=réacteur music=calm
 - Continuer
 =couloirréacteur2logs
 
-$Freefall bg=réacteur
+$Freefall bg=noir
 En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond,
  vous glissez sur la mousse environnant le puits.
  Vous mourrez après la meilleure expérience de chute libre de votre vie (et la plus courte).
 
-| Freefall 
+| Freefall
 
 <couloirréacteur2 Vous arrivez dans un couloir sombre avec une porte au bout.
 
@@ -266,7 +266,7 @@ $créature char=créature
 ...
 >AUUUUUUUUGHHHHHH
 
-$dévoré
+$dévoré bg=noir
 La créature va plus vite que vous et vous rattrape, vous sentez votre corps se faire
  dissoudre dans le plasma noir qui forme le corps de la créature.
 
@@ -449,9 +449,9 @@ $réacteurfuitelogsbout bg=réacteur
 - Tenter de sauter au dessus du puits
 =freefall2
 
-$freefall2
+$freefall2 bg=noir music=
 Vous menez la créature au puit du réacteur et l'entrainez dedans, 
- malheureusement vous tombez aussi, "Au moins j'ai sauvé la ville" est votre dernière pensée.
+ malheureusement vous tombez aussi. "Au moins j'ai sauvé la ville" est votre dernière pensée.
  Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
 | Freefall 2
 
@@ -516,7 +516,7 @@ $mortbout
 - Sortir
 =proposition
 
-$purifiéparlefeu bg=hill
+$purifiéparlefeu bg=noir
 Vous sortez du complexe rempli de soulagement, vous choisissez
  de ne pas raconter l'histoire à Bert, il ne vous croirai pas.
  Cependant, les disparitions cessent, tout le monde va bien.
@@ -575,7 +575,7 @@ Bert monte dans la voiture
 - Fuir par la forêt
 =siproche
 
-$fuite music=calm
+$fuite music=calm bg=noir
 Vous et Bert vous enfuyez en prévenant le central, la créature arrête de vous 
  poursuivre. Le lendemain, des militaires sont sur la zone.
 | Fuite
@@ -587,12 +587,12 @@ Vous courez à toute vitesse
 - Fuir par la forêt
 =siproche
 
-$amiabandonné music=sad
+$amiabandonné music= bg=noir
 Vous fuyez en voiture sans demander votre reste et voyez Bert se faire dévorer
  vivant par la créature. Le lendemain, des militaires sont sur la zone.
 | Ami Abandonné
 
-$siproche
+$siproche bg=noir music=
 Vous décidez de vous enfuir à travers la forêt, vous trébuchez sur une racine 
  et la créature vous rattrape. Vous sentez votre corps se faire dissoudre dans
  le plasma noir qui forme le corps de la créature.
@@ -621,11 +621,11 @@ $Elimination char=McTharney
 Je vois, après tout, nous ne pouvons pas vous forcer.
 >Au revoir, Shériff.
 
-$ char= music=
+$ char= music= bg=noir
 Bert se fait escorter vers un fourgon, McTharney sort un browning et fait feu.
 | Eliminé
 
-$Recruté char=McTharney
+$Recruté char=McTharney bg=noir
 Parfait, nous allons vous faire subir une formation intensive pendant les mois
  suivants. Vous partez tout de suite, désolé mais vous ne pourrez pas faire vos
  adieux.
