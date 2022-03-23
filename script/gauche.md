@@ -11,7 +11,7 @@ Devant vous se trouve une porte en acier fermée.
 - Pousser la porte
 =
 
-<caserne1 Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. vous voyez un cadavre de soldat au milieu de la pièce.
+<caserne1 Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. Vous voyez un cadavre de soldat au milieu de la pièce.
 
 $caserne1
 {caserne1}
@@ -20,24 +20,23 @@ $caserne1
 - Continuer
 =caserne2
 
-<corps vous examinez le corps du militaire, il serre un paquet dans ses bras.
+<corps Vous examinez le corps du militaire, il serre un paquet dans ses bras.
 
 $corps
 {corps}
-
 - Prendre le paquet
 =explosifs
 - Ne pas continuer
 =caserne2
 
-<explosifs Vous récupérez le paquet, il contient des explosifs, Cependant, vous ne savez pas comment ils pourraient vous être utiles
+<explosifs Vous récupérez le paquet, il contient des explosifs. Cependant, vous ne savez pas comment ils pourraient vous être utiles.
 
 $explosifs
 {explosifs}
-- examiner l'insigne
+- Examiner l'insigne
 =insigne
 
-<insigne vous examinez l'insigne du militaire, il ne vous dit absolument rien.
+<insigne Vous examinez l'insigne du militaire, il ne vous dit absolument rien.
 
 $insigne bg=insigne
 {insigne}
@@ -168,7 +167,7 @@ Vous appuyez sur le bouton, la porte s'ouvre doucement avec un grand fracas.
 - entrer
 =cellulebout
 
-<cellule Vous entrz dans la cellule, devant vous se trouve un cube en béton avec une étrange créature noire
+<cellule Vous entrez dans la cellule, devant vous se trouve un cube en béton avec une étrange créature noire
 
 $cellule bg=cellule char= music=
 {cellule}

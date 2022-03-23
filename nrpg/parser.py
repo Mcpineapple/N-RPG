@@ -136,6 +136,7 @@ class Parser:
         caractere = self._lire()
 
         if caractere == "\n":
+            self._trouve = False
             contenu = {
                     "type": "texte",
                     "remplacer": 1,
@@ -346,7 +347,6 @@ class Parser:
             Sortie :
                 contenu : str, texte lu jusqu'à la fin de la ligne.
         """
-        # Trouver un moyen de bien s'occuper de la fin du fichier !
         contenu = premier
         while True:
             caractere = self._lire()
@@ -419,8 +419,9 @@ class Parser:
             if position is not None:
                 self._script_actuel.seek(position)
             else:
+                caractere = "\n" # Le premier caractère a déjà été lu
+                # autrement une ligne pourrait être passée
                 while True:
-                    caractere = self._lire()
                     while caractere != "\n": # Recherche d'une fin de ligne
                         caractere = self._lire()
                     while caractere == "\n": # En cas de plusieurs retours à la ligne
@@ -432,12 +433,14 @@ class Parser:
                             self._table[nom] = self._script_actuel.tell()
                         if nom == identifiant : # Si il s'agit de ce que l'on
                             # cherchait
+                            self._trouve = True
                             break # Fin de la fonction
                     elif caractere == "<": # Scanne aussi les aliases
-                        identifiant = self._identifiant()
+                        nom = self._identifiant()
                         contenu = self._contenu()
-                        if identifiant != "":
-                            self._aliases[identifiant] = contenu
+                        if nom != "":
+                            self._aliases[nom] = contenu
+                    caractere = self._lire()
 
     def _passage_fichier(self, fichier: str) -> None:
         u"""
