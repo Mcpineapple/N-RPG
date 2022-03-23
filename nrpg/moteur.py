@@ -177,10 +177,10 @@ class MoteurGUI(Label):
         self.affichage_texte = Label(master, font=("Firacode",15), textvariable = self.texte_afficher, anchor=N, height=15, wraplength = 800)
         self.affichage_texte.pack(side=TOP)
 
-        self.bouton_gauche = Button(master, bg="grey", textvariable = self.texte_bouton_gauche, command=self.fonc_bouton_gauche, width = 45)
+        self.bouton_gauche = Button(master, bg="grey", font=("HeavyData Nerd Font",12), textvariable = self.texte_bouton_gauche, command=self.fonc_bouton_gauche, width = 45)
         self.bouton_gauche.pack(side=LEFT,expand=True)
 
-        self.bouton_droit = Button(master, bg="grey", textvariable = self.texte_bouton_droit, command=self.fonc_bouton_droit, width=45)
+        self.bouton_droit = Button(master, bg="grey", font=("HeavyData Nerd Font",12),textvariable = self.texte_bouton_droit, command=self.fonc_bouton_droit, width=45)
         self.bouton_droit.pack(side=RIGHT,expand=True)
 
         self.commande_bouton_gauche = "delete"
@@ -307,8 +307,11 @@ class MoteurGUI(Label):
             La commande associée au bouton gauche est executée.
         """
         self.jouer_bruitage("media/sfx/button-3.wav")
+
         if self.commande_bouton_gauche == "delete":
+
             self.fenetre.destroy()
+
         elif self.commande_bouton_gauche == "gauche":
 
             self.arbre = self.arbre.fils_gauche
@@ -324,6 +327,7 @@ class MoteurGUI(Label):
             La commande associée au bouton droit est executée.
         """
         self.jouer_bruitage("media/sfx/button-3.wav")
+
         if self.commande_bouton_droit ==  "start":
 
             position_script = os.path.join(os.path.dirname(__file__), '..', 'script', 'depart.md')
@@ -353,7 +357,18 @@ class MoteurGUI(Label):
 
     def appliquer_parser(self):
         u"""
+        Vérifie le contenu de l'arbre, lit les instructions données par le parser, et les appliquent.
         """
+
+        try:
+            print(self.arbre.texte)
+            print(self.arbre.arete_gauche)
+            print(self.arbre.arete_droit)
+            print(self.commande_bouton_gauche)
+            print(self.commande_bouton_droit)
+        except:
+            print("Err")
+
         if self.arbre.arete_gauche != u"" and self.arbre.arete_droit == u"":
 
             self.changer_texte_bouton_droit(self.arbre.arete_gauche)
