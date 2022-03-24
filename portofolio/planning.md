@@ -45,6 +45,7 @@ François|Compte-Rendu|21/03|0h30|Rédaction du compte-rendu
 François|Media (fonds, musique)|21/03|1h30|Ajout des dernières images et musiques et crédit
 Pierre|planning|21/03|1h|rédaction des arbres binaires décrivant l'histoire
 Pierre|script|1h|correction syntaxique et ajout d'un fond noir
+François|Codage (parser)|3h|Gestion de bugs
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
@@ -66,6 +67,7 @@ Codage (arbre)|1h20|Facile
 Codage (console)|2h30|Facile
 Codage (graphique)|10h45|Difficile
 Codage (modules)|1h|Facile
+Codage (parser)|11h30|Difficile
 Media (graphismes, etc.)|5h30|Difficile
 Script|7h|Moyen
 Conception|2h|Moyen
