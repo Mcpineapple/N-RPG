@@ -44,8 +44,9 @@ Tristan|Moteur|20/03|4h|Raccordage du moteur et de l'interface avec le parser et
 François|Compte-Rendu|21/03|0h30|Rédaction du compte-rendu
 François|Media (fonds, musique)|21/03|1h30|Ajout des dernières images et musiques et crédit
 Pierre|planning|21/03|1h|rédaction des arbres binaires décrivant l'histoire
-Pierre|script|1h|correction syntaxique et ajout d'un fond noir
-François|Codage (parser)|3h|Gestion de bugs
+Pierre|script|22/03|1h|correction syntaxique et ajout d'un fond noir
+François|Codage (parser)|23/03|3h|Gestion de bugs
+François|Codage (parser)|24/03|1h|Meilleure gestion de la fin de fichier
 
 ## Étapes de développement
 Type|Date|Difficulté|Contenu
@@ -67,7 +68,7 @@ Codage (arbre)|1h20|Facile
 Codage (console)|2h30|Facile
 Codage (graphique)|10h45|Difficile
 Codage (modules)|1h|Facile
-Codage (parser)|15h40|Difficile
+Codage (parser)|16h40|Difficile
 Media (graphismes, etc.)|5h30|Difficile
 Script|7h|Moyen
 Conception|2h|Moyen
