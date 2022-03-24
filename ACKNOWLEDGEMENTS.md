@@ -93,3 +93,23 @@ https://commons.wikimedia.org/wiki/File:Haigerloch-nuclear-reactor_ArM.JPG
 Conditions : CC-BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
 Modifié par François Gallois : francois.gallois.pro@gmail.com, sous licence
 identique et conférant tous droits au créateur original
+
+## Persos
+
+Neutral et Panick Bert:
+par Pierre Chain
+Conditions : CC-0
+
+McTharney:
+par Pierre Chain
+Conditions CC-0
+
+talkies:
+par Pierre Chain
+Conditions: CC-0
+
+Créature:
+https://creazilla.com/fr/nodes/1460-mante-religieuse-silhouette
+Mante religieuse silhouette par Natasha Sinegina, sur Creazilla
+Conditions : CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/deed.fr)
+identique et conférant tous droits au créateur original
