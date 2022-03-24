@@ -27,6 +27,10 @@ import json, sys, os.path
 class FinError(Exception):
     pass
 
+# Erreur en cas d'absence de l'identifiant recherché dans le fichier présent
+class IdentifiantInexistantError(Exception):
+    pass
+
 class Parser:
     def __init__(self, script: str, position: int = None, aliases: dict = {}) -> None:
         u"""
@@ -81,8 +85,11 @@ class Parser:
 
     def _fin(func):
         u"""
-        Décorateur permettant de prendre en charge l'erreur en arrivant en fin de
-        fichier.
+        Décorateur permettant de prendre en charge l'erreur personalisée
+        "FinError" en arrivant en fin de fichier. Celui-ci est mis en place
+        seulement dans les espaces dans lesquels une sortie n'est pas déjà
+        attendue, afin de lire correctement la dernière ligne même en recevant
+        une fin de fichier.
         Préconditions :
             Décorer une fonction qui fait appel à self._lire(), directemet ou
                 indirectement, et renvoie une valeur vers l'extérieur.
@@ -104,7 +111,7 @@ class Parser:
                 'parametres': '',
                 'texte': ''
                 })
-            except (Exception) as e:
+            except (Exception):
                 # Dans le cas d'une autre erreur, la laisse passer normalement
                 raise
             finally:
@@ -163,21 +170,27 @@ class Parser:
                 self._table[self._script_nom][str(identifiant)] \
                         = self._script_actuel.tell()
                 # Le type d'identifiant doit être forcé pour éviter
-                # l'auto-changement. Python stuff.
+                # l'auto-changement en int, cherchant comme une liste.
             caractere = self._lire()
             parametre = ""
-            while True:
-                if caractere == "\n":
-                    break
-                elif caractere == "=":
-                    if parametre != "":
-                        sortie[self._remplacement(parametre)] \
-                                = self._identifiant()
-                        parametre = ""
-                else:
-                    parametre += caractere
-                caractere = self._lire()
-            return json.dumps(sortie)
+            try :
+                while True:
+                    if caractere == "\n":
+                        break
+                    elif caractere == "=":
+                        if parametre != "":
+                            sortie[self._remplacement(parametre)] \
+                                    = self._identifiant()
+                            parametre = ""
+                    else:
+                        parametre += caractere
+                    caractere = self._lire()
+            except(FinError):
+                pass
+            except(Exception):
+                raise
+            finally:
+                return json.dumps(sortie)
 
         elif caractere == "/":
             self._contenu()
@@ -188,24 +201,30 @@ class Parser:
                     "type": "choix"
                     }
             compteur = -1 # Pour partir de 0
-            while True:
-                if caractere == "-":
-                    compteur += 1
-                    self._choix.append("")
-                    sortie[compteur]={
-                            "parametres": self._identifiant(),
-                            "texte": self._contenu()
-                            }
-                elif caractere == "=":
-                    self._choix[compteur] = self._identifiant()
-                    self._contenu() # Ignorer la fin de la ligne
-                elif caractere == "\n":
-                    self._laver = 1
-                    break
-                else:
-                    self._contenu()
-                caractere = self._lire()
-            return json.dumps(sortie)
+            try:
+                while True:
+                    if caractere == "-":
+                        compteur += 1
+                        self._choix.append("")
+                        sortie[compteur]={
+                                "parametres": self._identifiant(),
+                                "texte": self._contenu()
+                                }
+                    elif caractere == "=":
+                        self._choix[compteur] = self._identifiant()
+                        self._contenu() # Ignorer la fin de la ligne
+                    elif caractere == "\n":
+                        self._laver = 1
+                        break
+                    else:
+                        self._contenu()
+                    caractere = self._lire()
+            except(FinError):
+                pass
+            except(Exception):
+                raise
+            finally:
+                return json.dumps(sortie)
 
         elif caractere == "#":
             ordre = 0
@@ -287,7 +306,6 @@ class Parser:
             self._rechercher(destination)
         self._choix = []
 
-    @_fin
     def sauvegarder(self) -> None:
         u"""
         Donne la position actuelle du parser afin de pouvoir réutiliser cette
@@ -313,7 +331,8 @@ class Parser:
     def _identifiant(self) -> str:
         u"""
         Lit l'identifiant à la suite d'un symbole, et le renvoie. Prend en
-        compte les alias à remplacer.
+        compte les alias à remplacer. En cas d'arivée en fin de fichier, renvoie
+        simplement le contenu déjà lu.
         Préconditions :
             Existence d'un script ouvert sous forme d'un objet file
                 self._script_actuel
@@ -326,26 +345,34 @@ class Parser:
                 identifiant : str, identifiant lu
         """
         identifiant = ""
-        caractere = self._lire()
-        while True:
-            if caractere == "\\": # Caractère d'échappement
-                caractere = self._script_actuel.read(1)
-                # Ne passe pas par les autres vérifications
-            elif caractere == " ":
-                break
-            elif caractere == "\n":
-                self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
-                break
-            identifiant += caractere
+        try:
             caractere = self._lire()
-        return self._remplacement(identifiant)
+            while True:
+                if caractere == "\\": # Caractère d'échappement
+                    caractere = self._script_actuel.read(1)
+                    # Ne passe pas par les autres vérifications
+                elif caractere == " ":
+                    break
+                elif caractere == "\n":
+                    self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
+                    break
+                identifiant += caractere
+                caractere = self._lire()
+        except(FinError):
+            pass
+        except(Exception):
+            raise
+        finally:
+            return self._remplacement(identifiant)
 
     def _contenu(self, premier: str = "", stop: bool = False) -> str:
         u"""
         Lit le contenu jusqu'à la fin de la ligne, et le renvoie. Permet aussi
         évetuellement de prendre en compte les pauses dans le texte. Prend en
         compte les lignes étendues à l'aide de l'espace en début de ligne
-        suivante et de remplacer les aliases.
+        suivante et de remplacer les aliases. En cas d'arivée à la fin du
+        fichier, renvoie simplement le contenu en s'arrêtant à la fin du
+        fichier.
         Préconditions :
             Existence d'un script ouvert sous forme d'un objet file dans
                 self._script_actuel.
@@ -363,22 +390,28 @@ class Parser:
                 contenu : str, texte lu jusqu'à la fin de la ligne.
         """
         contenu = premier
-        while True:
-            caractere = self._lire()
-            if caractere == "\\": # Caractère d'échappement
-                caractere = self._script_actuel.read(1)
-                # Ne passe pas par les autres vérifications
-            elif caractere == "\n":
-                if self._lire() == " ":
-                    contenu += " " # Laisse un espace
-                    continue # Si la ligne est étendue
-                else :
-                    self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
+        try:
+            while True:
+                caractere = self._lire()
+                if caractere == "\\": # Caractère d'échappement
+                    caractere = self._script_actuel.read(1)
+                    # Ne passe pas par les autres vérifications
+                elif caractere == "\n":
+                    if self._lire() == " ":
+                        contenu += " " # Laisse un espace
+                        continue # Si la ligne est étendue
+                    else :
+                        self._script_actuel.seek(self._script_actuel.tell()-1,0) # Retour en arrière
+                        break
+                elif stop and caractere == ">":
                     break
-            elif stop and caractere == ">":
-                break
-            contenu += caractere
-        return self._remplacement(contenu)
+                contenu += caractere
+        except(FinError):
+            pass
+        except(Exception):
+            raise
+        finally:
+            return self._remplacement(contenu)
 
     def _lire(self) -> str:
         u"""
@@ -405,6 +438,7 @@ class Parser:
         Place le pointeur dans le fichier à la ligne correspondant à
         l'identifiant, soit en le retrouvant dans la _table, soit en lisant le
         script, en indexant tous les autres identifiants trouvés sur le chemin.
+        Renverra une erreur personalisée si l'identifiant n'est pas trouvé.
         Préconditions :
             Existence d'un script dans lequel rechercher
             Existence d'une _table dans laquelle indexer les positions
@@ -438,29 +472,35 @@ class Parser:
             else:
                 caractere = "\n" # Le premier caractère a déjà été lu
                 # autrement une ligne pourrait être passée
-                while True:
-                    while caractere == "\n": # En cas de plusieurs retours à la ligne
-                        caractere = self._lire()
-                    if caractere == "$": # Et que celle-ci commence par un $
-                        nom = self._identifiant()
-                        if nom != "": # N'enregistre pas dans le cas d'une ligne
-                            # de paramètre anonyme
-                            self._table[nom] = self._script_actuel.tell()
-                        if nom == identifiant : # Si il s'agit de ce que l'on
-                            # cherchait
-                            self._trouve = True
-                            break # Fin de la fonction
-                        caractere = self._lire()
-                        continue
-                    elif caractere == "<": # Scanne aussi les aliases
-                        nom = self._identifiant()
-                        contenu = self._contenu()
-                        if nom != "":
-                            self._aliases[nom] = contenu
-                        caractere = self._lire()
-                        continue
-                    while caractere != "\n": # Recherche d'une fin de ligne
-                        caractere = self._lire()
+                try : # En cas d'arivée en fin de fichier sans rien trouver
+                    while True:
+                        while caractere == "\n": # En cas de plusieurs retours à la ligne
+                            caractere = self._lire()
+                        if caractere == "$": # Et que celle-ci commence par un $
+                            nom = self._identifiant()
+                            if nom != "": # N'enregistre pas dans le cas d'une ligne
+                                # de paramètre anonyme
+                                self._table[nom] = self._script_actuel.tell()
+                            if nom == identifiant : # Si il s'agit de ce que l'on
+                                # cherchait
+                                self._trouve = True
+                                break # Fin de la fonction
+                            caractere = self._lire()
+                            continue
+                        elif caractere == "<": # Scanne aussi les aliases
+                            nom = self._identifiant()
+                            contenu = self._contenu()
+                            if nom != "":
+                                self._aliases[nom] = contenu
+                            caractere = self._lire()
+                            continue
+                        while caractere != "\n": # Recherche d'une fin de ligne
+                            caractere = self._lire()
+                except(FinError):
+                    raise IdentifiantInexistantError
+                except (Exception) as e:
+                    # Dans le cas d'une autre erreur, la laisse passer normalement
+                    raise
 
     def _passage_fichier(self, fichier: str) -> None:
         u"""

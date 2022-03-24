@@ -24,7 +24,7 @@
 -- 000 --
 {'type': 'parametres'}
 {'type': 'texte', 'remplacer': 1, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
-{'type': 'fin', 'parametres': '', 'texte': ''}
+{'type': 'fin', 'parametres': '', 'texte': 'Couard'}
 
 (Pousser la porte)
 -- 001 --
@@ -2637,7 +2637,7 @@
 -- 0100 --
 {'type': 'parametres'}
 {'type': 'texte', 'remplacer': 1, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
-{'type': 'fin', 'parametres': '', 'texte': ''}
+{'type': 'fin', 'parametres': '', 'texte': 'Couard'}
 
 (Pousser la porte)
 -- 0101 --
@@ -5248,7 +5248,7 @@
 -- 0110 --
 {'type': 'parametres'}
 {'type': 'texte', 'remplacer': 1, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
-{'type': 'fin', 'parametres': '', 'texte': ''}
+{'type': 'fin', 'parametres': '', 'texte': 'Couard'}
 
 (Pousser la porte)
 -- 0111 --
@@ -7868,7 +7868,7 @@
 -- 100 --
 {'type': 'parametres'}
 {'type': 'texte', 'remplacer': 1, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
-{'type': 'fin', 'parametres': '', 'texte': ''}
+{'type': 'fin', 'parametres': '', 'texte': 'Couard'}
 
 (Pousser la porte)
 -- 101 --
@@ -10481,7 +10481,7 @@
 -- 1100 --
 {'type': 'parametres'}
 {'type': 'texte', 'remplacer': 1, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
-{'type': 'fin', 'parametres': '', 'texte': ''}
+{'type': 'fin', 'parametres': '', 'texte': 'Couard'}
 
 (Pousser la porte)
 -- 1101 --
@@ -13092,7 +13092,7 @@
 -- 1110 --
 {'type': 'parametres'}
 {'type': 'texte', 'remplacer': 1, 'contenu': "Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des années."}
-{'type': 'fin', 'parametres': '', 'texte': ''}
+{'type': 'fin', 'parametres': '', 'texte': 'Couard'}
 
 (Pousser la porte)
 -- 1111 --
