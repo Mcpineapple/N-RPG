@@ -69,7 +69,7 @@ $lab2
 - Celle de gauche
 =couloirréacteur1
 - Celle de droite
-=derniercouloirgauche1
+=derniercouloirdroit
 
 $lab2logs
 {lab2}
