@@ -159,7 +159,7 @@ $derniercouloirdroit bg=couloirtournantgauche
 
 $derniercouloirgauche1 bg=couloirtournantdroit
 Vous arrivez dans un couloir avec un tournant à gauche
-- Prnedre le tournant
+- Prendre le tournant
 =sas
 
 $sas bg=sas
