@@ -25,11 +25,15 @@ import json, sys, os.path
 
 # Erreur en fin de fichier
 class FinError(Exception):
-    pass
+    def __init__(self, message="Le parser a atteint la fin du fichier"):
+        self.message = message
+        super().__init__(self.message)
 
 # Erreur en cas d'absence de l'identifiant recherché dans le fichier présent
 class IdentifiantInexistantError(Exception):
-    pass
+    def __init__(self, message="L'identifiant recherché est inexistant"):
+        self.message = message
+        super().__init__(self.message)
 
 class Parser:
     def __init__(self, script: str, position: int = None, aliases: dict = {}) -> None:
