@@ -155,13 +155,12 @@ $derniercouloirdroit bg=couloirtournantgauche
 - Prendre le tournant
 =sas
 
-<sas Vous arrivez devant une grande porte en acier entrouverte avec un bouton à gauche.
-
 $derniercouloirgauche1 bg=couloirtournantdroit
 Vous arrivez dans un couloir avec un tournant à gauche
 - Prendre le tournant
 =sas
 
+<sas Vous arrivez devant une grande porte en acier entrouverte avec un bouton à gauche.
 $sas bg=sas
 {sas}
 - Appuyer sur le bouton
