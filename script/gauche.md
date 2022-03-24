@@ -135,7 +135,7 @@ Vous lisez l'entrée située en dessous du tube, Il est écrit:
 
 <lab2 La réponse ne se trouve pas ici, il faut avancer. Il ne reste qu'une porte devant vous.
 
-$lab2
+$lab2 bg=lab
 {lab2}
 - Passer la porte
 =derniercouloirdroit
