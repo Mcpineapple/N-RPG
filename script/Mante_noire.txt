@@ -1,0 +1,120 @@
+#Le Laboratoire souterrain
+
+##Synopsis
+Vous arrivez sur les lieux, une plaque en acier encadrée de béton est ouverte, votre adjoint
+Bert est là.Bert vous explique ce qu'il a dit au téléphone, le cercle décrit par les 
+disparitions a cette colline pour centre et cette trappe semble être la clé du mystère. 
+Comme vous êtes le shériff, vous entrez et Bert reste à l'extérieur pour être en contact avec
+le central. Vous descendez et une fois porte franchie vous êtes dans une structure 
+souterraine, les murs et le sol sont en acier. Vous perdez le contact par Talkie.
+Il n'y a plus que vous et le laboratoire silencieux.
+
+## Environnement
+Plan:
+          ________
+     ____|caserne |____
+    | ____\_   ___\__  |
+    | |     | |      | |
+   _| |    _| |_     | |____
+[E]_/ |    |[R]|     B \ [C]|
+    | |    |_ _|     | /____|
+    | |     | |      | |
+    | |_____| |______| |
+    |____/   Labo  /___|
+         |_#_#_#_#_|
+
+[E]: entrée par l'echelle, sert aussi de sortie
+/: porte, peut s'ouvrir avec une action
+[R]: puit du réacteur désaffecté, seul endroit où l'air filtre
+caserne: anciens baraquements, lore et progression possible dedans, si l'on y passe après le
+laboratoire, on peut y récupérer des explosifs
+Labo: ancien laboratoire, lore et progression possible dedans
+B: bouton permettant d'ouvrir la porte du sas, le sas peut aussi être forcé
+[C]: créature #3188 mante religieuse constitué d'un fluide noir, dévoreuse de chair chaude
+#: créature #3188bis :petits objets constitués du même fluide que la 3188, impossible de 
+savoir leur lien
+
+##Personnages
+-Personnage principal: nom pas important, shériff d'une petite bourgade du centre des 
+Etats-Unis
+-Bert: votre adjoint, donne le contexte de l'enquête
+-La créature #3188: une créature inconnue, récupérée par l'Agence Mondiale d'Exploration et 
+de Neutralisation de l'Occulte(AMENO), est à la source des disparitions dans la région et se
+nourrit de chair d'animaux à sang chaud
+-McTharney: Officiel de l'AMENO, vous propose de rejoindre l'organisation s'ils ont été 
+prévenus
+
+##Mystères
+L'existence et le but de l'AMENO
+La nature des créatures #3188 et #3188bis
+
+##Fins
+
+###"Mauvaises" Fins
+-"Freefall": En vous rapprochant du puits du réacteur pour contempler ce qu'il y a au fond ,
+vous glissez sur la mousse environnant le puits, vous mourez après la meilleure expérience 
+de chute libre de votre vie (très courte).
+-"Dévoré": La créature va plus vite que vous et vous mange, vous sentez votre corps se faire
+dissoudre dans le plasma noir qui forme le corps de la créature.
+-"Enseveli": Une mauvaise utilisation des explosifs fait s'effondrer le laboratoire souterrain
+sur vous et la créature. "Au moins j'ai sauvé la ville" est votre dernière pensée.
+-"Couard": Vous remontez par l'échelle sans avoir rien trouvé, les disparitions ne cessent 
+pas, vous êtes démis de vos fonctions de shériff et la ville entière vous hait pendant des 
+années.
+-"Freefall 2": Vous menez la créature au puit du réacteur et l'entrainez dedans, 
+malheureusement vous tombez aussi, "Au moins j'ai sauvé la ville" est votre dernière pensée.
+Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
+-"Si proche": Vous arrivez à échapper à la créature et à sortir du complexe, que vous ayez
+prévenu Bert ou pas, Vous décidez de vous enfuir à travers la forêt, vous trébuchez sur une 
+racine et la créature vous rattrape.
+-"Ami abandonné": Vous arrivez à échapper à la créature et à sortir du complexe, vous fuyez
+en voiture sans demander votre reste et voyez Bert se faire dévorer vivant par la créature.
+Le lendemain, des militaires sont sur la zone.
+-"Eliminé": En appuyant sur le bouton permettant d'ouvrir le sas, l'AMENO est prévenu et arrive
+sur les lieux, en réussissant à sortir du complexe, on vous propose de rejoindre, vous et Bert 
+l'organisation, étant donné que vous êtes celui ayant découvert la créature, c'est à vous 
+qu'appartient le choix. Cette fin apparait si vous dites non. McTharney vous élimine d'une balle
+en pleine tête alors que Bert est escorté vers un fourgon.
+
+###"Bonnes" Fins
+-"Fuite": Vous arrivez à échapper à la créature et à sortir du complexe, vous prévenez Bert et 
+vous vous enfuyez en prévenant le central, la créature arrête de vous poursuivre. Le lendemain,
+des militaires sont sur la zone.
+-"SPLAT!": Vous menez la créature au puit du réacteur et l'entrainez dedans, en s'écrasant au 
+fond elle éclate en slime noir avec un grand bruit et se répand sur les murs du puits.
+-"Purifié par le feu": Vous arrivez à utiliser les explosifs sur la créature, elle meurt en se 
+tordant de douleur alors que les flammes réagissent avec le plasma.
+-"Recruté"(Vraie Fin): En appuyant sur le bouton permettant d'ouvrir le sas, l'AMENO est prévenu
+et arrive sur les lieux, en réussissant à sortir du complexe, on vous propose de rejoindre, vous
+et Bert l'organisation, étant donné que  vous êtes celui ayant découvert la créature, c'est à 
+vous qu'appartient le choix. Cette fin apparait si vous dites oui. Vou vous mettez en route vers
+de prochaines aventures.
+
+###Fin secrète
+-"Tourniquet": faites trois tours du complexe souterrain, la créature s'évanouit de fatigue et vous
+sortez tranquillement
+
+##Gameplay
+Le jeu comporte deux phases principales, l'exploration et la fuite.
+
+###L'exploration
+Vous pouvez explorer le labo autant que vous voulez, vous avez à chaque écran deux options de
+progression, éventuellement un retour arrière. Il y a des choses à trouver à travers le complexe
+-Caserne: Complètement carbonisée, vous pouvez y trouver le cadavre d'un garde portant l'insigne
+de l'AMENO (je le dessinerais), qui vous est donc inconnu à ce moment, vous pouvez récupérer des 
+explosifs attachésdans son dos. Vous pouvez aussi trouver un enregistrement d'une voix de 
+militaire qui demande de l'aide et qui dit qu'il a perdu des hommes.
+-Labo: En désordre, des papiers partout et des taches de sang par terre. On y trouve les créatures
+#3188bis et des logs sur des écrans bioluminescents en dessous des bocaux qui nous donnent des détails
+et qui nous apprennent que la créature #3188 est très sensible au feu.
+-Cellule: Endroit où est contenue la créature #3188, dès qu'on entre elle nous poursuit.
+
+###La fuite
+Vous fuyez à travers le complexe à chaque bifurcation, vous avez le choix sur les deux tournants
+(éventuellement un chronomètre) si vous parcourez un couloir entier (les deux couloirs horizontaux
+voir plan), la créature vous rattrape et vous avez une fin "dévoré". Vous avez différentes fenêtres
+pour utiliser les explosifs si vous les avez. Si vous les lancez  et que vous avez récupéré les 
+logs, vous avez une fin "Purifié par le feu", si vous n'avez pas lu les logs vous avez une fin
+"Enseveli". Si vous parvenez à sortir vous pouvez prévenir Bert ou non, ensuite, vous pouvez 
+prendre la voiture et fuir par la route ou fuir par la forêt. En fonction des combinaisons
+vous avez une fin "Ami abandonné", "Si proche" ou "Fuite".
