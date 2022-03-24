@@ -93,3 +93,18 @@ https://commons.wikimedia.org/wiki/File:Haigerloch-nuclear-reactor_ArM.JPG
 Conditions : CC-BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)
 Modifié par François Gallois : francois.gallois.pro@gmail.com, sous licence
 identique et conférant tous droits au créateur original
+
+fondtexte :
+https://bgfons.com/download/989
+"concrete, texture concrete, download photo, beton texture background,
+download", par inconnu sur bgfons.com
+Conditions : Bgfons.com license, Attribution-NonCommercial 4.0 intenational
+(https://bgfons.com/license)
+
+fondbouton :
+https://freerangestock.com/photos/20581/metal-sheet.html
+" Metal Sheet
+Reinforced metal sheet" par Chance Agrella, sur Freerange.
+Conditions : Equalicense (https://freerangestock.com/licensing.php)
+Photos courtesy of and copyright Free Range Stock, www.freerangestock.com, and
+Chance Agrella.
