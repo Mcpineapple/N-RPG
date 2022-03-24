@@ -13,7 +13,7 @@ Devant vous se trouve une porte en acier fermée.
 
 <caserne1 Vous arrivez dans une salle carbonisée, vous y voyez différents ensembles de ce qui semble avoir été une caserne. Vous voyez un cadavre de soldat au milieu de la pièce.
 
-$caserne1
+$caserne1 bg=caserne
 {caserne1}
 - Inspecter le corps
 =corps
