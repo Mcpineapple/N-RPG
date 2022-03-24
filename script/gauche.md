@@ -222,12 +222,12 @@ $fuite2droitebout bg=couloirtournantdroit
 $fuite3droite bg=couloirporte
 {fuite3}
 - Pousser la porte
-=labfuite1
+=lab1fuite
 
 $fuite3droitebout bg=couloirporte
 {fuite3}
 - Pousser la porte
-=labfuite1bout
+=lab1fuitebout
 
 <lab1fuite Vous entrez dans le laboratoire.
 
