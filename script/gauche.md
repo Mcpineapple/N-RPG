@@ -22,7 +22,7 @@ $caserne1
 
 <corps Vous examinez le corps du militaire, il serre un paquet dans ses bras.
 
-$corps
+$corps bg=corps
 {corps}
 - Prendre le paquet
 =explosifs
@@ -287,7 +287,7 @@ $réacteurfuitebout bg=réacteur
 =freefall2
 
 $freefall2 bg=noir
-Vous menez la créature au puit du réacteur et l'entrainez dedans, 
+Vous menez la créature au puit du réacteur et l'entrainez dedans,
  malheureusement vous tombez aussi. "Au moins j'ai sauvé la ville" est votre dernière pensée.
  Vous mourez après la meilleure expérience de chute libre de votre vie (très courte).
 | Freefall 2

@@ -5,7 +5,7 @@ import os.path
 
 # Création d'objets contenant l'emplacement du son et de l'image d'introduction
 image = os.path.join(os.path.dirname(__file__), 'media', 'images', 'imagemenu.jpg')
-son = os.path.join(os.path.dirname(__file__), 'media', 'sfx', 'Duckpoxode_Syrup.mp3')
+son = os.path.join(os.path.dirname(__file__), 'media', 'music', 'Duckpoxode_Syrup.mp3')
 
 # Création de l'objet tkinter
 root = Tk()

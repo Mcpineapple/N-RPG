@@ -181,6 +181,7 @@ class Parser:
 
         elif caractere == "/":
             self._contenu()
+            return self.continuer()
 
         elif caractere == "-":
             sortie = {
@@ -233,6 +234,7 @@ class Parser:
                 self._rechercher(identifiant)
             else:
                 self._contenu()
+            return self.continuer()
 
         elif caractere == ">":
             sortie = {
@@ -428,6 +430,7 @@ class Parser:
         if identifiant != "": # Dans le cas où on change de fichier sans aller
             # vers un nouvel identifiant, mais juste le début du fichier
             self._trouve = True
+            self._laver = 1
             position = self._table.get(identifiant) # None si la clé n'est pas
             # présente
             if position is not None:
@@ -436,8 +439,6 @@ class Parser:
                 caractere = "\n" # Le premier caractère a déjà été lu
                 # autrement une ligne pourrait être passée
                 while True:
-                    while caractere != "\n": # Recherche d'une fin de ligne
-                        caractere = self._lire()
                     while caractere == "\n": # En cas de plusieurs retours à la ligne
                         caractere = self._lire()
                     if caractere == "$": # Et que celle-ci commence par un $
@@ -449,12 +450,17 @@ class Parser:
                             # cherchait
                             self._trouve = True
                             break # Fin de la fonction
+                        caractere = self._lire()
+                        continue
                     elif caractere == "<": # Scanne aussi les aliases
                         nom = self._identifiant()
                         contenu = self._contenu()
                         if nom != "":
                             self._aliases[nom] = contenu
-                    caractere = self._lire()
+                        caractere = self._lire()
+                        continue
+                    while caractere != "\n": # Recherche d'une fin de ligne
+                        caractere = self._lire()
 
     def _passage_fichier(self, fichier: str) -> None:
         u"""
