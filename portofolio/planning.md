@@ -67,7 +67,7 @@ Codage (arbre)|1h20|Facile
 Codage (console)|2h30|Facile
 Codage (graphique)|10h45|Difficile
 Codage (modules)|1h|Facile
-Codage (parser)|11h30|Difficile
+Codage (parser)|15h40|Difficile
 Media (graphismes, etc.)|5h30|Difficile
 Script|7h|Moyen
 Conception|2h|Moyen

@@ -142,14 +142,14 @@ $caserne1logs
 
 <corps Vous examinez le corps du militaire, il serre un paquet dans ses bras.
 
-$corps
+$corps bg=corps
 {corps}
 - Prendre le paquet
 =explosifs
 - Ne pas continuer
 =caserne2
 
-$corpslogs
+$corpslogs bg=corps
 {corps}
 - Prendre le paquet
 =explosifslogs
