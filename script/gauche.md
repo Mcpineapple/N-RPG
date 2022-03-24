@@ -47,8 +47,10 @@ $insigne bg=insigne
 
 $caserne2 bg=caserne
 {caserne2}
-- Prendre la porte droit devant
+- Prendre la porte à droit
 =réacteur
+- Prendre la porte droit devant
+=derniercouloirgauche
 
 
 <couloirréacteur1 Devant vous s'étend un couloir avec une porte à la fin
@@ -154,6 +156,11 @@ $derniercouloirdroit bg=couloirtournantgauche
 =sas
 
 <sas Vous arrivez devant une grande porte en acier entrouverte avec un bouton à gauche.
+
+$derniercouloirgauche1 bg=couloirtournantdroit
+Vous arrivez dans un couloir avec un tournant à gauche
+- Prnedre le tournant
+=sas
 
 $sas bg=sas
 {sas}
