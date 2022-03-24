@@ -11,7 +11,7 @@ Vous avez compris ce que j'ai dit au téléphone?
 
 Eh bien, vous voyez comment les disparitions étaient agencées sur la carte ?
 Avouez que c'était un peu étrange non? Eh bien ca formait un cercle, et le
- centre du cercle>, c'est ici!
+ centre du cercle,> c'est ici!
 - Sérieusement?
 =
 
@@ -50,7 +50,7 @@ All... Vo... ...nt...ndez..
 =
 
 $3 char=
-le contact est coupé.
+Le contact est coupé.
 - Remonter
 =couard
 - Pousser la porte

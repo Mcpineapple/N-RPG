@@ -113,3 +113,19 @@ https://creazilla.com/fr/nodes/1460-mante-religieuse-silhouette
 Mante religieuse silhouette par Natasha Sinegina, sur Creazilla
 Conditions : CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/deed.fr)
 identique et conférant tous droits au créateur original
+
+fondtexte :
+https://bgfons.com/download/989
+"concrete, texture concrete, download photo, beton texture background,
+download", par inconnu sur bgfons.com
+Conditions : Bgfons.com license, Attribution-NonCommercial 4.0 intenational
+(https://bgfons.com/license)
+
+fondbouton :
+https://freerangestock.com/photos/20581/metal-sheet.html
+" Metal Sheet
+Reinforced metal sheet" par Chance Agrella, sur Freerange.
+Conditions : Equalicense (https://freerangestock.com/licensing.php)
+Photos courtesy of and copyright Free Range Stock, www.freerangestock.com, and
+Chance Agrella.
+

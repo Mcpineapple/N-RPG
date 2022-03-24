@@ -140,16 +140,16 @@ $caserne1logs
 - Continuer
 =caserne2
 
-<corps vous examinez le corps du militaire, il serre un paquet dans ses bras.
+<corps Vous examinez le corps du militaire, il serre un paquet dans ses bras.
 
-$corps
+$corps bg=corps
 {corps}
 - Prendre le paquet
 =explosifs
 - Ne pas continuer
 =caserne2
 
-$corpslogs
+$corpslogs bg=corps
 {corps}
 - Prendre le paquet
 =explosifslogs
@@ -167,7 +167,7 @@ $explosifslogs
 - Examiner l'insigne
 =insigne
 
-<insigne vous examinez l'insigne du militaire, il ne vous dit absolument rien.
+<insigne Vous examinez l'insigne du militaire, il ne vous dit absolument rien.
 
 
 $insigne bg=insigne
@@ -232,7 +232,7 @@ $ouverturelogs
 - Entrer
 =cellulelogsbout
 
-<cellule Vous entrz dans la cellule, devant vous se trouve un cube en béton avec une étrange créature noire
+<cellule Vous entrez dans la cellule, devant vous se trouve un cube en béton avec une étrange créature noire
 
 $cellule bg=cellule char= music=
 {cellule}
