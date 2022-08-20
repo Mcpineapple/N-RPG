@@ -61,8 +61,7 @@ class MoteurCLI:
             Affiche dans la sortie standard le texte tel que demandé.
         """
         if nouveau:
-            print(f"\n\t", end="")
-        print(f"{texte}", end="")
+            print(f"{texte}", end="")
 
     @property
     def personnage(self) -> str:
@@ -194,8 +193,8 @@ class MoteurGUI(Label):
             Paramètres:
                 emplacement : str, endroit ou se trouve le fichier du bruitage jouer
         """
-        # Block = False empêche l'écran de geler 
-        #sinon le programme attend que la musique se termine pour continuer
+        # Block = False empêche l'écran de geler
+        # sinon le programme attend que la musique se termine pour continuer
         try :
             playsound(emplacement,block=False)
         except:

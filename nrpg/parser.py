@@ -107,6 +107,7 @@ class Parser:
             sortie : str, soit la sortie de la fonction, soit une fin vide
         """
         def inner(self):
+            sortie = None
             try :
                 sortie = func(self)
             except(FinError):
@@ -150,23 +151,19 @@ class Parser:
         caractere = self._lire()
 
         if caractere == "\n":
-            self._trouve = False
-            if self._laver == 1 :
-                self._laver = 0
-                contenu = {
-                        "type": "texte",
-                        "remplacer": 1,
-                        "contenu": ""
-                        }
-                return json.dumps(contenu)
-            else :
-                self._laver = 1
-                # Relance un appel
-                return self.continuer()
+            self._laver = 1
+            # Relance un appel
+            return self.continuer()
 
-        elif self._trouve or caractere == "$" :
-            self._trouve = False
-            identifiant = self._identifiant()
+        elif caractere == "$" or self._trouve == True :
+            if self._trouve == True:
+                self._trouve = False
+                # Si le premier caractère a été pris après une recherche
+                caractere = caractere
+                identifiant = ""
+            else :
+                identifiant = self._identifiant()
+                caractere = self._lire()
             sortie = {
                     "type": "parametres"
                     }
@@ -175,7 +172,6 @@ class Parser:
                         = self._script_actuel.tell()
                 # Le type d'identifiant doit être forcé pour éviter
                 # l'auto-changement en int, cherchant comme une liste.
-            caractere = self._lire()
             parametre = ""
             try :
                 while True:
@@ -194,7 +190,10 @@ class Parser:
             except(Exception):
                 raise
             finally:
-                return json.dumps(sortie)
+                if sortie == {"type": "parametres"}:
+                    return self.continuer()
+                else :
+                    return json.dumps(sortie)
 
         elif caractere == "/":
             self._contenu()
@@ -250,6 +249,7 @@ class Parser:
             contenu = self._contenu()
             if identifiant != "":
                 self._aliases[identifiant] = contenu
+            return self.continuer()
 
         elif caractere == "=":
             identifiant = self._identifiant()
@@ -401,7 +401,8 @@ class Parser:
                     caractere = self._script_actuel.read(1)
                     # Ne passe pas par les autres vérifications
                 elif caractere == "\n":
-                    if self._lire() == " ":
+                    caractere = self._lire()
+                    if caractere == " ":
                         contenu += " " # Laisse un espace
                         continue # Si la ligne est étendue
                     else :

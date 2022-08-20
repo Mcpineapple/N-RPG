@@ -169,7 +169,6 @@ $explosifslogs
 
 <insigne Vous examinez l'insigne du militaire, il ne vous dit absolument rien.
 
-
 $insigne bg=insigne
 {insigne}
 - Continuer
