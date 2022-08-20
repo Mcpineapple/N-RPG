@@ -33,7 +33,7 @@ class Arbre:
         self._arete_droit = u""
 
     @property
-    def fils_gauche(self) -> None :
+    def fils_gauche(self):
         u"""
         Renvoie le fils gauche.
         Préconditions :
@@ -45,7 +45,7 @@ class Arbre:
         return self._fils_gauche
 
     @property
-    def fils_droit(self) -> None :
+    def fils_droit(self):
         u"""
         Renvoie le fils droit.
         Préconditions :
@@ -57,7 +57,7 @@ class Arbre:
         return self._fils_droit
 
     @property
-    def arete_gauche(self) -> str :
+    def arete_gauche(self):
         u"""
         Renvoie le texte de l'arête gauche.
         Préconditions :
@@ -69,7 +69,7 @@ class Arbre:
         return self._arete_gauche
 
     @property
-    def arete_droit(self) -> str :
+    def arete_droit(self):
         u"""
         Renvoie le texte de l'arête droite.
         Préconditions :

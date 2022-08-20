@@ -336,6 +336,7 @@ class MoteurGUI(Label):
 
             self.arbre.construire(None, {"fichier": position_script, "position": 0})
 
+            self.changer_texte("") 
             self.appliquer_parser()
 
         elif self.commande_bouton_droit == "droite":
@@ -358,6 +359,10 @@ class MoteurGUI(Label):
     def appliquer_parser(self):
         u"""
         Vérifie le contenu de l'arbre, lit les instructions données par le parser, et les appliquent.
+        Préconditions :
+            L'arbre contenant le script doit être constituer et l'interface graphique lancée.
+        Post-conditions :
+            Applique les instructions du parser au noeud présent de l'arbre.
         """
 
         try:
@@ -366,6 +371,12 @@ class MoteurGUI(Label):
             print(self.arbre.arete_droit)
             print(self.commande_bouton_gauche)
             print(self.commande_bouton_droit)
+
+            #print(self.arbre.fils_gauche.texte)
+            #print(self.arbre.fils_droit.texte)
+            #print(self.arbre.fils_gauche.arete_droit)
+            print(type(arbre.fils_gauche))
+            print(type(arbre.fils_droit))
         except:
             print("Err")
 
@@ -433,6 +444,7 @@ class MoteurGUI(Label):
             self.commande_bouton_droit = "continue"
 
             self.appliquer_parser()
+
 
 
         elif contenu["type"] == "fin" :
